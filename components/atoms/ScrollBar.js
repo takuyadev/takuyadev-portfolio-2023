@@ -8,7 +8,7 @@ const ScrollBarEl = styled.div`
     border-radius: 8px;
 `
 
-const Slider = styled.div `
+const Slider = styled.div`
     width: px;
     height: 24px;
     border-radius: 8px;
@@ -18,9 +18,9 @@ const Slider = styled.div `
 function ScrollBar() {
     return (
         <ScrollBarEl>
-            <Slider/>
+            <Slider />
         </ScrollBarEl>
     )
 }
 
-export { ScrollBar }
+export default ScrollBar

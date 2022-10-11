@@ -5,10 +5,10 @@ import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
 const ToggleEl = styled.button`
     position: relative;
     width: 60px;
-    height: 25px;
+    height: 27px;
     padding: 0.25em;
-    background: ${props => 
-        props.isActive ? props.theme.colors.light : props.theme.colors.primary["500"] };
+    background: ${props =>
+        props.isActive ? props.theme.colors.light : props.theme.colors.primary["500"]};
     border-radius: 25px;
     border:none;
     cursor:pointer;
@@ -21,11 +21,11 @@ const ToggleEl = styled.button`
 
 const SliderIcon = styled.div`
     position:absolute;
-    top: 4px;
-    transform: translateX(${props => props.isActive ? "0px" : "36px"});
+    top: 2px;
+    transform: translateX(${props => props.isActive ? "0px" : "31.5px"});
     width: 18px;
     height: 18px;
-    padding: 0.15em;
+    padding: 0.125em;
     background: ${props => props.theme.colors.dark};
     color: ${props =>
         props.isActive ? props.theme.colors.light : props.theme.colors.primary["500"]};
@@ -33,11 +33,16 @@ const SliderIcon = styled.div`
     transition: transform 0.25s cubic-bezier(0.85, 0, 0.15, 1);
 `
 
+const DarkIcon = styled(MoonIcon)`
+    width: 16px;
+    height: 16px;
+`
+
 function Toggle({ onClick, isActive }) {
     return (
         <ToggleEl isActive={isActive} onClick={onClick}>
             <SliderIcon isActive={isActive}>
-                {isActive ? <SunIcon /> : <MoonIcon />}
+                {isActive ? <SunIcon /> : <DarkIcon />}
             </SliderIcon>
         </ToggleEl>
     )
@@ -47,4 +52,4 @@ Toggle.defaultProps = {
     isActive: true
 }
 
-export { Toggle }
+export default Toggle

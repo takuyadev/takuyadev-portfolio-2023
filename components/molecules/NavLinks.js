@@ -1,8 +1,10 @@
 // Packages
 import styled from "styled-components"
-import { NavItem } from "../atoms/NavItem"
 import { HomeIcon, UserCircleIcon, CodeBracketIcon, BriefcaseIcon, EnvelopeIcon, SwatchIcon } from '@heroicons/react/24/solid'
-import { ScrollBar } from "../atoms/ScrollBar"
+
+// Components
+import NavItem from "components/atoms/NavItem"
+import ScrollBar from "components/atoms/ScrollBar"
 
 const NavigationEl = styled.div`
     display: flex;
@@ -21,7 +23,7 @@ const UlEl = styled.ul`
 function NavLinks() {
     return (
         <NavigationEl>
-            <ScrollBar/>
+            <ScrollBar />
             <nav>
                 <UlEl>
                     <NavItem text="Home" icon={<HomeIcon />} />
@@ -36,4 +38,4 @@ function NavLinks() {
     )
 }
 
-export { NavLinks }
+export default NavLinks

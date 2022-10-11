@@ -7,7 +7,7 @@ const NavItemEl = styled.li`
     color: ${props => props.theme.colors.light}99;
     font-weight: bold;
     cursor:pointer;
-    transition: color 0.1s cubic-bezier(0.61, 1, 0.88, 1);
+    transition: color 0.2s cubic-bezier(0.61, 1, 0.88, 1);
 
     & svg {
         width: 24px;
@@ -43,4 +43,4 @@ NavItem.defaultProps = {
     icon: <HomeIcon />
 }
 
-export { NavItem }
+export default NavItem

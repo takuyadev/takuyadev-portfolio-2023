@@ -1,9 +1,11 @@
 // Packages
 import styled from "styled-components";
-import { NavLinks } from "../molecules/NavLinks";
-import { Toggle } from '../atoms/Toggle'
-import { Logo } from "../atoms/Logo";
-import { IconLinks } from "../molecules/IconLinks";
+
+// Components
+import Toggle from 'components/atoms/Toggle'
+import Logo from "components/atoms/Logo";
+import NavLinks from "components/molecules/NavLinks";
+import IconLinks from "components/molecules/IconLinks";
 
 const SidebarEl = styled.aside`
     grid-area: sidebar;
@@ -14,6 +16,7 @@ const SidebarEl = styled.aside`
     justify-content: space-between;
     padding: 2em 1em;
     background: ${props => props.theme.colors.dark};
+    border-right: 1px solid ${props => props.theme.colors.light}80;
     height: 100vh;
 `
 
@@ -27,14 +30,14 @@ const BottomContainer = styled.div`
 function Sidebar() {
     return (
         <SidebarEl>
-            <Logo />
+            <Logo priority={true} />
             <NavLinks />
             <BottomContainer>
                 <Toggle isActive={false} />
-                <IconLinks/>
+                <IconLinks />
             </BottomContainer>
         </SidebarEl>
     )
 }
 
-export { Sidebar }
+export default Sidebar

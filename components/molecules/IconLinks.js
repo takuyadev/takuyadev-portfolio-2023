@@ -1,15 +1,16 @@
 // Packages
 import styled from "styled-components";
-import Image from "next/image";
 import Link from "next/link";
-import { GithubIcon, MailIcon, EasterIcon, LinkedInIcon } from "../atoms/Icons";
+
+// Components
+import GithubIcon from "components/atoms/icons/GithubIcon";
+import MailIcon from "components/atoms/icons/MailIcon";
+import LinkedInIcon from "components/atoms/icons/LinkedInIcon";
+import EasterIcon from "components/atoms/icons/EasterIcon";
 
 const IconLinksEl = styled.nav`
     display: flex;
     gap: 1em;
-`
-const Icon = styled(Image)`
-
 `
 
 function IconLinks() {
@@ -18,7 +19,6 @@ function IconLinks() {
             <Link href="/">
                 <a>
                     <MailIcon />
-
                 </a>
             </Link>
             <Link href="/">
@@ -33,11 +33,11 @@ function IconLinks() {
             </Link>
             <Link href="/">
                 <a>
-                    <EasterIcon/>
+                    <EasterIcon />
                 </a>
             </Link>
         </IconLinksEl>
     )
 }
 
-export { IconLinks }
+export default IconLinks
