@@ -1,20 +1,59 @@
 // Packages
-import styled from 'styled-components'
-import Head from 'next/head'
+import styled from "styled-components"
+import Head from "next/head"
+import { UserCircleIcon } from "@heroicons/react/24/solid"
 
 // Components
-import Sidebar from '@/organisms/general/Sidebar'
-import PrimaryBtn from '@/atoms/buttons/PrimaryBtn'
+import Sidebar from "@/organisms/general/Sidebar"
+import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
+import Hero from "@/organisms/homepage/Hero"
 
 const Main = styled.main`
-  display:grid;
+  display: grid;
   grid-template-areas: "sidebar content";
   grid-template-columns: repeat(4, 1fr);
 `
 
 const Content = styled.div`
+  display: grid;
+  grid-template-areas: "text hero";
+  grid-template-columns: repeat(4, 1fr);
   grid-area: content;
+  grid-column: span 3;
+  overflow-y: hidden;
+  overflow: hidden;
+  height: 100vh;
+`
+
+const TextCont = styled.div`
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  grid-area: text;
   grid-column: span 2;
+  justify-content: center;
+  gap: 16px;
+  margin-left: 32px;
+  z-index: 25;
+`
+
+const Heading = styled.h2`
+  margin: 0;
+  font-size: ${(props) => props.theme.fontSize["3xl"]};
+  letter-spacing: -0.02em;
+  text-shadow: 4px 4px 0px rgba(17, 58, 93, 1);
+`
+
+const Paragraph = styled.p`
+  max-width: 425px;
+  margin: 0;
+  font-size: ${(props) => props.theme.fontSize["s"]};
+  line-height: 175%;
+  letter-spacing: 0.015em;
+  color: ${(props) => props.theme.colors.light}D9;
+  text-shadow: 2px 2px 0px rgba(17, 58, 93, 1);
 `
 
 export default function Home() {
@@ -26,8 +65,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        <Sidebar/>
-        <Content />
+        <Sidebar />
+        <Content>
+          <Hero />
+          <TextCont>
+            <Heading>
+              Hi, I’m Takuya 👋 <br />
+              Front-end Developer <br />& UX/UI Designer
+            </Heading>
+            <Paragraph>
+              I’m a React.js Front-end Developer with expertise in UX/UI
+              Designing, as well as Node.js Full Stack Development. Currently
+              looking for opportunites in development!
+            </Paragraph>
+            <PrimaryBtn icon={<UserCircleIcon />} text="About Me" />
+          </TextCont>
+        </Content>
       </Main>
     </div>
   )

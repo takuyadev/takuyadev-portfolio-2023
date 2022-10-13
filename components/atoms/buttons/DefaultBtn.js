@@ -22,9 +22,7 @@ const Button = styled.button`
     }
 `
 
-function DefaultBtn(props) {
-   const { icon, text, ...otherProps } = props
-
+function DefaultBtn({ icon, text, ...otherProps }) {
    return (
       <Button {...otherProps}>
          {icon}

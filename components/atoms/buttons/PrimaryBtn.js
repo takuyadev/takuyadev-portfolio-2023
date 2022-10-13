@@ -16,18 +16,9 @@ const PrimaryBtnEl = styled(DefaultBtn)`
 `
 
 function PrimaryBtn({ icon, text, otherProps }) {
-
     return (
-        <PrimaryBtnEl {...otherProps}>
-            {icon}
-            {text}
-        </PrimaryBtnEl>
+        <PrimaryBtnEl icon={icon} text={text} {...otherProps} />
     )
-}
-
-PrimaryBtn.defaultProps = {
-    text: "Default",
-    icon: <HomeIcon />
 }
 
 export default PrimaryBtn

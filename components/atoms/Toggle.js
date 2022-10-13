@@ -23,9 +23,9 @@ const SliderIcon = styled.div`
     position:absolute;
     top: 2px;
     transform: translateX(${props => props.isActive ? "0px" : "31.5px"});
-    width: 18px;
-    height: 18px;
-    padding: 0.125em;
+    width: 22px;
+    height: 22px;
+    padding: 0.2em;
     background: ${props => props.theme.colors.dark};
     color: ${props =>
         props.isActive ? props.theme.colors.light : props.theme.colors.primary["500"]};

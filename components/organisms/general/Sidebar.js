@@ -14,8 +14,10 @@ const SidebarEl = styled.aside`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 2em 1em;
+    padding: 2em;
     background: ${props => props.theme.colors.dark};
+    transform: translateX(0px);
+    transition: transform 1s cubic-bezier(0.61, 1, 0.88, 1);
     border-right: 1px solid ${props => props.theme.colors.light}80;
     height: 100vh;
 `
