@@ -1,4 +1,5 @@
 // Packages
+import { forwardRef } from "react";
 import styled from "styled-components";
 import { HomeIcon } from '@heroicons/react/24/solid'
 
@@ -22,14 +23,16 @@ const Button = styled.button`
     }
 `
 
-function DefaultBtn({ icon, text, ...otherProps }) {
+const DefaultBtn = forwardRef(({ icon, text, ...otherProps }, ref) => {
    return (
-      <Button {...otherProps}>
+      <Button ref={ref}{...otherProps}>
          {icon}
          {text}
       </Button>
    )
-}
+})
+
+DefaultBtn.displayName = "PrimaryBtn"
 
 DefaultBtn.defaultProps = {
    text: "Default",

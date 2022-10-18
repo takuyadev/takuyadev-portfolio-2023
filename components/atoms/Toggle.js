@@ -38,9 +38,9 @@ const DarkIcon = styled(MoonIcon)`
     height: 16px;
 `
 
-function Toggle({ onClick, isActive }) {
+function Toggle({ onClick, isActive, ...otherProps }) {
     return (
-        <ToggleEl isActive={isActive} onClick={onClick}>
+        <ToggleEl {...otherProps} isActive={isActive} onClick={onClick}>
             <SliderIcon isActive={isActive}>
                 {isActive ? <SunIcon /> : <DarkIcon />}
             </SliderIcon>

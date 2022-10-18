@@ -28,3 +28,14 @@
     background: #113A5D;
   }
 }
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #F9F9F9;
+  background: #FF7A8A;
+}
+
+::selection {
+  color: #F9F9F9;
+  background: #FF7A8A;
+}

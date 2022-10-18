@@ -17,22 +17,22 @@ function IconLinks() {
     return (
         <IconLinksEl>
             <Link href="/">
-                <a>
+                <a aria-label="Email">
                     <MailIcon />
                 </a>
             </Link>
             <Link href="/">
-                <a>
+                <a aria-label="Github">
                     <GithubIcon />
                 </a>
             </Link>
             <Link href="/">
-                <a>
+                <a aria-label="LinkedIn">
                     <LinkedInIcon />
                 </a>
             </Link>
             <Link href="/">
-                <a>
+                <a aria-label="Easter Egg">
                     <EasterIcon />
                 </a>
             </Link>

@@ -26,12 +26,12 @@ function NavLinks() {
             <ScrollBar />
             <nav>
                 <UlEl>
-                    <NavItem text="Home" icon={<HomeIcon />} />
-                    <NavItem text="About Us" icon={<UserCircleIcon />} />
-                    <NavItem text="Projects" icon={<CodeBracketIcon />} />
-                    <NavItem text="Work" icon={<BriefcaseIcon />} />
-                    <NavItem text="Contact" icon={<EnvelopeIcon />} />
-                    <NavItem text="Style" icon={<SwatchIcon />} />
+                    <NavItem href="/" text="Home" icon={<HomeIcon />} />
+                    <NavItem href="/about" text="About me" icon={<UserCircleIcon />} />
+                    <NavItem href="/projects" text="Projects" icon={<CodeBracketIcon />} />
+                    <NavItem href="/work" text="Work" icon={<BriefcaseIcon />} />
+                    <NavItem href="/contact" text="Contact" icon={<EnvelopeIcon />} />
+                    <NavItem href="/style" text="Style" icon={<SwatchIcon />} />
                 </UlEl>
             </nav>
         </NavigationEl>

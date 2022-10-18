@@ -20,6 +20,7 @@ const SidebarEl = styled.aside`
     transition: transform 1s cubic-bezier(0.61, 1, 0.88, 1);
     border-right: 1px solid ${props => props.theme.colors.light}80;
     height: 100vh;
+    z-index: 100
 `
 
 const BottomContainer = styled.div`
@@ -35,7 +36,7 @@ function Sidebar() {
             <Logo priority={true} />
             <NavLinks />
             <BottomContainer>
-                <Toggle isActive={false} />
+                <Toggle aria-label="Dark mode toggle" isActive={false} />
                 <IconLinks />
             </BottomContainer>
         </SidebarEl>

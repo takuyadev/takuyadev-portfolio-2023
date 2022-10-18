@@ -1,9 +1,10 @@
 // Packages
+import { forwardRef } from "react";
 import styled from "styled-components";
 import { HomeIcon } from '@heroicons/react/24/solid'
 
 // Components
-import DefaultBtn from "components/atoms/buttons/DefaultBtn";
+import DefaultBtn from "@/atoms/buttons/DefaultBtn";
 
 const PrimaryBtnEl = styled(DefaultBtn)`
     background: ${props => props.theme.colors.primary["500"]};
@@ -15,10 +16,10 @@ const PrimaryBtnEl = styled(DefaultBtn)`
     }
 `
 
-function PrimaryBtn({ icon, text, otherProps }) {
-    return (
-        <PrimaryBtnEl icon={icon} text={text} {...otherProps} />
-    )
-}
+const PrimaryBtn = forwardRef(({ icon, text, ...otherProps }, ref) => (
+    <PrimaryBtnEl ref={ref} icon={icon} text={text} {...otherProps} />
+))
+
+PrimaryBtn.displayName = "PrimaryBtn"
 
 export default PrimaryBtn
