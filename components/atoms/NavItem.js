@@ -29,7 +29,7 @@ function NavItem({ href, icon, text }) {
     return (
         <Link href={href}>
             <NavItemEl>
-                <a>
+                <a tabIndex="0">
                     {icon}
                     {text}
                 </a>

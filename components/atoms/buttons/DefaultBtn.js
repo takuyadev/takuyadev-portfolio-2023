@@ -26,8 +26,8 @@ const Button = styled.button`
 const DefaultBtn = forwardRef(({ icon, text, ...otherProps }, ref) => {
    return (
       <Button ref={ref}{...otherProps}>
-         {icon}
-         {text}
+         {icon && icon}
+         {text && text}
       </Button>
    )
 })
