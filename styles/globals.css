@@ -29,6 +29,13 @@
   }
 }
 
+#__next {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "sidebar content";
+  grid-template-columns: repeat(4, 1fr);
+}
+
 ::-moz-selection {
   /* Code for Firefox */
   color: #F9F9F9;

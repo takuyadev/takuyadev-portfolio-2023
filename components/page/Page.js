@@ -9,25 +9,17 @@ import { fade } from "@/config/animation/fade"
 import Sidebar from "@/organisms/general/Sidebar"
 
 // Styled Components
-const Main = styled(motion.main)`
-  display: grid;
-  grid-template-areas: "sidebar content";
-  grid-template-columns: repeat(4, 1fr);
-`
-
-const Content = styled(motion.div)`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+const Content = styled(motion.main)`
   grid-area: content;
   grid-column: span 3;
-  overflow-y: hidden;
-  overflow: hidden;
   height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `
 
 function Page({ children, router }) {
    return (
-      <Main>
+      <>
          <Sidebar />
          <AnimatePresence mode="wait">
             <Content
@@ -40,7 +32,7 @@ function Page({ children, router }) {
                {children}
             </Content>
          </AnimatePresence>
-      </Main>
+      </>
    )
 
 }

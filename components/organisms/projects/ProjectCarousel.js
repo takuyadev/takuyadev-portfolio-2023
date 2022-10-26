@@ -1,37 +1,42 @@
 // Packages
 import styled from "styled-components";
+import { forwardRef } from "react";
 
-// Componetns
-import ImageCardL from "@/molecules/ImageCard/Large";
+// Components
+import ProjectCard from "@/molecules/ProjectCard";
 
 // Styled Components
-const CarouselCont = styled.div`
-   width: 100%;
+const CarouselCont = styled.section`
    grid-column: span 4;
-   overflow: auto;
-   height: auto;
+   width: 100%;
+   height: fit-content;
+   min-height: 400px;
+   overflow-x: scroll;
+   overflow-y: hidden;
+
 `
-
-
 const InnerCont = styled.div`
    display:inline-flex;
-   justify-content: flex-start;
+   align-items: center;
+   gap: 1em;
 `
 
-function ProjectCarousel({ data }) {
-   return (
-      <CarouselCont>
-         <InnerCont>
+const ProjectCarousel = forwardRef(({ data }, ref) => (
+   <CarouselCont ref={ref}>
+      <InnerCont>
+         {data.map((val, i) => (
+            <ProjectCard
+               key={i}
+               img="/img/dummy/1.webp"
+               height="400px"
+               width="700px"
+            />
+         ))}
+      </InnerCont>
+   </CarouselCont>
+))
 
-            {data.map((item, i) => {
-               return (
-                  <ImageCardL key={i} />
-               )
-            })}
-         </InnerCont>
+ProjectCarousel.displayName = "ProjectCarousel"
 
-      </CarouselCont>
-   )
-}
 
 export default ProjectCarousel

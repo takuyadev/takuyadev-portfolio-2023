@@ -12,7 +12,7 @@ const Slider = styled.div`
     width: px;
     height: 24px;
     border-radius: 8px;
-    background: ${props => props.theme.colors.primary["500"]}
+    background: ${props => props.theme.colors.primary["500"]};
 `
 
 function ScrollBar() {
