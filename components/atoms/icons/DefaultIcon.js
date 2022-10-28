@@ -1,6 +1,7 @@
 // Packages
 import styled from "styled-components";
 
+// Styled Components
 const IconEl = styled.svg`
     width: 24px;
     height: 24px;
@@ -12,12 +13,12 @@ const IconEl = styled.svg`
     }
 `
 
-function DefaultIcon({ children }) {
-   return (
-      <IconEl xmlns="http://www.w3.org/2000/svg">
-         {children}
-      </IconEl>
-   )
-}
+// Component
+const DefaultIcon = ({ children }) => (
+   <IconEl xmlns="http://www.w3.org/2000/svg">
+      {children}
+   </IconEl>
+)
 
+// Settings & Exports
 export default DefaultIcon

@@ -1,13 +1,15 @@
 // Packages
+import { forwardRef } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { HomeIcon } from '@heroicons/react/24/solid';
 
+// Styled Components
 const NavItemEl = styled.li`
     color: ${props => props.theme.colors.light}99;
     font-weight: bold;
-    cursor:pointer;
     transition: color 0.2s cubic-bezier(0.61, 1, 0.88, 1);
+    cursor:pointer;
 
     & svg {
         width: 24px;
@@ -24,19 +26,23 @@ const NavItemEl = styled.li`
 
     }
 `
+// Component
+const NavItem = forwardRef(({ href, icon, text }, ref) => (
+    <Link
+        ref={ref}
+        href={href}
+    >
+        <NavItemEl>
+            <a tabIndex="0">
+                {icon}
+                {text}
+            </a>
+        </NavItemEl>
+    </Link>
+))
 
-function NavItem({ href, icon, text }) {
-    return (
-        <Link href={href}>
-            <NavItemEl>
-                <a tabIndex="0">
-                    {icon}
-                    {text}
-                </a>
-            </NavItemEl>
-        </Link>
-    )
-}
+// Settings & Exports
+NavItem.displayName = "NavItem"
 
 NavItem.defaultProps = {
     href: "/",

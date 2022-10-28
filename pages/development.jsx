@@ -26,8 +26,8 @@ function About() {
   return (
     <>
       <PageHeader
-        title="Projects"
-        subtitle="All finished projects hosted and ready for viewing."
+        title="Development"
+        subtitle="Development projects, both for Front-end and Full Stack Development"
       />
       <ProjectCont variants={staggerAnimation} initial="hidden" animate="show">
         <MotionCarousel variants={staggerItem} data={projectData} />

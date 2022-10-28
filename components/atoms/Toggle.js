@@ -1,7 +1,9 @@
 // Packages
+import { forwardRef } from "react";
 import styled from "styled-components";
 import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
 
+// Styled Components
 const ToggleEl = styled.button`
     position: relative;
     width: 60px;
@@ -38,15 +40,22 @@ const DarkIcon = styled(MoonIcon)`
     height: 16px;
 `
 
-function Toggle({ onClick, isActive, ...otherProps }) {
-    return (
-        <ToggleEl {...otherProps} isActive={isActive} onClick={onClick}>
-            <SliderIcon isActive={isActive}>
-                {isActive ? <SunIcon /> : <DarkIcon />}
-            </SliderIcon>
-        </ToggleEl>
-    )
-}
+// Component
+const Toggle = forwardRef(({ onClick, isActive, ...otherProps }, ref) => (
+    <ToggleEl
+        ref={ref}
+        onClick={onClick}
+        isActive={isActive}
+        {...otherProps}
+    >
+        <SliderIcon isActive={isActive}>
+            {isActive ? <SunIcon /> : <DarkIcon />}
+        </SliderIcon>
+    </ToggleEl>
+))
+
+// Settings & Exports
+Toggle.displayName = "Toggle"
 
 Toggle.defaultProps = {
     isActive: true

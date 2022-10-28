@@ -2,6 +2,8 @@
 import styled from "styled-components"
 import { UserCircleIcon } from "@heroicons/react/24/solid"
 import { motion } from "framer-motion"
+import Link from "next/link"
+import Image from "next/image"
 
 // Animations
 import { staggerAnimation, staggerItem } from "@/config/animation/staggerFade"
@@ -13,9 +15,8 @@ import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
 import Hero from "@/organisms/homepage/Hero"
 
 // Styled Components
-const TextCont = styled(motion.section)`
+const TextCont = styled(motion.article)`
   grid-area: text;
-  grid-column: span 3;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -25,7 +26,16 @@ const TextCont = styled(motion.section)`
   height: 100%;
   margin-left: 2em;
   gap: 1em;
-  z-index: 25;
+`
+
+const Swirl = styled.div`
+  position: fixed;
+  z-index: 0;
+  left: 12.5%;
+`
+
+const Anchor = styled.a`
+  text-decoration: none;
 `
 
 // Convert to motion
@@ -38,6 +48,14 @@ function Home() {
   return (
     <>
       <Hero />
+      <Swirl>
+        <Image
+          width={630}
+          height={490}
+          src="/img/swirl.png"
+          alt="Vector of swirl"
+        />
+      </Swirl>
       <TextCont variants={staggerAnimation} initial="hidden" animate="show">
         <MotionHeading shadow={true} variants={staggerItem}>
           Hi, I’m Takuya 👋 <br /> Front-end Developer <br /> & UX/UI Designer
@@ -47,11 +65,15 @@ function Home() {
           as well as Node.js Full Stack Development. Currently looking for
           opportunites in development!
         </MotionParagraph>
-        <MotionButton
-          variants={staggerItem}
-          icon={<UserCircleIcon />}
-          text="About Me"
-        />
+        <Link href="/about">
+          <Anchor>
+            <MotionButton
+              variants={staggerItem}
+              icon={<UserCircleIcon />}
+              text="About Me"
+            />
+          </Anchor>
+        </Link>
       </TextCont>
     </>
   )

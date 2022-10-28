@@ -1,5 +1,15 @@
+// Components
+import PageHeader from "@/organisms/general/PageHeader"
+
 function About() {
-  return <div>Hello</div>
+  return (
+    <>
+      <PageHeader
+        title="About"
+        subtitle="Get to know what I do outside of my work"
+      />
+    </>
+  )
 }
 
 export default About

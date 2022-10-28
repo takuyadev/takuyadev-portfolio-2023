@@ -3,6 +3,7 @@ import { forwardRef } from "react";
 import styled from "styled-components";
 import { HomeIcon } from '@heroicons/react/24/solid'
 
+// Styled Components
 const Button = styled.button`
     display:inline-flex;
     align-items: center;
@@ -23,6 +24,7 @@ const Button = styled.button`
     }
 `
 
+// Component
 const DefaultBtn = forwardRef(({ icon, text, ...otherProps }, ref) => {
    return (
       <Button ref={ref}{...otherProps}>
@@ -32,6 +34,7 @@ const DefaultBtn = forwardRef(({ icon, text, ...otherProps }, ref) => {
    )
 })
 
+// Settings & Exports
 DefaultBtn.displayName = "PrimaryBtn"
 
 DefaultBtn.defaultProps = {

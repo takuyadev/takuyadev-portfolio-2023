@@ -17,24 +17,21 @@ const Content = styled(motion.main)`
   overflow-x: hidden;
 `
 
-function Page({ children, router }) {
-   return (
-      <>
-         <Sidebar />
-         <AnimatePresence mode="wait">
-            <Content
-               key={router.route}
-               variants={fade}
-               initial="initial"
-               animate="animate"
-               exit="exit"
-            >
-               {children}
-            </Content>
-         </AnimatePresence>
-      </>
-   )
-
-}
+const Page = ({ children, router }) => (
+   <>
+      <Sidebar />
+      <AnimatePresence mode="wait">
+         <Content
+            key={router.route}
+            variants={fade}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+         >
+            {children}
+         </Content>
+      </AnimatePresence>
+   </>
+)
 
 export default Page

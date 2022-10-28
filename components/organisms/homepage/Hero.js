@@ -20,7 +20,7 @@ const Container = styled.div`
    justify-self: self-start;
    align-content: center;
    grid-column: span 2;
-   z-index: 0;
+   z-index: 1;
    
    & img {
       object-fit: cover;

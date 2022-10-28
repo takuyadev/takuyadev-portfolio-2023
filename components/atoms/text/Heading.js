@@ -10,13 +10,17 @@ const StyledHeading = styled.h2`
   ${props => props.shadow && "text-shadow: 4px 4px 0px rgba(17, 58, 93, 1)"};
 `
 
-const Heading = forwardRef(({ children, shadow }, ref) => (
-   <StyledHeading ref={ref} shadow={shadow}>
+const Heading = forwardRef(({ children, size, shadow }, ref) => (
+   <StyledHeading ref={ref} size={size} shadow={shadow}>
       {children}
    </StyledHeading>
 ))
 
 // Export settings
 Heading.displayName = "Heading"
+
+Heading.defaultProps = {
+   size: "s"
+}
 
 export default Heading

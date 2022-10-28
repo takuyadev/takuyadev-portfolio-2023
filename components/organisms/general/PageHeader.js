@@ -5,6 +5,9 @@ import Image from "next/image"
 // Modules
 import { staggerAnimation, staggerItem } from "@/config/animation/staggerFade"
 
+// Components
+import Title from "@/atoms/text/Title"
+
 // Styled Components
 const HeaderCont = styled.header`
    display: flex;
@@ -42,10 +45,6 @@ const TitleCont = styled.div`
    gap: 1em;
 `
 
-const HeadingText = styled.h1`
-   margin: 0;
-   font-size: ${props => props.theme.fontSize && props.theme.fontSize["xl"]};
-`
 
 const SubtitleText = styled.p`
    font-size: ${props => props.theme.fontSize && props.theme.fontSize["s"]};
@@ -75,9 +74,9 @@ const PageHeader = ({ title, subtitle }) => {
             />
          </CirclesCont>
          <TitleCont>
-            <HeadingText>
+            <Title>
                {title}
-            </HeadingText>
+            </Title>
             <SubtitleText>
                {subtitle}
             </SubtitleText>

@@ -1,6 +1,6 @@
 // Packages
 import styled from "styled-components"
-import { HomeIcon, UserCircleIcon, CodeBracketIcon, BriefcaseIcon, EnvelopeIcon, SwatchIcon } from '@heroicons/react/24/solid'
+import { HomeIcon, UserCircleIcon, CodeBracketIcon, BriefcaseIcon, EnvelopeIcon, SwatchIcon, LightBulbIcon } from '@heroicons/react/24/solid'
 
 // Components
 import NavItem from "components/atoms/NavItem"
@@ -27,11 +27,12 @@ function NavLinks() {
             <nav>
                 <UlEl>
                     <NavItem href="/" text="Home" icon={<HomeIcon />} />
-                    <NavItem href="/about" text="About me" icon={<UserCircleIcon />} />
-                    <NavItem href="/projects" text="Projects" icon={<CodeBracketIcon />} />
-                    <NavItem href="/work" text="Work" icon={<BriefcaseIcon />} />
+                    <NavItem href="/experience" text="Experience" icon={<LightBulbIcon />} />
+                    <NavItem href="/development" text="Development" icon={<CodeBracketIcon />} />
+                    <NavItem href="/design" text="Design" icon={<BriefcaseIcon />} />
                     <NavItem href="/contact" text="Contact" icon={<EnvelopeIcon />} />
                     <NavItem href="/style" text="Style" icon={<SwatchIcon />} />
+                    <NavItem href="/about" text="About" icon={<UserCircleIcon />} />
                 </UlEl>
             </nav>
         </NavigationEl>
