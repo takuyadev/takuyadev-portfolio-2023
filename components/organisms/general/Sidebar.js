@@ -20,7 +20,10 @@ const SidebarEl = styled.aside`
     transition: transform 1s cubic-bezier(0.61, 1, 0.88, 1);
     border-right: 1px solid ${props => props.theme.colors.light}80;
     height: 100vh;
-    z-index: 100
+    z-index: 100;
+    @media (max-width: 1024px) {
+        display:none;
+    }
 `
 
 const BottomContainer = styled.div`

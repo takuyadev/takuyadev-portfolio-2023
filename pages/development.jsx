@@ -4,11 +4,11 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 
 // Components
-import ProjectCarousel from "@/organisms/projects/ProjectCarousel"
-import ProjectGallery from "@/organisms/projects/ProjectGallery"
+import ProjectHighlights from "@/organisms/projects/ProjectHighlights"
+import ProjectCards from "@/organisms/projects/ProjectCards"
 import PageHeader from "@/organisms/general/PageHeader"
-const MotionCarousel = motion(ProjectCarousel)
-const MotionGallery = motion(ProjectGallery)
+const MotionCarousel = motion(ProjectHighlights)
+const MotionGallery = motion(ProjectCards)
 
 // Modules
 import { staggerAnimation, staggerItem } from "@/config/animation/staggerFade"

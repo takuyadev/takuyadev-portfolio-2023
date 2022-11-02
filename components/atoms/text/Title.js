@@ -7,11 +7,13 @@ const StyledTitle = styled.h1`
    margin: 0;
    font-size: ${props => props.theme.fontSize && props.theme.fontSize["xl"]};
    letter-spacing: 0.02em;
+  ${props => props.shadow && "text-shadow: 3px 3px 0px rgba(17, 58, 93, 1)"};
+
 `
 
 // Component
-const Title = forwardRef(({ children }, ref) => (
-   <StyledTitle ref={ref}>
+const Title = forwardRef(({ children, shadow }, ref) => (
+   <StyledTitle shadow={shadow} ref={ref}>
       {children}
    </StyledTitle>
 ))

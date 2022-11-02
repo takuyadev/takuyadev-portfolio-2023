@@ -12,8 +12,8 @@ const StyledParagraph = styled.p`
 `
 
 // Component
-const Paragraph = forwardRef(({ children, shadow }, ref) => (
-   <StyledParagraph ref={ref} shadow={shadow}>
+const Paragraph = forwardRef(({ children, className, shadow }, ref) => (
+   <StyledParagraph ref={ref} className={className} shadow={shadow}>
       {children}
    </StyledParagraph>
 ))

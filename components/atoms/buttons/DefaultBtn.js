@@ -7,6 +7,7 @@ import { HomeIcon } from '@heroicons/react/24/solid'
 const Button = styled.button`
     display:inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5em;
     padding: 0.5em 1.5em;
     border: transparent;
@@ -39,7 +40,6 @@ DefaultBtn.displayName = "PrimaryBtn"
 
 DefaultBtn.defaultProps = {
    text: "Default",
-   icon: <HomeIcon />
 }
 
 export default DefaultBtn

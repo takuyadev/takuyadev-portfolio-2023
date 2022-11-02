@@ -6,7 +6,7 @@ import Gallery from "@/atoms/containers/Gallery";
 import ProjectCard from "@/molecules/ProjectCard";
 
 // Functional Component
-const ProjectGallery = forwardRef(({ data }, ref) => (
+const ProjectCards = forwardRef(({ data }, ref) => (
    <Gallery ref={ref}>
       {data.map((item, i) => (
          <ProjectCard
@@ -17,6 +17,6 @@ const ProjectGallery = forwardRef(({ data }, ref) => (
 ))
 
 // Export settings
-ProjectGallery.displayName = "ProjectGallery"
+ProjectCards.displayName = "ProjectGallery"
 
-export default ProjectGallery
+export default ProjectCards

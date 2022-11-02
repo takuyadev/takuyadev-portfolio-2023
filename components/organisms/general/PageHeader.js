@@ -40,11 +40,11 @@ const CirclesCont = styled(ImageCont)`
 `
 
 const TitleCont = styled.div`
+   position: relative;
    display: flex;
    flex-direction: column;
    gap: 1em;
 `
-
 
 const SubtitleText = styled.p`
    font-size: ${props => props.theme.fontSize && props.theme.fontSize["s"]};
@@ -74,7 +74,7 @@ const PageHeader = ({ title, subtitle }) => {
             />
          </CirclesCont>
          <TitleCont>
-            <Title>
+            <Title shadow={true}>
                {title}
             </Title>
             <SubtitleText>

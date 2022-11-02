@@ -15,6 +15,11 @@ const Content = styled(motion.main)`
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  
+   @media (max-width: 1024px) {
+        grid-column: span 4;
+
+  }
 `
 
 const Page = ({ children, router }) => (
