@@ -6,6 +6,7 @@
       "@/atoms/*": ["components/atoms/*"],
       "@/molecules/*": ["components/molecules/*"],
       "@/organisms/*": ["components/organisms/*"],
+      "@/data/*": ["data/*"],
       "@/utils/*": ["modules/utils/*"],
       "@/modules/*": ["modules/*"],
       "@/config/*": ["modules/config/*"],

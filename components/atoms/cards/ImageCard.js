@@ -1,7 +1,6 @@
 // Packages
 import { forwardRef } from "react"
 import styled from "styled-components"
-import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
 
 // Styled Components
 const Figure = styled.figure`

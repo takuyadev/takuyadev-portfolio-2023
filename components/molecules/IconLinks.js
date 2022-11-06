@@ -8,11 +8,13 @@ import MailIcon from "components/atoms/icons/MailIcon";
 import LinkedInIcon from "components/atoms/icons/LinkedInIcon";
 import EasterIcon from "components/atoms/icons/EasterIcon";
 
+// Styled Components
 const IconLinksEl = styled.nav`
     display: flex;
     gap: 1em;
 `
 
+// Component
 function IconLinks() {
     return (
         <IconLinksEl>
