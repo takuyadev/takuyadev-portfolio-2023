@@ -3,7 +3,7 @@ import axios from "axios"
 
 // Components
 import PageHeader from "@/organisms/general/PageHeader"
-import ArticleCards from "@/organisms/experience/Gallery"
+import ArticleCards from "@/organisms/experience/ArticleGallery"
 
 function Experience({ data }) {
   return (

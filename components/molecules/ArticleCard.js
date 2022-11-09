@@ -12,26 +12,38 @@ import List from "@/atoms/List";
 const Article = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
+  padding: 2em;
+  border-radius: 8px;
+  background: #0C284099;
+  border-left: 5px solid ${props => props.theme.colors.primary["500"]};
+`
+
+const StyledSubtitle = styled(Subtitle)`
+   opacity: 0.5;
+   margin-bottom: 0.5em;
 `
 
 // Component
-const Gallery = forwardRef(({ title, subtitle, description, list }, ref) => (
+const ArticleCard = forwardRef(({ title, subtitle, description, list }, ref) => (
    <Article ref={ref}>
       <Heading2>
          {title}
       </Heading2>
-      <Subtitle>
+      <StyledSubtitle>
          {subtitle}
-      </Subtitle>
+      </StyledSubtitle>
       <Paragraph>
          {description}
       </Paragraph>
-      <List data={list} />
+      <List
+         isOrdered={false}
+         data={list}
+      />
    </Article>
 ))
 
 // Settings & Exports
-Gallery.displayName = ''
+ArticleCard.displayName = 'Gallery'
 
-export default Gallery
+export default ArticleCard

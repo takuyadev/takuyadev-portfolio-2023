@@ -22,8 +22,7 @@ const NavItemEl = styled.li`
     }
 
     &:hover, &:focus{
-            color: ${props => props.theme.colors.light};
-
+        color: ${props => props.theme.colors.light};
     }
 `
 // Component
