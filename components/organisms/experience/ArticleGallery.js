@@ -1,46 +1,33 @@
 // Packages
 import { forwardRef } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 // Components
 import ArticleCard from "@/molecules/ArticleCard";
-
-// Animations
-import {
-   staggerAnimation,
-   staggerItem,
-} from "@/modules/config/animation/staggerFade"
+import HeadingUlr from "@/molecules/HeadingUlr";
 
 // Styled Components
-const Article = styled(motion.article)`
+const Article = styled.article`
   display: flex;
   flex-direction: column;
   gap: 1em;
-  margin: 0em 2em;
 `
 
-// Convert to motion
-const MotionCard = motion(ArticleCard)
-
 // Component
-const ArticleGallery = forwardRef(({ data }, ref) => (
+const ArticleGallery = forwardRef(({ title, data, icon }, ref) => (
    <Article
       ref={ref}
-      variants={staggerAnimation}
-      initial="hidden"
-      animate="show"
    >
+      <HeadingUlr icon={icon}>{title}</HeadingUlr>
       {data.map((item, i) => (
-         <MotionCard
+         <ArticleCard
             key={i}
-            variants={staggerItem}
             title={item.title}
             subtitle={item.subtitle}
             description={item.description}
             list={item.list}
+            href={item.href}
          />
-
       ))}
    </Article>
 ))

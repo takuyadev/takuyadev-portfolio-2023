@@ -1,10 +1,13 @@
 // Packages
 import { forwardRef } from "react";
 import styled from "styled-components";
+import { SparklesIcon } from '@heroicons/react/24/solid'
+import Link from "next/link";
 
 // Components
-import Heading2 from "@/atoms/text/Heading2";
-import Subtitle from "@/atoms/text/Subtitle";
+import PrimaryBtn from "@/atoms/buttons/PrimaryBtn";
+import Heading3 from "@/atoms/text/Heading3";
+import Heading4 from "@/atoms/text/Heading4";
 import Paragraph from "@/atoms/text/Paragraph";
 import List from "@/atoms/List";
 
@@ -12,6 +15,7 @@ import List from "@/atoms/List";
 const Article = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.5em;
   padding: 2em;
   border-radius: 8px;
@@ -19,17 +23,21 @@ const Article = styled.section`
   border-left: 5px solid ${props => props.theme.colors.primary["500"]};
 `
 
-const StyledSubtitle = styled(Subtitle)`
+const StyledSubtitle = styled(Heading4)`
    opacity: 0.5;
-   margin-bottom: 0.5em;
+`
+
+const Anchor = styled.a`
+   color: unset;
+   text-decoration: none;
 `
 
 // Component
-const ArticleCard = forwardRef(({ title, subtitle, description, list }, ref) => (
+const ArticleCard = forwardRef(({ title, subtitle, description, list, href }, ref) => (
    <Article ref={ref}>
-      <Heading2>
+      <Heading3>
          {title}
-      </Heading2>
+      </Heading3>
       <StyledSubtitle>
          {subtitle}
       </StyledSubtitle>
@@ -40,6 +48,12 @@ const ArticleCard = forwardRef(({ title, subtitle, description, list }, ref) => 
          isOrdered={false}
          data={list}
       />
+      {href &&
+         <Anchor href={href} tabIndex="0" target="_blank" rel="noopener noreferrer">
+            <PrimaryBtn text="More details" icon={<SparklesIcon />} />
+         </Anchor>
+      }
+
    </Article>
 ))
 

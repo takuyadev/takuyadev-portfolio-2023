@@ -11,7 +11,10 @@ const MotionCarousel = motion(ProjectHighlights)
 const MotionGallery = motion(ProjectCards)
 
 // Modules
-import { staggerAnimation, staggerItem } from "@/config/animation/staggerFade"
+import {
+  stgerFadeDownAnim,
+  stgerFadeDownItem,
+} from "@/modules/config/animation/stgerFadeDown"
 import { projectData, minorProjectData } from "@/modules/dummy/projects"
 
 // Styled Components
@@ -29,9 +32,9 @@ function About() {
         title="Development"
         subtitle="Development projects, both for Front-end and Full Stack Development"
       />
-      <ProjectCont variants={staggerAnimation} initial="hidden" animate="show">
-        <MotionCarousel variants={staggerItem} data={projectData} />
-        <motion.div variants={staggerItem}>
+      <ProjectCont variants={stgerFadeDownAnim} initial="hidden" animate="show">
+        <MotionCarousel variants={stgerFadeDownItem} data={projectData} />
+        <motion.div variants={stgerFadeDownItem}>
           <Image
             width={150}
             height={10}
@@ -39,7 +42,7 @@ function About() {
             alt="Vector of squiggly lines"
           />
         </motion.div>
-        <MotionGallery variants={staggerItem} data={minorProjectData} />
+        <MotionGallery variants={stgerFadeDownItem} data={minorProjectData} />
       </ProjectCont>
     </>
   )

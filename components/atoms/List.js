@@ -8,7 +8,7 @@ import styled from "styled-components"
 const listStyle = `
    display:flex;
    flex-direction: column;
-   gap: 0.5em;
+   gap: 0.25m;
 `
 
 const UlContainer = styled.ul`
@@ -19,7 +19,10 @@ const OlContainer = styled.ol`
    ${listStyle}
 `
 
-const Item = styled.li``
+const Item = styled.li`
+  line-height: 175%;
+  
+`
 
 const List = forwardRef(({ isOrdered, data }, ref) => (
    <>

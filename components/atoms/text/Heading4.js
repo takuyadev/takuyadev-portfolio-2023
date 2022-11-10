@@ -3,14 +3,15 @@ import { forwardRef } from "react";
 import styled from "styled-components";
 
 // Styled Components
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h4`
   margin: 0;
-  font-size: ${(props) => props.theme.fontSize["l"]};
-  letter-spacing: 0.015em;
+  font-size: ${(props) => props.theme.fontSize["s"]};
+  font-weight: normal;
+  letter-spacing: 0.04em;
   ${props => props.shadow && "text-shadow: 4px 4px 0px rgba(17, 58, 93, 1)"};
 `
 
-const Heading2 = forwardRef(({ children, className, shadow }, ref) => (
+const Heading4 = forwardRef(({ children, className, shadow }, ref) => (
    <StyledHeading
       ref={ref}
       className={className}
@@ -21,6 +22,6 @@ const Heading2 = forwardRef(({ children, className, shadow }, ref) => (
 ))
 
 // Export settings
-Heading2.displayName = "Heading"
+Heading4.displayName = "Heading4"
 
-export default Heading2
+export default Heading4

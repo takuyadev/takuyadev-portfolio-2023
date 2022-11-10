@@ -1,4 +1,4 @@
-const staggerAnimation = {
+const stgerFadeRightAnim = {
    hidden: { opacity: 0 },
    show: {
       opacity: 1,
@@ -8,13 +8,13 @@ const staggerAnimation = {
    },
 }
 
-const staggerItem = {
-   hidden: { opacity: 0, y: -100 },
+const stgerFadeRightItem = {
+   hidden: { opacity: 0, x: -100 },
    show: {
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: { duration: 1, ease: [0.215, 0.61, 0.355, 1.0] },
    },
 }
 
-export { staggerAnimation, staggerItem }
+export { stgerFadeRightAnim, stgerFadeRightItem }

@@ -14,6 +14,9 @@ const PrimaryBtnEl = styled(DefaultBtn)`
         color: ${props => props.theme.colors.light};
         background: ${props => props.theme.colors.primary["900"]};
     }
+    & a{
+        text-decoration: none;
+    }
 `
 
 // Components

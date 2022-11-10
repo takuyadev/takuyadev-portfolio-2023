@@ -6,10 +6,13 @@ import Link from "next/link"
 import Image from "next/image"
 
 // Animations
-import { staggerAnimation, staggerItem } from "@/config/animation/staggerFade"
+import {
+  stgerFadeDownAnim,
+  stgerFadeDownItem,
+} from "@/modules/config/animation/stgerFadeDown"
 
 // Components
-import Heading from "@/atoms/text/Heading"
+import Heading from "@/atoms/text/Heading1"
 import Paragraph from "@/atoms/text/Paragraph"
 import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
 import Hero from "@/organisms/homepage/Hero"
@@ -56,19 +59,19 @@ function Home() {
           alt="Vector of swirl"
         />
       </Swirl>
-      <TextCont variants={staggerAnimation} initial="hidden" animate="show">
-        <MotionHeading shadow={true} variants={staggerItem}>
+      <TextCont variants={stgerFadeDownAnim} initial="hidden" animate="show">
+        <MotionHeading shadow={true} variants={stgerFadeDownItem}>
           Hi, I’m Takuya 👋 <br /> Front-end Developer <br /> & UX/UI Designer
         </MotionHeading>
-        <MotionParagraph shadow={true} variants={staggerItem}>
+        <MotionParagraph shadow={true} variants={stgerFadeDownItem}>
           I’m a React.js Front-end Developer with expertise in UX/UI Designing,
           as well as Node.js Full Stack Development. Currently looking for
           opportunites in development!
         </MotionParagraph>
         <Link href="/about">
-          <Anchor>
+          <Anchor tabIndex="0">
             <MotionButton
-              variants={staggerItem}
+              variants={stgerFadeDownItem}
               icon={<UserCircleIcon />}
               text="About Me"
             />

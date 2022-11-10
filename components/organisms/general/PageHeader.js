@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Image from "next/image"
 
 // Modules
-import { staggerAnimation, staggerItem } from "@/config/animation/staggerFade"
+import { staggerAnimation, staggerItem } from "@/modules/config/animation/stgerFadeDown"
 
 // Components
 import Title from "@/atoms/text/Title"

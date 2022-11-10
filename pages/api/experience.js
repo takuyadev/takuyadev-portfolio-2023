@@ -1,35 +1,40 @@
 export default function handler(req, res) {
    res.status(200).json(
       {
-         data: [
+         experience: [
             {
-               title: "Project 1",
-               subtitle: "Subtitle",
-               description: "Hello this is big description please notice me.",
+               title: "Digital Design and Development",
+               subtitle: "Diploma, British Columbia Institution of Technology, Sept 2019 - May 2021",
+               description: "At Digital Design and Development, we learned modern web development frameworks and design software to create multiple cross-platform applications within various team environments that worked to solve issues users face every day. Graduated with distinction with a 3.67 GPA.",
                list: [
-                  "hello",
-                  "hello",
-                  "hello",
-               ]
+                  "Two-year, full-time diploma program",
+                  "Eight week practicum to learn on the job",
+                  "Learn from some of the most knowledgeable and talented people in the industry",
+               ],
+               href: "https://www.bcit.ca/programs/digital-design-and-development-diploma-full-time-6515dipma/"
             },
             {
-               title: "Project 2",
-               subtitle: "Subtitle",
-               description: "Hello this is big description please notice me.",
+               title: "The Frontend Developer Career Path",
+               subtitle: "Certificate, Scrimba, July 2022",
+               description: "The Frontend Developer Career Path is a 70-hour interactive online course covering all the nuances of modern frontend web development. It allows students to build multiple projects, including hands-off projects that challenge their problem-solving skills.",
                list: [
-                  "hello",
-                  "hello",
-                  "hello",
-               ]
-            },
+                  "70-hour, online certificate program",
+                  "Covers HTML, CSS, JavaScript, React, design, career strategy, and much more.",
+                  "Interact with other students and offer code reviews or ask for career advice",
+               ],
+               href: "https://scrimba.com/learn/frontend"
+            }
+         ],
+         work: [
             {
-               title: "Project 3",
-               subtitle: "Subtitle",
-               description: "Hello this is big description please notice me.",
+               title: "ScopeMedia",
+               subtitle: "Internship Mar 2021 - May 2021, Contract Dec 2022 - May 2022",
+               description: "At ScopeMedia for an internship, I was assigned to Frontend Development and UX / UI Design role, where I was to develop a demo website for clients to showcase the company's new AI Stylist SaaS. Later that year, I was hired as a contractor in a UX / UI Design and Frontend Development role and tasked to create design systems, prototypes, recommendations, and overlook documentation for the new ScopeX website.",
+
                list: [
-                  "hello",
-                  "hello",
-                  "hello",
+                  "Designed multiple low and high fidelity prototypes, as well as design systems",
+                  "Managed multiple new interns of UX / UI Designers and Frontend Developers",
+                  "Worked under an Agile environment, using Jira",
                ]
             }
          ]
