@@ -44,6 +44,29 @@
 }
 
 ::selection {
-  color: #F9F9F9;
+  color: #113A5D;
+  background: #FF7A8A;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0C284099;
+  ;
+  border-radius: 25px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF7A8A;
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
   background: #FF7A8A;
 }

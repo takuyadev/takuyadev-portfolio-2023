@@ -2,11 +2,9 @@
 import styled from "styled-components"
 import Image from "next/image"
 
-// Modules
-import { staggerAnimation, staggerItem } from "@/modules/config/animation/stgerFadeDown"
-
 // Components
 import Title from "@/atoms/text/Title"
+import Paragraph from "@/atoms/text/Paragraph"
 
 // Styled Components
 const HeaderCont = styled.header`
@@ -15,7 +13,6 @@ const HeaderCont = styled.header`
    gap: 2em;
    position: sticky;
    top: 0;
-   margin-bottom: 2em;
    padding: 2em;
    background: ${props => props.theme.colors.dark};
    border-bottom: 1px solid ${props => props.theme.colors.light}99;
@@ -46,10 +43,8 @@ const TitleCont = styled.div`
    gap: 1em;
 `
 
-const SubtitleText = styled.p`
-   font-size: ${props => props.theme.fontSize && props.theme.fontSize["s"]};
+const StyledParagraph = styled(Paragraph)`
    color:  ${props => props.theme.colors.light}99;
-   margin: 0;
 `
 
 const PageHeader = ({ title, subtitle }) => {
@@ -77,9 +72,9 @@ const PageHeader = ({ title, subtitle }) => {
             <Title shadow={true}>
                {title}
             </Title>
-            <SubtitleText>
+            <StyledParagraph>
                {subtitle}
-            </SubtitleText>
+            </StyledParagraph>
          </TitleCont>
       </HeaderCont>
    )

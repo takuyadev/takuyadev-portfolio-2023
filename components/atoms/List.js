@@ -9,6 +9,7 @@ const listStyle = `
    display:flex;
    flex-direction: column;
    gap: 0.25m;
+   margin: 0;
 `
 
 const UlContainer = styled.ul`

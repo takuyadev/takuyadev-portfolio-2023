@@ -1,5 +1,6 @@
 // Components
 import PageHeader from "@/organisms/general/PageHeader"
+import Main from "@/atoms/containers/Main"
 
 function About() {
   return (

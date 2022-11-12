@@ -9,16 +9,15 @@ import { fade } from "@/config/animation/fade"
 import Sidebar from "@/organisms/general/Sidebar"
 
 // Styled Components
-const Content = styled(motion.main)`
+const Content = styled(motion.div)`
   grid-area: content;
   grid-column: span 3;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   
    @media (max-width: 1024px) {
         grid-column: span 4;
-
   }
 `
 
@@ -32,6 +31,7 @@ const Page = ({ children, router }) => (
             initial="initial"
             animate="animate"
             exit="exit"
+            aria-label="content"
          >
             {children}
          </Content>

@@ -9,7 +9,6 @@ const Container = styled.section`
    height: fit-content;
    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
    grid-column: span 4;
-   padding: 0 2em;
    gap: 1em;
 `
 

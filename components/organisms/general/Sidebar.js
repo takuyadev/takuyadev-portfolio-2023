@@ -7,7 +7,7 @@ import Logo from "components/atoms/Logo";
 import NavLinks from "components/molecules/NavLinks";
 import IconLinks from "components/molecules/IconLinks";
 
-const SidebarEl = styled.aside`
+const SidebarEl = styled.div`
     grid-area: sidebar;
     grid-column: span 1;
     display: flex;
@@ -26,7 +26,7 @@ const SidebarEl = styled.aside`
     }
 `
 
-const BottomContainer = styled.div`
+const BottomContainer = styled.aside`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +35,7 @@ const BottomContainer = styled.div`
 
 function Sidebar() {
     return (
-        <SidebarEl>
+        <SidebarEl aria-label="sidebar">
             <Logo priority={true} />
             <NavLinks />
             <BottomContainer>

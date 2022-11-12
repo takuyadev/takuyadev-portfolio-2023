@@ -13,6 +13,7 @@ const Article = styled.article`
   gap: 1em;
 `
 
+
 // Component
 const ArticleGallery = forwardRef(({ title, data, icon }, ref) => (
    <Article
@@ -23,6 +24,7 @@ const ArticleGallery = forwardRef(({ title, data, icon }, ref) => (
          <ArticleCard
             key={i}
             title={item.title}
+            time={item.time}
             subtitle={item.subtitle}
             description={item.description}
             list={item.list}

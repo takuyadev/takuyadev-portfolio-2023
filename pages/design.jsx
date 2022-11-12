@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 
 // Components
+import Main from "@/atoms/containers/Main"
 import ProjectHighlights from "@/organisms/projects/ProjectHighlights"
 import ProjectCards from "@/organisms/projects/ProjectCards"
 import PageHeader from "@/organisms/general/PageHeader"
@@ -18,11 +19,13 @@ import {
 import { projectData, minorProjectData } from "@/modules/dummy/projects"
 
 // Styled Components
-const ProjectCont = styled(motion.article)`
-  display: flex;
-  flex-direction: column;
+const StyledMain = styled(Main)`
   align-items: center;
-  gap: 4em;
+`
+
+const ImageCont = styled(motion.div)`
+  display: flex;
+  justify-content: center;
 `
 
 function Designs() {
@@ -32,18 +35,18 @@ function Designs() {
         title="Designs"
         subtitle="UX/UI or other Adobe Creative Suite projects that I've worked on"
       />
-      <ProjectCont variants={stgerFadeDownAnim} initial="hidden" animate="show">
+      <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionCarousel variants={stgerFadeDownItem} data={projectData} />
-        <motion.div variants={stgerFadeDownItem}>
+        <ImageCont variants={stgerFadeDownItem}>
           <Image
             width={150}
             height={10}
             src="/img/squiggly.png"
             alt="Vector of squiggly lines"
           />
-        </motion.div>
+        </ImageCont>
         <MotionGallery variants={stgerFadeDownItem} data={minorProjectData} />
-      </ProjectCont>
+      </StyledMain>
     </>
   )
 }

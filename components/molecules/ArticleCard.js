@@ -33,13 +33,17 @@ const Anchor = styled.a`
 `
 
 // Component
-const ArticleCard = forwardRef(({ title, subtitle, description, list, href }, ref) => (
+const ArticleCard = forwardRef(({ title, subtitle, time, description, list, href }, ref) => (
    <Article ref={ref}>
       <Heading3>
          {title}
       </Heading3>
       <StyledSubtitle>
-         {subtitle}
+         {subtitle},
+         <time>
+            {" "}
+            {time}
+         </time>
       </StyledSubtitle>
       <Paragraph>
          {description}

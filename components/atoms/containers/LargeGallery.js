@@ -9,7 +9,6 @@ const Container = styled.section`
    width: 100%;
    height: fit-content;
    gap: 1em;
-   padding: 0 2em;
    @media (max-width: 1024px) {
       grid-template-columns: 1fr;
   }

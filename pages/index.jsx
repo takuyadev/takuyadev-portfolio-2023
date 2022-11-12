@@ -12,13 +12,14 @@ import {
 } from "@/modules/config/animation/stgerFadeDown"
 
 // Components
+import Main from "@/atoms/containers/Main"
 import Heading from "@/atoms/text/Heading1"
 import Paragraph from "@/atoms/text/Paragraph"
 import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
 import Hero from "@/organisms/homepage/Hero"
 
 // Styled Components
-const TextCont = styled(motion.article)`
+const StyledMain = styled(Main)`
   grid-area: text;
   position: relative;
   display: flex;
@@ -59,7 +60,7 @@ function Home() {
           alt="Vector of swirl"
         />
       </Swirl>
-      <TextCont variants={stgerFadeDownAnim} initial="hidden" animate="show">
+      <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionHeading shadow={true} variants={stgerFadeDownItem}>
           Hi, I’m Takuya 👋 <br /> Front-end Developer <br /> & UX/UI Designer
         </MotionHeading>
@@ -77,7 +78,7 @@ function Home() {
             />
           </Anchor>
         </Link>
-      </TextCont>
+      </StyledMain>
     </>
   )
 }
