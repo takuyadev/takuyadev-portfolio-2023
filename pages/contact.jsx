@@ -1,35 +1,46 @@
 // Packages
+import axios from "axios"
 import styled from "styled-components"
 import React, { useRef } from "react"
-import { motion } from "framer-motion"
 
 // Components
 import Main from "@/atoms/containers/Main"
 import PageHeader from "@/organisms/general/PageHeader"
 import HeadingUlr from "@/molecules/HeadingUlr"
 import Paragraph from "@/atoms/text/Paragraph"
-import IconLinks from "@/molecules/IconLinks"
+import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
+import MailIcon from "@/atoms/icons/MailIcon"
+import List from "@/atoms/List"
+import GithubIcon from "@/atoms/icons/GithubIcon"
+import LinkedInIcon from "@/atoms/icons/LinkedInIcon"
 import Input from "@/atoms/Input"
+import ServiceGallery from "@/organisms/contacts/ServiceGallery"
 
 // Modules
 import { sendEmail } from "@/utils/sendEmail"
-import List from "@/atoms/List"
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 2em;
-  min-height: 600px;
   border-radius: 8px;
 `
 
 const Section = styled.section`
-  display: grid;
   gap: 3em;
-  grid-template-columns: 1fr 1fr;
+`
+
+const SectionRow = styled(Section)`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
   }
+`
+
+const ServiceSection = styled(Section)`
+  display: grid;
+  flex-direction: column;
 `
 
 const Container = styled.div`
@@ -40,9 +51,31 @@ const Container = styled.div`
 
 const TextArea = styled(Input)`
   height: 100%;
+
+  & > input {
+    height: 100%;
+  }
 `
 
-function Contact() {
+const ButtonContainer = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 1em;
+
+  & svg {
+    fill: ${(props) => props.theme.colors.dark};
+  }
+
+  &:hover {
+    fill: ${(props) => props.theme.colors.light};
+  }
+`
+const InlineBtn = styled(PrimaryBtn)`
+  width: fit-content;
+`
+
+function Contact({ service }) {
   const form = useRef()
 
   return (
@@ -52,26 +85,24 @@ function Contact() {
         subtitle="Contact form for people with interest with my work"
       />
       <Main>
-        <Section>
+        <HeadingUlr>Send me a message</HeadingUlr>
+        <SectionRow>
           <Container>
-            <HeadingUlr>Send me a message</HeadingUlr>
             <Paragraph>
-              Intersted in my work? Please feel free to shoot me a message
-              through the form, and Ill respond as soon as I can. Currently, I'm
-              open to positions and inquries for:
+              I'm always interested and would love to hear and be involved in
+              your projects! If you are interested in contacting me, currently,
+              I am open to working the following services:
             </Paragraph>
-            <List
-              isOrdered={false}
-              data={[
-                "Frontend Development",
-                "Fullstack Development",
-                "UX/UI Design",
-              ]}
-            ></List>
+            <List isOrdered={false} data={service.map((item) => item.title)} />
             <Paragraph>
-              You can also contact me under my other platforms.
+              You can also reach out to me at the platforms below. I look
+              forward to hearing more from you!
             </Paragraph>
-            <IconLinks />
+            <ButtonContainer>
+              <InlineBtn icon={<MailIcon />} text="Email" />
+              <InlineBtn icon={<GithubIcon />} text="Github" />
+              <InlineBtn icon={<LinkedInIcon />} text="LinkedIn" />
+            </ButtonContainer>
           </Container>
           <Form ref={form} onSubmit={(e) => sendEmail(e, form)}>
             <Input label="Name" placeholder="ex. John Doe" name="user_name" />
@@ -84,16 +115,24 @@ function Contact() {
             <TextArea type="textarea" label="Message" name="message" />
             <input type="submit" value="Send" />
           </Form>
-        </Section>
+        </SectionRow>
+        <ServiceSection>
+          <HeadingUlr>Services</HeadingUlr>
+          <ServiceGallery data={service} />
+        </ServiceSection>
       </Main>
     </>
   )
 }
 
-// pages/index.js
+// Static Site Generation
 export async function getStaticProps() {
+  const { data } = await axios.get(`http://localhost:3000/api/contacts`)
+
   return {
-    props: {},
+    props: {
+      service: data.service,
+    },
   }
 }
 

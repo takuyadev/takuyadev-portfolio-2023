@@ -19,7 +19,7 @@ const Article = styled.section`
   gap: 0.5em;
   padding: 2em;
   border-radius: 8px;
-  background: #0C284099;
+  background: #0E304D;
   border-left: 5px solid ${props => props.theme.colors.primary["500"]};
 `
 

@@ -28,10 +28,10 @@ const Label = styled.label`
 
 // Components
 const Input = forwardRef(({ type, label, value, placeholder, name }, ref) => (
-   <Container ref={ref}>
-      <Label>{label}</Label>
-      <StyledInput type={type} value={value} name={name} placeholder={placeholder} />
-   </Container>
+  <Container ref={ref}>
+    <Label>{label}</Label>
+    <StyledInput type={type} value={value} name={name} placeholder={placeholder} />
+  </Container>
 ))
 
 // Settings & Exports
