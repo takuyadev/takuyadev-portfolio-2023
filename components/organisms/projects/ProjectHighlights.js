@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 // Components
 import LargeGallery from "@/atoms/containers/LargeGallery";
 import HighlightCard from "@/molecules/cards/HighlightCard";
-
+import HeadingUlr from "@/molecules/text/HeadingUlr";
 // Component 
 const ProjectHighlights = forwardRef(({ ...otherProps }, ref) => (
    <LargeGallery ref={ref}>

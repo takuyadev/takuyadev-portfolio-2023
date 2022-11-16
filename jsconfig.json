@@ -10,7 +10,7 @@
       "@/utils/*": ["modules/utils/*"],
       "@/modules/*": ["modules/*"],
       "@/config/*": ["modules/config/*"],
-      "@/animation/*": ["modules/config/animation/*"]
+      "@/animation/*": ["modules/animation/*"]
     }
   }
 }

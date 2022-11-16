@@ -5,6 +5,8 @@ import { motion } from "framer-motion"
 
 // Components
 import Main from "@/atoms/containers/Main"
+import Heading2 from "@/atoms/text/Heading2"
+import HeadingUlr from "@/molecules/text/HeadingUlr"
 import ProjectHighlights from "@/organisms/projects/ProjectHighlights"
 import ProjectCards from "@/organisms/projects/ProjectCards"
 import PageHeader from "@/organisms/general/PageHeader"
@@ -15,37 +17,32 @@ const MotionGallery = motion(ProjectCards)
 import {
   stgerFadeDownAnim,
   stgerFadeDownItem,
-} from "@/modules/config/animation/stgerFadeDown"
+} from "@/modules/animation/stgerFadeDown"
 import { projectData, minorProjectData } from "@/modules/dummy/projects"
 
 // Styled Components
-const StyledMain = styled(Main)`
-  align-items: center;
-`
+const StyledMain = styled(Main)``
 
 const ImageCont = styled(motion.div)`
   display: flex;
-  justify-content: center;
+`
+
+const HiddenHeading = styled(Heading2)`
+  display: none;
 `
 
 function About() {
   return (
     <>
+      <HiddenHeading>Projects</HiddenHeading>
       <PageHeader
         title="Development"
         subtitle="Development projects, both for Front-end and Full Stack Development"
       />
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionCarousel variants={stgerFadeDownItem} data={projectData} />
-        <ImageCont variants={stgerFadeDownItem}>
-          <Image
-            width={150}
-            height={10}
-            src="/img/squiggly.png"
-            alt="Vector of squiggly lines"
-          />
-        </ImageCont>
         <MotionGallery variants={stgerFadeDownItem} data={minorProjectData} />
+        <HeadingUlr>Skills</HeadingUlr>
       </StyledMain>
     </>
   )

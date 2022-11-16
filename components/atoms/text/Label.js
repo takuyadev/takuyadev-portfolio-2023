@@ -1,10 +1,11 @@
 // Packages
 import { forwardRef } from "react"
 import styled from "styled-components"
+import { fontSize } from "@/modules/config/theme.config"
 
 // Styled Components
 const StyledLabel = styled.label`
-   font-size: ${props => props.theme.fontSize["s"]};
+   font-size: ${fontSize["s"]};
    font-weight: bold;   
    letter-spacing: 0.015em;
 `

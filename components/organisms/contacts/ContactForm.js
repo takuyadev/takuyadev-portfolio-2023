@@ -6,12 +6,12 @@ import { sendEmail } from "@/utils/sendEmail";
 
 // Components
 import Form from "@/atoms/containers/Form";
-import PrimaryBtn from "@/atoms/buttons/PrimaryBtn";
+import SubmitBtn from "@/atoms/buttons/SubmitBtn";
 import InputWithLabel from "@/molecules/inputs/InputWithLabel";
 import TextAreaWithLabel from "@/molecules/inputs/TextAreaWithLabel";
 
 // Component
-const ContactForm = () => {
+const ContactForm = ({ ref }) => {
    const form = useRef()
 
    return (
@@ -32,7 +32,7 @@ const ContactForm = () => {
             label="Message"
             name="message"
          />
-         <PrimaryBtn type="submit" text="Send message" value="Send" />
+         <SubmitBtn text="Send message" value="Send" />
       </Form>
    )
 }

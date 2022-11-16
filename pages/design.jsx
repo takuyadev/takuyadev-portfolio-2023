@@ -1,6 +1,5 @@
 // Packages
 import styled from "styled-components"
-import Image from "next/image"
 import { motion } from "framer-motion"
 
 // Components
@@ -15,7 +14,7 @@ const MotionGallery = motion(ProjectCards)
 import {
   stgerFadeDownAnim,
   stgerFadeDownItem,
-} from "@/modules/config/animation/stgerFadeDown"
+} from "@/modules/animation/stgerFadeDown"
 import { projectData, minorProjectData } from "@/modules/dummy/projects"
 
 // Styled Components
@@ -37,14 +36,6 @@ function Designs() {
       />
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionCarousel variants={stgerFadeDownItem} data={projectData} />
-        <ImageCont variants={stgerFadeDownItem}>
-          <Image
-            width={150}
-            height={10}
-            src="/img/squiggly.png"
-            alt="Vector of squiggly lines"
-          />
-        </ImageCont>
         <MotionGallery variants={stgerFadeDownItem} data={minorProjectData} />
       </StyledMain>
     </>

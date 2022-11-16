@@ -6,7 +6,7 @@ import Image from "next/image";
 // Components
 import FigureCard from "@/atoms/cards/FigureCard";
 import Line from "@/atoms/other/Line";
-import Heading2 from "@/atoms/text/Heading2";
+import Heading3 from "@/atoms/text/Heading3";
 import Paragraph from "@/atoms/text/Paragraph";
 import PrimaryBtn from "@/atoms/buttons/PrimaryBtn";
 
@@ -32,12 +32,12 @@ const Caption = styled.figcaption`
 
 // ------------------- //
 
-const StyledTitle = styled(Heading2)`
+const StyledTitle = styled(Heading3)`
    white-space: nowrap;
 `
 
 const StyledParagraph = styled(Paragraph)`
-   color: ${props => props.theme.colors.light}99;
+   color: ${({ theme }) => theme.light.main}99;
 `
 
 const StyledButton = styled(PrimaryBtn)`

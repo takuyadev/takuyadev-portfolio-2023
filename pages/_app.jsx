@@ -1,5 +1,5 @@
 import Head from "next/head"
-import theme from "@/config/theme.config"
+import { theme } from "@/modules/config/theme.config"
 import "@/styles/globals.css"
 import { ThemeProvider } from "styled-components"
 import Page from "components/page/Page"

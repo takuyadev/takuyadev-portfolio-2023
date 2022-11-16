@@ -7,11 +7,11 @@ const StyledInput = styled.input`
   padding: 0.5em;
   background: #0c284099;
   border: none;
-  border-bottom: 3px solid ${(props) => props.theme.colors.primary["500"]};
+  border-bottom: 3px solid ${({ theme }) => theme.primary.main};
   border-radius: 4px;
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.light}99;
+    color: ${({ theme }) => theme.light.main}99;
   }
 `
 

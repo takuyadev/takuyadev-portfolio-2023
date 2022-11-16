@@ -18,18 +18,14 @@ const Article = styled.section`
   gap: 1em;
   padding: 2em;
   border-radius: 8px;
-  background: #0E304D;
-  border-left: 5px solid ${props => props.theme.colors.primary["500"]};
+  background: ${({ theme }) => theme.dark.dark};
+  border-left: 5px solid ${({ theme }) => theme.primary.main};
 `
 
 const StyledSubtitle = styled(Heading4)`
    opacity: 0.5;
 `
 
-const Anchor = styled.a`
-   color: unset;
-   text-decoration: none;
-`
 
 // Component
 const ArticleCard = forwardRef(({ title, subtitle, time, description, list, href }, ref) => (
@@ -53,9 +49,14 @@ const ArticleCard = forwardRef(({ title, subtitle, time, description, list, href
       />
       {
          href &&
-         <Anchor href={href} tabIndex="0" target="_blank" rel="noopener noreferrer">
-            <PrimaryBtn text="More details" icon={<SparklesIcon />} />
-         </Anchor>
+         <PrimaryBtn
+            as="a"
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            text="More details"
+            icon={<SparklesIcon />}
+         />
       }
    </Article>
 ))

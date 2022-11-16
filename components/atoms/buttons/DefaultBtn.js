@@ -1,10 +1,5 @@
-// Packages
-import { forwardRef } from "react";
-import styled from "styled-components";
-import { HomeIcon } from '@heroicons/react/24/solid'
-
-// Styled Components
-const Button = styled.button`
+// Import and insert into styled components for usage
+const DefaultBtn = `
     display:inline-flex;
     align-items: center;
     justify-content: center;
@@ -12,10 +7,10 @@ const Button = styled.button`
     padding: 0.5em 1.5em;
     border: transparent;
     border-radius: 50px;
+    text-decoration: none;
     font-weight: bold;  
     transition: background 0.1s cubic-bezier(0.61, 1, 0.88, 1);
     cursor: pointer;
-
     & > svg {
         width: 24px;
     }
@@ -25,21 +20,4 @@ const Button = styled.button`
     }
 `
 
-// Component
-const DefaultBtn = forwardRef(({ icon, text, ...otherProps }, ref) => {
-   return (
-      <Button ref={ref}{...otherProps}>
-         {icon && icon}
-         {text && text}
-      </Button>
-   )
-})
-
-// Settings & Exports
-DefaultBtn.displayName = "PrimaryBtn"
-
-DefaultBtn.defaultProps = {
-   text: "Default",
-}
-
-export default DefaultBtn
+export { DefaultBtn }

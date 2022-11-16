@@ -9,28 +9,28 @@ const ToggleEl = styled.button`
     width: 60px;
     height: 27px;
     padding: 0.25em;
-    background: ${props =>
-        props.isActive ? props.theme.colors.light : props.theme.colors.primary["500"]};
+    background: ${({ isActive, theme }) =>
+        isActive ? theme.light.main : theme.primary.main};
     border-radius: 25px;
     border:none;
     cursor:pointer;
     transition: background 0.1s cubic-bezier(0.61, 1, 0.88, 1);
 
     &:hover{
-        background: ${props => props.theme.colors.primary["900"]};
+        background: ${({ theme }) => theme.primary.dark};
     }
 `
 
 const SliderIcon = styled.div`
     position:absolute;
     top: 2px;
-    transform: translateX(${props => props.isActive ? "0px" : "31.5px"});
+    transform: translateX(${({ isActive }) => isActive ? "0px" : "31.5px"});
     width: 22px;
     height: 22px;
     padding: 0.2em;
-    background: ${props => props.theme.colors.dark["main"]};
-    color: ${props =>
-        props.isActive ? props.theme.colors.light : props.theme.colors.primary["500"]};
+    background: ${({ theme }) => theme.dark.main};
+    color: ${({ isActive, theme }) =>
+        isActive ? theme.light.main : theme.primary.main};
     border-radius: 50%;
     transition: transform 0.25s cubic-bezier(0.85, 0, 0.15, 1);
 `

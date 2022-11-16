@@ -12,7 +12,7 @@ import ArticleCards from "@/organisms/experience/ArticleGallery"
 import {
   stgerFadeRightAnim,
   stgerFadeRightItem,
-} from "@/modules/config/animation/stgerFadeRight"
+} from "@/modules/animation/stgerFadeRight"
 
 // Motion Components
 const MotionGallery = motion(ArticleCards)

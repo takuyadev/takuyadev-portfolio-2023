@@ -8,12 +8,12 @@ const StyledForm = styled.form`
   flex-direction: column;
   gap: 2em;
   border-radius: 8px;
-  min-height: 450px;
+  min-height: 39px;
 `
 
 // Component
-const Form = forwardRef(({ children }, ref) => (
-   <StyledForm ref={ref}>
+const Form = forwardRef(({ children, onSubmit }, ref) => (
+   <StyledForm onSubmit={onSubmit} ref={ref}>
       {children}
    </StyledForm>
 ))

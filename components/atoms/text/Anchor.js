@@ -2,11 +2,10 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { HomeIcon } from '@heroicons/react/24/solid';
 
 // Styled Components
 const StyledAnchor = styled.li`
-    color: ${props => props.theme.colors.light}99;
+    color: ${({ theme }) => theme.light.main}99;
     font-weight: bold;
     transition: color 0.2s cubic-bezier(0.61, 1, 0.88, 1);
     cursor:pointer;
@@ -18,7 +17,7 @@ const StyledAnchor = styled.li`
     }
 
     &:hover, &:focus{
-        color: ${props => props.theme.colors.light};
+        color: ${({ theme }) => theme.light.main};
     }
 `
 // Component

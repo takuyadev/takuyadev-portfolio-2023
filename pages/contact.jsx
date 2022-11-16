@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import {
   stgerFadeDownAnim,
   stgerFadeDownItem,
-} from "@/modules/config/animation/stgerFadeDown"
+} from "@/modules/animation/stgerFadeDown"
 
 // Components
 import Main from "@/atoms/containers/Main"
@@ -15,9 +15,9 @@ import Paragraph from "@/atoms/text/Paragraph"
 import List from "@/atoms/text/List"
 import HeadingUlr from "@/molecules/text/HeadingUlr"
 import PageHeader from "@/organisms/general/PageHeader"
-import ContactForm from "@/organisms/contacts/ContactForm."
+import ContactForm from "@/organisms/contacts/ContactForm"
 import ServiceGallery from "@/organisms/contacts/ServiceGallery"
-import SocialButtons from "@/organisms/contacts/SocialBtns"
+import SocialButtons from "@/molecules/navigation/SocialBtns"
 
 // Styled Components
 const ContactSection = styled(motion.section)`
@@ -29,7 +29,7 @@ const ContactSection = styled(motion.section)`
 
 const ContactContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(450px, 450px) 1fr;
   gap: 2em;
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;

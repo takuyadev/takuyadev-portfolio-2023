@@ -9,7 +9,7 @@ const StyledLine = styled.hr`
    width: 100%;
    height: 4px;
    border-radius: 8px;
-   background: ${props => props.theme.colors.primary["500"]};
+   background: ${({ theme }) => theme.primary.main};
    border: none;
 `
 

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { motion, AnimatePresence } from "framer-motion"
 
 // Modules
-import { fade } from "@/config/animation/fade"
+import { fade } from "@/modules/animation/fade"
 
 // Components
 import Sidebar from "@/organisms/general/Sidebar"
@@ -14,6 +14,7 @@ const Content = styled(motion.div)`
   grid-column: span 3;
   height: 100vh;
   overflow: hidden;
+  background: ${({ theme }) => theme.dark.main};
   
    @media (max-width: 1024px) {
         grid-column: span 4;

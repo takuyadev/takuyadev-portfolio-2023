@@ -1,13 +1,14 @@
 // Packages
 import { forwardRef } from "react"
 import styled from "styled-components"
+import { fontSize } from "@/modules/config/theme.config"
 
 // Styled Components
 const StyledTitle = styled.h1`
    margin: 0;
-   font-size: ${props => props.theme.fontSize && props.theme.fontSize["xl"]};
+   font-size: ${fontSize["xl"]};
    letter-spacing: 0.02em;
-  ${props => props.shadow && "text-shadow: 3px 3px 0px rgba(17, 58, 93, 1)"};
+  ${({ shadow }) => shadow && "text-shadow: 4px 4px 0px rgba(17, 58, 93, 1)"};
 
 `
 

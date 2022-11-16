@@ -11,9 +11,9 @@ import Anchor from "@/atoms/text/Anchor";
 const IconLinksEl = styled.nav`
     display: flex;
     justify-content: space-between;
-    list-style: none;
     gap: 1em;
-    color: ${props => props.theme.colors.light};
+    list-style: none;
+    color: ${({ theme }) => theme.light.main};
 `
 
 
@@ -21,18 +21,12 @@ const IconLinksEl = styled.nav`
 function IconLinks() {
     return (
         <IconLinksEl>
+            <Anchor href="mailto:email@example.com" aria-label="Email" icon={<HiMail size={24} />} />
             <Link href="/">
-                <Anchor aria-label="Email" icon={<HiMail size={24} />} />
+                <Anchor aria-label="Github" icon={<BsGithub size={20} />} />
             </Link>
             <Link href="/">
-                <Anchor aria-label="Github" icon={<BsGithub size={24} />} />
-            </Link>
-            <Link href="/">
-                <Anchor aria-label="LinkedIn" icon={<BsLinkedin size={24} />} />
-
-            </Link>
-            <Link href="/">
-                <Anchor aria-label="Easter Egg" icon={<BsEggFill size={24} />} />
+                <Anchor aria-label="LinkedIn" icon={<BsLinkedin size={20} />} />
             </Link>
         </IconLinksEl>
     )

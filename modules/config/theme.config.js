@@ -1,16 +1,19 @@
+// Styleguide data
 const theme = {
-  colors: {
-    primary: {
-      "0": "#FFB8C0",
-      "500": "#FF7A8A",
-      "900": "#871A26"
-    },
-    dark: {
-      main: "#113A5D",
-      dark: "#0E304D",
-      darker: "0C2840"
-    },
-    light: "#F9F9F9"
+  primary: {
+    main: "#FF7A8A",
+    dark: "#803D45",
+    darker: "#592B30"
+  },
+  dark: {
+    main: "#113A5D",
+    dark: "#0E304D",
+    darker: "0C2840"
+  },
+  light: {
+    main: "#F9F9F9",
+    dark: "#E6E6E6",
+    darker: "#D9D9D9"
   },
   fontSize: {
     "3xs": "0.512rem",
@@ -23,6 +26,10 @@ const theme = {
     "2xl": "2.441rem",
     "3xl": "3.052rem"
   }
-};
+}
 
-export default theme
+const { fontSize } = theme
+
+// Export theme
+// ? fontSize is exported to individual components, theme is set to ThemeProvider
+export { theme, fontSize }

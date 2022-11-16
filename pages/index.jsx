@@ -9,7 +9,7 @@ import Image from "next/image"
 import {
   stgerFadeDownAnim,
   stgerFadeDownItem,
-} from "@/modules/config/animation/stgerFadeDown"
+} from "@/modules/animation/stgerFadeDown"
 
 // Components
 import Main from "@/atoms/containers/Main"
@@ -70,13 +70,13 @@ function Home() {
           opportunites in development!
         </MotionParagraph>
         <Link href="/about">
-          <Anchor tabIndex="0">
-            <MotionButton
-              variants={stgerFadeDownItem}
-              icon={<UserCircleIcon />}
-              text="About Me"
-            />
-          </Anchor>
+          <MotionButton
+            as="a"
+            tabIndex="0"
+            variants={stgerFadeDownItem}
+            icon={<UserCircleIcon />}
+            text="About Me"
+          />
         </Link>
       </StyledMain>
     </>

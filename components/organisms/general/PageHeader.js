@@ -14,8 +14,8 @@ const HeaderCont = styled.header`
    position: sticky;
    top: 0;
    padding: 2em;
-   background: ${props => props.theme.colors.dark};
-   border-bottom: 1px solid ${props => props.theme.colors.light}99;
+   background: ${({ theme }) => theme.dark.main};
+   border-bottom: 1px solid ${({ theme }) => theme.light.main}99;
    z-index: 100;
 `
 
@@ -44,7 +44,7 @@ const TitleCont = styled.div`
 `
 
 const StyledParagraph = styled(Paragraph)`
-   color:  ${props => props.theme.colors.light}99;
+   color:  ${({ theme }) => theme.light.main}99;
 `
 
 const PageHeader = ({ title, subtitle }) => {

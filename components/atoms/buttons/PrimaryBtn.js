@@ -3,22 +3,30 @@ import { forwardRef } from "react";
 import styled from "styled-components";
 
 // Components
-import DefaultBtn from "@/atoms/buttons/DefaultBtn";
+import { DefaultBtn } from "./DefaultBtn";
 
 // Styled Components
-const PrimaryBtnEl = styled(DefaultBtn)`
-    background: ${props => props.theme.colors.primary["500"]};
-    color: ${props => props.theme.colors.dark["main"]};
+const StyledBtn = styled.button`
+    ${DefaultBtn}
+    background: ${({ theme }) => theme.primary.main};
+    color: ${({ theme }) => theme.dark.main};
+    &:focus{
+        color: ${({ theme }) => theme.light.main};
+        background: ${({ theme }) => theme.primary.dark};
+    }
 
-    &:hover, &:focus{
-        color: ${props => props.theme.colors.light};
-        background: ${props => props.theme.colors.primary["900"]};
+    &:hover{
+        color: ${({ theme }) => theme.light.main};
+        background: ${({ theme }) => theme.primary.darker};
     }
 `
 
 // Components
 const PrimaryBtn = forwardRef(({ icon, text, ...otherProps }, ref) => (
-    <PrimaryBtnEl ref={ref} icon={icon} text={text} {...otherProps} />
+    <StyledBtn ref={ref}{...otherProps}>
+        {icon && icon}
+        {text && text}
+    </StyledBtn>
 ))
 
 // Setings & Exports

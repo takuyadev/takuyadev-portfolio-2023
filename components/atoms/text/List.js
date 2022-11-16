@@ -2,8 +2,6 @@
 import { forwardRef } from "react"
 import styled from "styled-components"
 
-
-
 // Styled Components
 const listStyle = `
    display:flex;
@@ -21,8 +19,7 @@ const OlContainer = styled.ol`
 `
 
 const Item = styled.li`
-  line-height: 175%;
-  
+  line-height: 175%; 
 `
 
 const List = forwardRef(({ isOrdered, data }, ref) => (
