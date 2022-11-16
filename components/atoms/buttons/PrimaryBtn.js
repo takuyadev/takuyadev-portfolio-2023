@@ -8,7 +8,7 @@ import DefaultBtn from "@/atoms/buttons/DefaultBtn";
 // Styled Components
 const PrimaryBtnEl = styled(DefaultBtn)`
     background: ${props => props.theme.colors.primary["500"]};
-    color: ${props => props.theme.colors.dark};
+    color: ${props => props.theme.colors.dark["main"]};
 
     &:hover, &:focus{
         color: ${props => props.theme.colors.light};

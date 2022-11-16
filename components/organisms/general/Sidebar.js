@@ -2,10 +2,10 @@
 import styled from "styled-components";
 
 // Components
-import Toggle from 'components/atoms/Toggle'
-import Logo from "components/atoms/Logo";
-import NavLinks from "components/molecules/NavLinks";
-import IconLinks from "components/molecules/IconLinks";
+import Toggle from '@/atoms/input/Toggle'
+import Logo from "@/atoms/img/Logo";
+import NavLinks from "@/molecules/navigation/NavLinks";
+import IconLinks from "@/molecules/navigation/IconLinks";
 
 const SidebarEl = styled.div`
     grid-area: sidebar;

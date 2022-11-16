@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import styled from "styled-components";
 
 // Components
-import ServiceCard from "@/molecules/ServiceCard";
+import ServiceCard from "@/molecules/cards/ServiceCard";
 
 // Styled Components
 const Container = styled.article`

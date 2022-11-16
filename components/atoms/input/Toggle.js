@@ -28,7 +28,7 @@ const SliderIcon = styled.div`
     width: 22px;
     height: 22px;
     padding: 0.2em;
-    background: ${props => props.theme.colors.dark};
+    background: ${props => props.theme.colors.dark["main"]};
     color: ${props =>
         props.isActive ? props.theme.colors.light : props.theme.colors.primary["500"]};
     border-radius: 50%;

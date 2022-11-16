@@ -19,7 +19,7 @@ const Slider = styled.div`
 
 // Component
 const ScrollBar = forwardRef(({ }, ref) => (
-    <ScrollBarEl>
+    <ScrollBarEl ref={ref}>
         <Slider />
     </ScrollBarEl>
 ))

@@ -5,15 +5,11 @@ import Link from "next/link";
 import { HomeIcon } from '@heroicons/react/24/solid';
 
 // Styled Components
-const NavItemEl = styled.li`
+const StyledAnchor = styled.li`
     color: ${props => props.theme.colors.light}99;
     font-weight: bold;
     transition: color 0.2s cubic-bezier(0.61, 1, 0.88, 1);
     cursor:pointer;
-
-    & svg {
-        width: 24px;
-    }
 
     & a {
         display:flex;
@@ -26,27 +22,26 @@ const NavItemEl = styled.li`
     }
 `
 // Component
-const NavItem = forwardRef(({ href, icon, text }, ref) => (
+const Anchor = forwardRef(({ href, icon, text, ...otherProps }, ref) => (
     <Link
         ref={ref}
         href={href}
+        {...otherProps}
     >
-        <NavItemEl>
+        <StyledAnchor>
             <a tabIndex="0">
-                {icon}
-                {text}
+                {icon && icon}
+                {text && text}
             </a>
-        </NavItemEl>
+        </StyledAnchor>
     </Link>
 ))
 
 // Settings & Exports
-NavItem.displayName = "NavItem"
+Anchor.displayName = "NavItem"
 
-NavItem.defaultProps = {
-    href: "/",
-    text: "Default",
-    icon: <HomeIcon />
+Anchor.defaultProps = {
+    href: "/"
 }
 
-export default NavItem
+export default Anchor

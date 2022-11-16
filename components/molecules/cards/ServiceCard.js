@@ -12,14 +12,18 @@ import Paragraph from "@/atoms/text/Paragraph"
 const StyledCard = styled(FigureCard)`
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  padding: 2em;
+  gap: 2em;
+  padding: 1em;
   background: #0c284099;
   & img {
    object-fit: cover;
   }
 `
-
+const FigCaption = styled.figcaption`
+   display:flex;
+   flex-direction: column;
+   gap: 0.5em;
+`
 // Component
 const ServiceCard = forwardRef(({ title, description, img }, ref) => (
    <StyledCard ref={ref}>
@@ -36,12 +40,15 @@ const ServiceCard = forwardRef(({ title, description, img }, ref) => (
             paddingBottom: "4px"
          }}
       />
-      <Heading3>
-         {title}
-      </Heading3>
-      <Paragraph>
-         {description}
-      </Paragraph>
+      <FigCaption>
+         <Heading3>
+            {title}
+         </Heading3>
+         <Paragraph>
+            {description}
+         </Paragraph>
+      </FigCaption>
+
    </StyledCard >
 ))
 

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 // Components
 import FigureCard from "@/atoms/cards/FigureCard";
-import Line from "@/atoms/Line";
+import Line from "@/atoms/other/Line";
 import Heading2 from "@/atoms/text/Heading2";
 import Paragraph from "@/atoms/text/Paragraph";
 import PrimaryBtn from "@/atoms/buttons/PrimaryBtn";

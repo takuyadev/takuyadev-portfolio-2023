@@ -5,7 +5,11 @@ const theme = {
       "500": "#FF7A8A",
       "900": "#871A26"
     },
-    dark: "#113A5D",
+    dark: {
+      main: "#113A5D",
+      dark: "#0E304D",
+      darker: "0C2840"
+    },
     light: "#F9F9F9"
   },
   fontSize: {

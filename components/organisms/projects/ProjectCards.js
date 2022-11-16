@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import Gallery from "@/atoms/containers/Gallery";
 
 // Components
-import ProjectCard from "@/molecules/ProjectCard";
+import ProjectCard from "@/molecules/cards/ProjectCard";
 
 // Functional Component
 const ProjectCards = forwardRef(({ data }, ref) => (

@@ -40,7 +40,7 @@ const TitleCont = styled.div`
    position: relative;
    display: flex;
    flex-direction: column;
-   gap: 1em;
+   gap: 0.5em;
 `
 
 const StyledParagraph = styled(Paragraph)`

@@ -13,8 +13,7 @@ const Content = styled(motion.div)`
   grid-area: content;
   grid-column: span 3;
   height: 100vh;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
   
    @media (max-width: 1024px) {
         grid-column: span 4;

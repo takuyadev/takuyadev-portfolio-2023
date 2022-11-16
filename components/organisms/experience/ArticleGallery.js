@@ -3,8 +3,8 @@ import { forwardRef } from "react";
 import styled from "styled-components";
 
 // Components
-import ArticleCard from "@/molecules/ArticleCard";
-import HeadingUlr from "@/molecules/HeadingUlr";
+import ArticleCard from "@/molecules/cards/ArticleCard";
+import HeadingUlr from "@/molecules/text/HeadingUlr";
 
 // Styled Components
 const Article = styled.article`

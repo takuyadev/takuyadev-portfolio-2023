@@ -1,5 +1,4 @@
 // Packages
-import styled from "styled-components"
 import axios from "axios"
 import { motion } from "framer-motion"
 import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid"

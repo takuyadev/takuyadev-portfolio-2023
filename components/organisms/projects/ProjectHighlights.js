@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 
 // Components
 import LargeGallery from "@/atoms/containers/LargeGallery";
-import HighlightCard from "@/molecules/HighlightCard";
+import HighlightCard from "@/molecules/cards/HighlightCard";
 
 // Component 
 const ProjectHighlights = forwardRef(({ ...otherProps }, ref) => (
