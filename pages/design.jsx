@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 // Components
 import Main from "@/atoms/containers/Main"
 import ProjectHighlights from "@/organisms/projects/ProjectHighlights"
-import ProjectCards from "@/organisms/projects/ProjectCards"
+import ProjectCards from "@/organisms/projects/ProjectGallery"
 import PageHeader from "@/organisms/general/PageHeader"
 const MotionCarousel = motion(ProjectHighlights)
 const MotionGallery = motion(ProjectCards)

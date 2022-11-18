@@ -42,7 +42,7 @@ function Hero() {
             layout="fill"
             src="/img/headshot.png"
             alt="Hero, with Takuya Toyokawa"
-            quality={50}
+            quality={75}
          />
       </Container >
    )

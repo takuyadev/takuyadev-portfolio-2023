@@ -39,6 +39,20 @@ export default function handler(req, res) {
                   "Worked under an Agile environment, using Jira",
                ]
             }
+         ],
+         certificate: [
+            {
+               img: "/img/experience/scrimba.webp",
+               href: "https://scrimba.com/certificate/ud29B7c6/gfrontend"
+            },
+            {
+               img: "/img/experience/nodejs_masterclass.jpg",
+               href: "https://www.udemy.com/certificate/UC-c0e64adc-c8ae-43a0-886b-ebb8aac4c380/"
+            },
+            {
+               img: "/img/experience/mongodb_course.jpg",
+               href: "https://www.udemy.com/certificate/UC-654be02e-f476-4a0d-843a-06956c6413f3/"
+            }
          ]
       }
    )

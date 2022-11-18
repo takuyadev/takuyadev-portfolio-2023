@@ -10,6 +10,8 @@ const Figure = styled.figure`
    height: ${props => props.height ? props.height : "200px"};
    background: ${props => props.img ? `url(${props.img})` : "grey"};
    border-radius: 8px;
+   background-position: center;
+   background-size: cover;
 `
 
 // Component

@@ -20,6 +20,7 @@ const StyledAnchor = styled.li`
         color: ${({ theme }) => theme.light.main};
     }
 `
+
 // Component
 const Anchor = forwardRef(({ href, icon, text, ...otherProps }, ref) => (
     <Link

@@ -13,7 +13,6 @@ const Article = styled.article`
   gap: 1em;
 `
 
-
 // Component
 const ArticleGallery = forwardRef(({ title, data, icon }, ref) => (
    <Article

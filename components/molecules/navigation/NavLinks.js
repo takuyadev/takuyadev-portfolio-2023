@@ -3,7 +3,6 @@ import styled from "styled-components"
 import {
     HiHome, HiUserCircle, HiOutlineCode, HiClipboardCheck, HiMail
 } from "react-icons/hi"
-import { HiSwatch } from "react-icons/hi2"
 import { FaBrush } from "react-icons/fa"
 
 // Components
@@ -35,7 +34,6 @@ function NavLinks() {
                     <Anchor href="/development" text="Development" icon={<HiOutlineCode size={24} />} />
                     <Anchor href="/design" text="Design" icon={<FaBrush size={24} />} />
                     <Anchor href="/contact" text="Contact" icon={<HiMail size={24} />} />
-                    <Anchor href="/style" text="Style" icon={<HiSwatch size={24} />} />
                     <Anchor href="/about" text="About" icon={<HiUserCircle size={24} />} />
                 </UlEl>
             </nav>

@@ -1,11 +1,13 @@
 // Packages
 import { forwardRef } from "react";
 import styled from "styled-components";
-import Image from "next/image";
+import Image from "next/image"
+import Link from "next/link";
 
 // Components
 import FigureCard from "@/atoms/cards/FigureCard";
 import Line from "@/atoms/other/Line";
+import Caption from "@/atoms/text/Caption";
 import Heading3 from "@/atoms/text/Heading3";
 import Paragraph from "@/atoms/text/Paragraph";
 import PrimaryBtn from "@/atoms/buttons/PrimaryBtn";
@@ -21,13 +23,11 @@ const StyledCard = styled(FigureCard)`
    }
 `
 
-const Caption = styled.figcaption`
-   display:flex;
+const Container = styled.div`
+   display: flex;
    flex-direction: column;
-   height: 100px;
-   gap: 0.5em;
-   margin: 0 1em;
-   transform: translateY(-18px);
+   gap: 1em;
+   margin: 1em;
 `
 
 // ------------------- //
@@ -40,17 +40,13 @@ const StyledParagraph = styled(Paragraph)`
    color: ${({ theme }) => theme.light.main}99;
 `
 
-const StyledButton = styled(PrimaryBtn)`
-   margin: 1em;
-`
-
 const StyledLine = styled(Line)`
    width: 80%;
    transform: translateY(calc(-1em + -2px));
 `
 
 // Component
-const HighlightCard = forwardRef(({ img, title, description }, ref) => (
+const HighlightCard = forwardRef(({ img, title, description, href }, ref) => (
    <StyledCard>
       <Image
          layout="responsive"
@@ -63,15 +59,23 @@ const HighlightCard = forwardRef(({ img, title, description }, ref) => (
          }}
       />
       <StyledLine />
-      <Caption>
-         <StyledTitle>
-            {title}
-         </StyledTitle>
-         <StyledParagraph>
-            {description}
-         </StyledParagraph>
-      </Caption>
-      <StyledButton text="Check live" />
+      <Container>
+         <Caption>
+            <StyledTitle>
+               {title}
+            </StyledTitle>
+            <StyledParagraph>
+               {description}
+            </StyledParagraph>
+         </Caption>
+         <PrimaryBtn
+            as="a"
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            text="Check live"
+         />
+      </Container>
    </StyledCard>
 ))
 
@@ -79,6 +83,7 @@ const HighlightCard = forwardRef(({ img, title, description }, ref) => (
 HighlightCard.displayName = "Highlight Card"
 
 HighlightCard.defaultProps = {
+   href: "/",
    img: "/img/dummy/1.webp",
    title: "title",
    description: "title"

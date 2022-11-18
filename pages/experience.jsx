@@ -7,17 +7,20 @@ import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid"
 import Main from "@/atoms/containers/Main"
 import PageHeader from "@/organisms/general/PageHeader"
 import ArticleCards from "@/organisms/experience/ArticleGallery"
+import CertificateGallery from "@/organisms/experience/CertificateGallery"
 
 // Animation
 import {
   stgerFadeRightAnim,
   stgerFadeRightItem,
 } from "@/modules/animation/stgerFadeRight"
+import Heading4 from "@/atoms/text/Heading4"
 
 // Motion Components
 const MotionGallery = motion(ArticleCards)
+const MotionCertGallery = motion(CertificateGallery)
 
-function Experience({ experience, work }) {
+function Experience({ experience, work, certificate }) {
   return (
     <>
       <PageHeader
@@ -31,6 +34,8 @@ function Experience({ experience, work }) {
           icon={<AcademicCapIcon />}
           data={experience}
         />
+        <Heading4>Certificates</Heading4>
+        <MotionCertGallery variants={stgerFadeRightItem} data={certificate} />
         <MotionGallery
           variants={stgerFadeRightItem}
           title="Work"
@@ -50,6 +55,7 @@ export async function getStaticProps() {
     props: {
       experience: data.experience,
       work: data.work,
+      certificate: data.certificate,
     },
   }
 }

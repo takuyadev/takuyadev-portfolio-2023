@@ -1,9 +1,8 @@
 // Packages
 import styled from "styled-components"
-import { UserCircleIcon } from "@heroicons/react/24/solid"
 import { motion } from "framer-motion"
+import { HiClipboardCheck } from "react-icons/hi"
 import Link from "next/link"
-import Image from "next/image"
 
 // Animations
 import {
@@ -28,18 +27,8 @@ const StyledMain = styled(Main)`
   justify-content: center;
   max-width: 475px;
   height: 100%;
-  margin-left: 2em;
   gap: 1em;
-`
-
-const Swirl = styled.div`
-  position: fixed;
-  z-index: 0;
-  left: 12.5%;
-`
-
-const Anchor = styled.a`
-  text-decoration: none;
+  margin-left: 2em;
 `
 
 // Convert to motion
@@ -52,14 +41,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <Swirl>
-        <Image
-          width={630}
-          height={490}
-          src="/img/swirl.png"
-          alt="Vector of swirl"
-        />
-      </Swirl>
+
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionHeading shadow={true} variants={stgerFadeDownItem}>
           Hi, I’m Takuya 👋 <br /> Front-end Developer <br /> & UX/UI Designer
@@ -69,13 +51,13 @@ function Home() {
           as well as Node.js Full Stack Development. Currently looking for
           opportunites in development!
         </MotionParagraph>
-        <Link href="/about">
+        <Link href="/experience">
           <MotionButton
             as="a"
             tabIndex="0"
             variants={stgerFadeDownItem}
-            icon={<UserCircleIcon />}
-            text="About Me"
+            icon={<HiClipboardCheck size={22} />}
+            text="Experiences"
           />
         </Link>
       </StyledMain>

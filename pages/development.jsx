@@ -8,7 +8,7 @@ import Main from "@/atoms/containers/Main"
 import Heading2 from "@/atoms/text/Heading2"
 import HeadingUlr from "@/molecules/text/HeadingUlr"
 import ProjectHighlights from "@/organisms/projects/ProjectHighlights"
-import ProjectCards from "@/organisms/projects/ProjectCards"
+import ProjectCards from "@/organisms/projects/ProjectGallery"
 import PageHeader from "@/organisms/general/PageHeader"
 const MotionCarousel = motion(ProjectHighlights)
 const MotionGallery = motion(ProjectCards)
@@ -42,7 +42,6 @@ function About() {
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionCarousel variants={stgerFadeDownItem} data={projectData} />
         <MotionGallery variants={stgerFadeDownItem} data={minorProjectData} />
-        <HeadingUlr>Skills</HeadingUlr>
       </StyledMain>
     </>
   )

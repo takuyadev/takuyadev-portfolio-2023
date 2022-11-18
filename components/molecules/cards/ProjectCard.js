@@ -5,6 +5,7 @@ import styled from "styled-components";
 // Component
 import ImageCard from "@/atoms/cards/ImageCard";
 import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
+import ServiceCard from "./ServiceCard";
 
 
 // Styled Components
@@ -45,12 +46,9 @@ const ProjectCard = forwardRef(({ img, width, height }, ref) => (
       width={width}
       height={height}
    >
-      <Content>
-         <ButtonContainer>
-         </ButtonContainer>
-         <Caption>
-         </Caption>
-      </Content>
+      <ServiceCard>
+
+      </ServiceCard>
    </StyledProjectCard>
 ))
 

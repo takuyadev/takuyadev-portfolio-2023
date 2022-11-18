@@ -10,7 +10,7 @@ const StyledParagraph = styled.p`
   font-size: ${fontSize["s"]};
   line-height: 175%;
   letter-spacing: 0.015em;
-  ${({ shadow }) => shadow && "text-shadow: 4px 4px 0px rgba(17, 58, 93, 1)"};
+  ${({ shadow }) => shadow && "text-shadow: 1px 1px 0px rgba(17, 58, 93, 1)"};
 `
 
 // Component
