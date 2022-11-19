@@ -14,10 +14,10 @@ const Container = styled.div`
 `
 
 // Components
-const InputWithLabel = forwardRef(({ type, label, value, placeholder, name }, ref) => (
+const InputWithLabel = forwardRef(({ type, required, label, value, placeholder, name, ...otherProps }, ref) => (
    <Container ref={ref}>
       <Label label={label} />
-      <Input type={type} value={value} name={name} placeholder={placeholder} />
+      <Input required={required} type={type} value={value} name={name} placeholder={placeholder} {...otherProps} />
    </Container>
 ))
 

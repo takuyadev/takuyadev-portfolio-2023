@@ -17,8 +17,8 @@ const StyledInput = styled.textarea`
 `
 
 // Components
-const TextArea = forwardRef(({ value, placeholder, name }, ref) => (
-  <StyledInput as="textarea" ref={ref} value={value} name={name} placeholder={placeholder} />
+const TextArea = forwardRef(({ required, value, placeholder, name, ...otherProps }, ref) => (
+  <StyledInput as="textarea" required={required} ref={ref} value={value} name={name} placeholder={placeholder} {...otherProps} />
 ))
 
 // Settings & Exports

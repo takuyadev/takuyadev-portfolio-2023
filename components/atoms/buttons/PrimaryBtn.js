@@ -19,6 +19,12 @@ const StyledBtn = styled.button`
         color: ${({ theme }) => theme.light.main};
         background: ${({ theme }) => theme.primary.darker};
     }
+    
+    &:disabled{
+        cursor: none;
+        color: ${({ theme }) => theme.primary.dark};
+        background: ${({ theme }) => theme.primary.darker};
+    }
 `
 
 // Components

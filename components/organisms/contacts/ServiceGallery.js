@@ -10,6 +10,10 @@ const Container = styled.article`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
+  @media (max-width: 800px){
+     grid-template-columns:1fr;
+
+  }
 `
 
 const ServiceGallery = forwardRef(({ data }, ref) => (

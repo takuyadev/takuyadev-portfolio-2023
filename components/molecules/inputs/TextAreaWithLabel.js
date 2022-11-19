@@ -20,10 +20,10 @@ const StyledTextArea = styled(TextArea)`
 `
 
 // Components
-const TextAreaWithLabel = forwardRef(({ label, value, placeholder, name }, ref) => (
+const TextAreaWithLabel = forwardRef(({ required, pattern, label, value, placeholder, name, ...otherProps }, ref) => (
    <Container ref={ref}>
       <Label label={label} />
-      <StyledTextArea value={value} name={name} placeholder={placeholder} />
+      <StyledTextArea required={required} pattern={pattern} value={value} name={name} placeholder={placeholder} {...otherProps} />
    </Container>
 ))
 

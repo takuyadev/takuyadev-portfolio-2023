@@ -71,8 +71,8 @@ function Contact({ service }) {
             <TextContainer>
               <HeadingUlr>Send me a message</HeadingUlr>
               <Paragraph>
-                I'm always interested and would love to hear and be involved in
-                your projects! If you are interested in contacting me,
+                {"I'm"} always interested and would love to hear and be involved
+                in your projects! If you are interested in contacting me,
                 currently, I am open to working the following services:
               </Paragraph>
               <List

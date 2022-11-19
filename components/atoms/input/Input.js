@@ -16,8 +16,8 @@ const StyledInput = styled.input`
 `
 
 // Components
-const Input = forwardRef(({ type, value, placeholder, name }, ref) => (
-  <StyledInput ref={ref} type={type} value={value} name={name} placeholder={placeholder} />
+const Input = forwardRef(({ type, required, value, placeholder, name, ...otherProps }, ref) => (
+  <StyledInput ref={ref} required={required} type={type} value={value} name={name} placeholder={placeholder} {...otherProps} />
 ))
 
 // Settings & Exports

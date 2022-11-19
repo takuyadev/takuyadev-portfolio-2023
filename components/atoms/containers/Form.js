@@ -12,8 +12,8 @@ const StyledForm = styled.form`
 `
 
 // Component
-const Form = forwardRef(({ children, onSubmit }, ref) => (
-   <StyledForm onSubmit={onSubmit} ref={ref}>
+const Form = forwardRef(({ children, className, onSubmit }, ref) => (
+   <StyledForm className={className} onSubmit={onSubmit} ref={ref}>
       {children}
    </StyledForm>
 ))

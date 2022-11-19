@@ -19,11 +19,17 @@ const StyledBtn = styled.input`
         color: ${({ theme }) => theme.light.main};
         background: ${({ theme }) => theme.primary.darker};
     }
-`
 
+    &:disabled{
+        cursor: none;
+        color: ${({ theme }) => theme.primary.main};
+        background: ${({ theme }) => theme.primary.dark};
+    }
+`
 // Components
-const SubmitBtn = forwardRef(({ ...otherProps }, ref) => (
-   <StyledBtn type="submit" ref={ref}{...otherProps} />
+const SubmitBtn = forwardRef(({ text, ...otherProps }, ref) => (
+    <StyledBtn type="submit" value={text} ref={ref} {...otherProps} />
+
 ))
 
 // Setings & Exports
