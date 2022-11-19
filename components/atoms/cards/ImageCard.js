@@ -15,9 +15,10 @@ const Figure = styled.figure`
 `
 
 // Component
-const ImageCard = forwardRef(({ children, img, width, height }, ref) => (
+const ImageCard = forwardRef(({ children, className, img, width, height }, ref) => (
    <Figure
       ref={ref}
+      className={className}
       img={img}
       width={width}
       height={height}

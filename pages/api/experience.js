@@ -42,14 +42,17 @@ export default function handler(req, res) {
          ],
          certificate: [
             {
+               title: "The Frontend Developer Career Path",
                img: "/img/experience/scrimba.webp",
                href: "https://scrimba.com/certificate/ud29B7c6/gfrontend"
             },
             {
+               title: "Node.js API Masterclass with Express & MongoDB",
                img: "/img/experience/nodejs_masterclass.jpg",
                href: "https://www.udemy.com/certificate/UC-c0e64adc-c8ae-43a0-886b-ebb8aac4c380/"
             },
             {
+               title: "MongoDB - The Complete Developer's Guide 2022",
                img: "/img/experience/mongodb_course.jpg",
                href: "https://www.udemy.com/certificate/UC-654be02e-f476-4a0d-843a-06956c6413f3/"
             }

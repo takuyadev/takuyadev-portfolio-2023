@@ -22,11 +22,6 @@ const StyledMain = styled(Main)`
   align-items: center;
 `
 
-const ImageCont = styled(motion.div)`
-  display: flex;
-  justify-content: center;
-`
-
 function Designs() {
   return (
     <>

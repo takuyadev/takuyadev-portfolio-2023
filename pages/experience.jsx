@@ -1,5 +1,6 @@
 // Packages
 import axios from "axios"
+import styled from "styled-components"
 import { motion } from "framer-motion"
 import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid"
 
@@ -20,6 +21,10 @@ import Heading4 from "@/atoms/text/Heading4"
 const MotionGallery = motion(ArticleCards)
 const MotionCertGallery = motion(CertificateGallery)
 
+const HiddenHeading4 = styled(Heading4)`
+  display: none;
+`
+
 function Experience({ experience, work, certificate }) {
   return (
     <>
@@ -34,7 +39,7 @@ function Experience({ experience, work, certificate }) {
           icon={<AcademicCapIcon />}
           data={experience}
         />
-        <Heading4>Certificates</Heading4>
+        <HiddenHeading4>Certificates</HiddenHeading4>
         <MotionCertGallery variants={stgerFadeRightItem} data={certificate} />
         <MotionGallery
           variants={stgerFadeRightItem}
