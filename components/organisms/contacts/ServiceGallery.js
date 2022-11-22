@@ -11,8 +11,7 @@ const Container = styled.article`
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
   @media (max-width: 800px){
-     grid-template-columns:1fr;
-
+     grid-template-columns: 1fr;
   }
 `
 

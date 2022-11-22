@@ -11,7 +11,7 @@ import ServiceCard from "./ServiceCard";
 // Styled Components
 const StyledProjectCard = styled(ImageCard)`
    position: relative;
-   width: ${props => props.width ? props.width : "200px"};
+   width: ${props => props.width ? props.width : "auto"};
    height: ${props => props.height ? props.height : "auto"};
    overflow: hidden;
 `

@@ -22,13 +22,16 @@ const StyledAnchor = styled.li`
 `
 
 // Component
-const Anchor = forwardRef(({ href, icon, text, ...otherProps }, ref) => (
+const Anchor = forwardRef(({ href, onClick, icon, text, ...otherProps }, ref) => (
     <Link
         ref={ref}
         href={href}
-        {...otherProps}
     >
-        <StyledAnchor>
+        <StyledAnchor
+            onClick={onClick}
+            {...otherProps}
+
+        >
             <a tabIndex="0">
                 {icon && icon}
                 {text && text}

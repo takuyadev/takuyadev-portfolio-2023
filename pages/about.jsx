@@ -37,7 +37,7 @@ const Article = styled(motion.article)`
 const ImageContainer = styled(motion.div)`
   object-fit: contain;
   @media (max-width: 1366px) {
-    opacity: 0.4;
+    opacity: 0.25;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -47,12 +47,14 @@ const ImageContainer = styled(motion.div)`
   }
 `
 
-function About() {
+function About({ isClosed, setIsClosed }) {
   return (
     <>
       <PageHeader
         title="About"
         subtitle="Get to know more about me and my personal life!"
+        isClosed={isClosed}
+        setIsClosed={setIsClosed}
       />
       <Main>
         <Section variants={stgerFadeDownAnim} initial="hidden" animate="show">

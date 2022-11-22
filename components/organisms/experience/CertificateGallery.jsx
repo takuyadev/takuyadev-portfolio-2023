@@ -1,13 +1,9 @@
 // Packages
 import { forwardRef } from "react"
-import styled from "styled-components"
 
 // Components
 import Gallery from "@/atoms/containers/Gallery"
 import CertificateCard from "@/molecules/cards/CertificateCard"
-
-// Styled Components
-const Anchor = styled.a``
 
 // Functional Component
 const CertificateGallery = forwardRef(({ data }, ref) => (

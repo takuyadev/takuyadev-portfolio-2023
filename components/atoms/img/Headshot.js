@@ -4,6 +4,7 @@ import Image from "next/image"
 // Component
 const Headshot = () => (
    <Image
+      priority
       layout="fixed"
       width="538px"
       height="475px"

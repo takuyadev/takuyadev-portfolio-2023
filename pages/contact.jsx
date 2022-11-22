@@ -58,12 +58,14 @@ const ServiceContainer = styled.div`
   }
 `
 
-function Contact({ service }) {
+function Contact({ service, isClosed, setIsClosed }) {
   return (
     <>
       <PageHeader
         title="Contact"
         subtitle="Leave me a message for any work inquiries"
+        isClosed={isClosed}
+        setIsClosed={setIsClosed}
       />
       <Main variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <ContactSection variants={stgerFadeDownItem}>

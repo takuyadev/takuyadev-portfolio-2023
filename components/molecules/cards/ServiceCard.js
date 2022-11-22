@@ -48,7 +48,6 @@ const ServiceCard = forwardRef(({ title, description, img }, ref) => (
             {description}
          </Paragraph>
       </FigCaption>
-
    </StyledCard >
 ))
 

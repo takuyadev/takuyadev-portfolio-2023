@@ -1,5 +1,6 @@
 // Packages
 import styled from "styled-components"
+import { useContext } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
@@ -20,6 +21,9 @@ import {
 } from "@/modules/animation/stgerFadeDown"
 import { projectData, minorProjectData } from "@/modules/dummy/projects"
 
+// Menu Context
+import { IsClosedContext } from "@/modules/context/IsClosedContext"
+
 // Styled Components
 const StyledMain = styled(Main)``
 
@@ -31,13 +35,15 @@ const HiddenHeading = styled(Heading2)`
   display: none;
 `
 
-function About() {
+function About({ isClosed, setIsClosed }) {
   return (
     <>
       <HiddenHeading>Projects</HiddenHeading>
       <PageHeader
         title="Development"
-        subtitle="Development projects, both for Front-end and Full Stack Development"
+        subtitle="Webdev projects"
+        isClosed={isClosed}
+        setIsClosed={setIsClosed}
       />
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionCarousel variants={stgerFadeDownItem} data={projectData} />

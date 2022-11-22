@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components"
 import Image from "next/image"
 
 // Styled Components
-const rotate = keyframes`
+const slideLeft = keyframes`
    0% {
       opacity: 0;
       transform: translateX(100%);
@@ -15,22 +15,19 @@ const rotate = keyframes`
 `
 
 const Container = styled.div`
-   grid-area: "hero";
-   align-self: flex;
-   justify-self: self-start;
-   align-content: center;
-   grid-column: span 2;
-   z-index: 1;
-   
    & img {
+      width: 100vw;
       object-fit: cover;
-      transform: translateX(40%);
       pointer-events: none;
-      animation: ${rotate} 1.5s ;
+      animation: ${slideLeft} 1.5s forwards ;
       user-select: none;
       -moz-user-select: none;
       -webkit-user-select: none;
       -ms-user-select: none;
+   }
+
+   @media (max-width:500px){
+      background: red;
    }
 `
 

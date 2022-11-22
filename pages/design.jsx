@@ -22,12 +22,14 @@ const StyledMain = styled(Main)`
   align-items: center;
 `
 
-function Designs() {
+function Designs({ isClosed, setIsClosed }) {
   return (
     <>
       <PageHeader
         title="Designs"
         subtitle="UX/UI or other Adobe Creative Suite projects that I've worked on"
+        isClosed={isClosed}
+        setIsClosed={setIsClosed}
       />
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionCarousel variants={stgerFadeDownItem} data={projectData} />

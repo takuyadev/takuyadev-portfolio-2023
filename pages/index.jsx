@@ -19,7 +19,6 @@ import Hero from "@/organisms/homepage/Hero"
 
 // Styled Components
 const StyledMain = styled(Main)`
-  grid-area: text;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -41,7 +40,6 @@ function Home() {
   return (
     <>
       <Hero />
-
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionHeading shadow={true} variants={stgerFadeDownItem}>
           Hi, I’m Takuya 👋 <br /> Front-end Developer <br /> & UX/UI Designer

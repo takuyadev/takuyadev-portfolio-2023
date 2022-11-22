@@ -4,13 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Component
-const Logo = (props) => (
-    <Link href="/">
-        <a>
-            <Image layout="fixed" width="108px" height="100px" src="/logo.png" alt="Logo of Takuya Toyokawa" {...props} />
+const Logo = forwardRef(({ ...otherProps }, ref) => (
+    <Link href="/" >
+        <a ref={ref} {...otherProps} >
+            <Image layout="fixed" width="108px" height="100px" src="/logo.png" alt="Logo of Takuya Toyokawa" />
         </a>
     </Link>
-)
+))
 
 // Settings & Exports
+Logo.displayName = "Logo"
+
 export default Logo

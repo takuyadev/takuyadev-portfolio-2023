@@ -25,12 +25,14 @@ const HiddenHeading4 = styled(Heading4)`
   display: none;
 `
 
-function Experience({ experience, work, certificate }) {
+function Experience({ experience, work, certificate, isClosed, setIsClosed }) {
   return (
     <>
       <PageHeader
         title="Experience"
         subtitle="My experience and achievements in both educational and work environments"
+        isClosed={isClosed}
+        setIsClosed={setIsClosed}
       />
       <Main variants={stgerFadeRightAnim} initial="hidden" animate="show">
         <MotionGallery

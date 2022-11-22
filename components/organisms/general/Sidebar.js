@@ -2,9 +2,8 @@
 import styled from "styled-components";
 
 // Components
-import Toggle from '@/atoms/input/Toggle'
 import Logo from "@/atoms/img/Logo";
-import NavLinks from "@/molecules/navigation/NavLinks";
+import NavLinks from "@/molecules/navigation/SidebarLinks";
 import IconLinks from "@/molecules/navigation/IconLinks";
 
 const SidebarEl = styled.div`
