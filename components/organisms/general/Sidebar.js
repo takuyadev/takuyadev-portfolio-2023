@@ -32,11 +32,11 @@ const BottomContainer = styled.aside`
     gap: 2em;
 `
 
-function Sidebar() {
+function Sidebar({ pathName }) {
     return (
         <SidebarEl aria-label="sidebar">
             <Logo priority={true} />
-            <NavLinks />
+            <NavLinks pathName={pathName} />
             <BottomContainer>
                 <IconLinks />
             </BottomContainer>

@@ -12,19 +12,7 @@ import Sidebar from "@/organisms/general/Sidebar"
 import MobileMenu from "@/organisms/general/MobileMenu"
 import { IsClosedContext } from "@/modules/context/IsClosedContext"
 import CircleBtn from "@/atoms/buttons/CircleBtn"
-
-
-const MobileMenuButton = styled(CircleBtn)`
-   position: fixed;
-   top: 3em;
-   right: 3em;
-   display:none;
-   z-index: 1000;
-
-   @media (max-width:1024px){
-      display:block
-   }
-`
+import { useRouter } from "next/router"
 
 // Styled Components
 const Content = styled(motion.div)`
@@ -39,18 +27,32 @@ const Content = styled(motion.div)`
    }
 `
 
+const MobileMenuButton = styled(CircleBtn)`
+   display:none;
+   position: fixed;
+   top: 3em;
+   right: 3em;
+   z-index: 1000;
+
+   @media (max-width:1024px){
+      display:block
+   }
+`
+
+
 const Page = ({ children, router }) => {
    const { isClosed, setIsClosed } = useContext(IsClosedContext)
-
+   const { pathname } = useRouter()
    return (
       <>
-         <Sidebar />
+         <Sidebar pathName={pathname} />
          <MobileMenuButton onClick={() => setIsClosed((prev) => !prev)} icon={<HiMenu size={18} />} />
          <AnimatePresence mode="wait">
             {!isClosed &&
                <MobileMenu
                   isClosed={isClosed}
                   setIsClosed={setIsClosed}
+                  pathName={pathname}
                />
             }
          </AnimatePresence>

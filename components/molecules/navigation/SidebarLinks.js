@@ -23,18 +23,18 @@ const UlEl = styled.ul`
     list-style:none;
 `
 
-function NavLinks() {
+function NavLinks({ pathName }) {
     return (
         <NavigationEl>
-            <ScrollBar />
+            <ScrollBar pathName={pathName} />
             <nav>
                 <UlEl>
-                    <Anchor href="/" text="Home" icon={<HiHome size={24} />} />
-                    <Anchor href="/experience" text="Experience" icon={<HiClipboardCheck size={24} />} />
-                    <Anchor href="/development" text="Development" icon={<HiOutlineCode size={24} />} />
-                    <Anchor href="/design" text="Design" icon={<FaBrush size={24} />} />
-                    <Anchor href="/contact" text="Contact" icon={<HiMail size={24} />} />
-                    <Anchor href="/about" text="About" icon={<HiUserCircle size={24} />} />
+                    <Anchor pathName={pathName} href="/" text="Home" icon={<HiHome size={24} />} />
+                    <Anchor pathName={pathName} href="/experience" text="Experience" icon={<HiClipboardCheck size={24} />} />
+                    <Anchor pathName={pathName} href="/development" text="Development" icon={<HiOutlineCode size={24} />} />
+                    <Anchor pathName={pathName} href="/design" text="Design" icon={<FaBrush size={24} />} />
+                    <Anchor pathName={pathName} href="/contact" text="Contact" icon={<HiMail size={24} />} />
+                    <Anchor pathName={pathName} href="/about" text="About" icon={<HiUserCircle size={24} />} />
                 </UlEl>
             </nav>
         </NavigationEl>

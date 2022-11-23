@@ -37,7 +37,7 @@ const MotionIcon = motion(IconLinks)
 
 // Component
 const MobileMenu = forwardRef(
-  ({ isClosed, setIsClosed, ...otherProps }, ref) => (
+  ({ isClosed, setIsClosed, pathName, ...otherProps }, ref) => (
     <Container
       variants={stgerFadeDownAnim}
       initial="hidden"
@@ -50,6 +50,7 @@ const MobileMenu = forwardRef(
       <MotionLogo variants={stgerFadeDownItem} />
       <MotionLinks
         variants={stgerFadeDownItem}
+        pathName={pathName}
         setIsClosed={setIsClosed}
         isClosed={isClosed}
       />

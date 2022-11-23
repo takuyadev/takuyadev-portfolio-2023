@@ -22,20 +22,23 @@ const UlEl = styled.ul`
     list-style:none;
 `
 
-const MobileLinks = forwardRef(({ setIsClosed }, ref) => (
-   <NavigationEl ref={ref}>
-      <nav>
-         <UlEl>
-            <Anchor onClick={() => setIsClosed(true)} href="/" text="Home" />
-            <Anchor onClick={() => setIsClosed(true)} href="/experience" text="Experience" />
-            <Anchor onClick={() => setIsClosed(true)} href="/development" text="Development" />
-            <Anchor onClick={() => setIsClosed(true)} href="/design" text="Design" />
-            <Anchor onClick={() => setIsClosed(true)} href="/contact" text="Contact" />
-            <Anchor onClick={() => setIsClosed(true)} href="/about" text="About" />
-         </UlEl>
-      </nav>
-   </NavigationEl>
-))
+const MobileLinks = forwardRef(({ setIsClosed, pathName }, ref) => {
+   console.log(pathName)
+   return (
+      <NavigationEl ref={ref}>
+         <nav>
+            <UlEl>
+               <Anchor pathName={pathName} onClick={() => setIsClosed(true)} href="/" text="Home" />
+               <Anchor pathName={pathName} onClick={() => setIsClosed(true)} href="/experience" text="Experience" />
+               <Anchor pathName={pathName} onClick={() => setIsClosed(true)} href="/development" text="Development" />
+               <Anchor pathName={pathName} onClick={() => setIsClosed(true)} href="/design" text="Design" />
+               <Anchor pathName={pathName} onClick={() => setIsClosed(true)} href="/contact" text="Contact" />
+               <Anchor pathName={pathName} onClick={() => setIsClosed(true)} href="/about" text="About" />
+            </UlEl>
+         </nav>
+      </NavigationEl>
+   )
+})
 
 // Settings & Exports
 MobileLinks.displayName = "MobileLinks"

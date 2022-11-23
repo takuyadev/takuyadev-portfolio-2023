@@ -1,12 +1,10 @@
 // Packages
 import styled from "styled-components"
 import Image from "next/image"
-import { HiMenu } from "react-icons/hi"
 
 // Components
 import Title from "@/atoms/text/Title"
 import Paragraph from "@/atoms/text/Paragraph"
-import CircleBtn from "@/atoms/buttons/CircleBtn"
 
 // Styled Components
 const HeaderCont = styled.header`
@@ -33,8 +31,8 @@ const ImageCont = styled.div`
 `
 
 const SquareCont = styled(ImageCont)`
-   position: fixed;
    @media (max-width: 1024px){
+      position: fixed;
       left: 0;
       transform: scale(1.5);
       opacity: 0.25;
@@ -51,11 +49,12 @@ const CirclesCont = styled(ImageCont)`
 `
 
 const TextCont = styled.div`
+   width: 100%;
    position: relative;
    display: flex;
    flex-direction: column;
+   color:  ${({ theme }) => theme.light.main};
    gap: 0.5em;
-   width: 75%;
 `
 
 const TitleCont = styled.div`
@@ -66,11 +65,13 @@ const TitleCont = styled.div`
 `
 
 const StyledParagraph = styled(Paragraph)`
-   color:  ${({ theme }) => theme.light.main}99;
     overflow: hidden;
     text-overflow: ellipsis;
+    opacity: 0.5;
     white-space: nowrap;
-    width: 60%;
+      @media (max-width: 1024px){
+      width: 80%;
+   }
 `
 
 

@@ -5,12 +5,13 @@ import { motion } from "framer-motion"
 
 // Styled Components
 const StyledMain = styled(motion.main)`
+position: relative;
   display: flex;
   flex-direction: column;
   padding: 2em;
   gap: 2em;  
   height: 85%;
-  overflow-y: auto;
+  overflow: auto;
 `
 
 // Component

@@ -9,6 +9,7 @@ const StyledHeading = styled.h4`
    font-size: ${fontSize["s"]};
    font-weight: normal;
    letter-spacing: 0.04em;
+   line-height: 1.5em;
    ${({ shadow }) => shadow && "text-shadow: 4px 4px 0px rgba(17, 58, 93, 1)"};
 
 `
