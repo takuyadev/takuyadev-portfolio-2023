@@ -21,7 +21,7 @@ const Section = styled(motion.section)`
   display: grid;
   position: relative;
   gap: 4em;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 4fr 3fr;
   @media (max-width: 1366px) {
     grid-template-columns: 1fr;
   }

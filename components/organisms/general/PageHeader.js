@@ -49,15 +49,16 @@ const CirclesCont = styled(ImageCont)`
 `
 
 const TextCont = styled.div`
-   width: 100%;
-   position: relative;
    display: flex;
    flex-direction: column;
-   color:  ${({ theme }) => theme.light.main};
    gap: 0.5em;
+   position: relative;
+   width: 100%;
+   color:  ${({ theme }) => theme.light.main};
 `
 
 const TitleCont = styled.div`
+width: 100%;
    display:flex;
    align-items: center;
    gap: 2em;
@@ -70,7 +71,7 @@ const StyledParagraph = styled(Paragraph)`
     opacity: 0.5;
     white-space: nowrap;
       @media (max-width: 1024px){
-      width: 80%;
+      width: calc(100% - 100px);
    }
 `
 
