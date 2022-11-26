@@ -18,60 +18,51 @@ const fade = keyframes`
    }
 `
 
-const Anchor = styled.a`
-  color: ${({ theme }) => theme.light.main};
-  font-weight: bold;
-  text-decoration: none;
-`
-
 const BoldParagraph = styled(Paragraph)`
   font-weight: bold;
 `
 
 const StyledCard = styled(ImageCard)`
-  position: relative;
-  overflow: hidden;
   transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   &:hover {
     transform: translateY(-8px);
-    & a {
-      pointer-events: fill;
-    }
   }
 `
 
 const Hover = styled.div`
   display: flex;
-  padding: 1em;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 1em;
   gap: 1em;
   opacity: 0;
   height: 100%;
   width: 100%;
   background: ${({ theme }) => theme.dark.dark}BB;
-  & > a {
-    pointer-events: none;
-  }
+
   &:hover {
     animation: ${fade} 0.5s forwards;
   }
 `
 
-const CertificateCard = forwardRef(({ title, img, href }, ref) => (
-  <StyledCard img={img}>
+const ImageCTACard = forwardRef(({ title, img, href }, ref) => (
+  <StyledCard ref={ref} img={img}>
     <Hover>
       <BoldParagraph>{title}</BoldParagraph>
-      <Anchor href={href} target="_blank" rel="noopener noreferrer">
-        <PrimaryBtn text="View Certificate" />
-      </Anchor>
+      <PrimaryBtn
+        as="a"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        text="View Certificate"
+      />
     </Hover>
   </StyledCard>
 ))
 
 // Settings & Exports
-CertificateCard.displayName = "CertificateCard"
+ImageCTACard.displayName = "CertificateCard"
 
-export default CertificateCard
+export default ImageCTACard

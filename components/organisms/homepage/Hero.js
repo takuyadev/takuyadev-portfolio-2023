@@ -1,10 +1,9 @@
 // Packages
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
 // Styled Components
-
 const slideLeft = {
    hidden: {
       x: "100%"
@@ -25,7 +24,6 @@ const Container = styled(motion.div)`
    }
 
 `
-
 
 function Hero() {
    return (

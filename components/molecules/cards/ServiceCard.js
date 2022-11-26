@@ -14,16 +14,18 @@ const StyledCard = styled(FigureCard)`
   flex-direction: column;
   gap: 2em;
   padding: 1em;
-  background: #0c284099;
+  background: ${({ theme }) => theme.dark.dark};
   & img {
    object-fit: cover;
   }
 `
+
 const FigCaption = styled.figcaption`
    display:flex;
    flex-direction: column;
    gap: 0.5em;
 `
+
 // Component
 const ServiceCard = forwardRef(({ title, description, img }, ref) => (
    <StyledCard ref={ref}>

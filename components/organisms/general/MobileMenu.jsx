@@ -3,7 +3,6 @@ import { forwardRef } from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import { fontSize } from "@/modules/config/theme.config"
-import { HiX } from "react-icons/hi"
 
 // Components
 import IconLinks from "../../molecules/navigation/IconLinks"

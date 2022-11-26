@@ -1,13 +1,11 @@
 // Packages
 import styled from "styled-components"
-import { useContext } from "react"
-import Image from "next/image"
+import axios from "axios"
 import { motion } from "framer-motion"
 
 // Components
 import Main from "@/atoms/containers/Main"
 import Heading2 from "@/atoms/text/Heading2"
-import HeadingUlr from "@/molecules/text/HeadingUlr"
 import ProjectHighlights from "@/organisms/projects/ProjectHighlights"
 import ProjectCards from "@/organisms/projects/ProjectGallery"
 import PageHeader from "@/organisms/general/PageHeader"
@@ -19,38 +17,43 @@ import {
   stgerFadeDownAnim,
   stgerFadeDownItem,
 } from "@/modules/animation/stgerFadeDown"
-import { projectData, minorProjectData } from "@/modules/dummy/projects"
-
-// Menu Context
-import { IsClosedContext } from "@/modules/context/IsClosedContext"
+import { minorProjectData } from "@/modules/dummy/projects"
 
 // Styled Components
 const StyledMain = styled(Main)``
-
-const ImageCont = styled(motion.div)`
-  display: flex;
-`
 
 const HiddenHeading = styled(Heading2)`
   display: none;
 `
 
-function About({ isClosed, setIsClosed }) {
+function Development({ isClosed, setIsClosed, highlights, projects }) {
   return (
     <>
       <HiddenHeading>Projects</HiddenHeading>
       <PageHeader
         title="Development"
-        subtitle="Webdev projects"
+        subtitle="All completed Web Development projects"
         isClosed={isClosed}
         setIsClosed={setIsClosed}
       />
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
-        <MotionCarousel variants={stgerFadeDownItem} data={projectData} />
+        <MotionCarousel data={highlights} variants={stgerFadeDownItem} />
         <MotionGallery variants={stgerFadeDownItem} data={minorProjectData} />
       </StyledMain>
     </>
   )
 }
 
-export default About
+// Static Site Generation
+export async function getStaticProps() {
+  const { data } = await axios.get(`http://localhost:3000/api/development`)
+
+  return {
+    props: {
+      highlights: data.highlights,
+      projects: data.projects,
+    },
+  }
+}
+
+export default Development

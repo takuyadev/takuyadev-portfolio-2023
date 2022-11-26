@@ -2,9 +2,6 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
 
-// Component
-import { DefaultBtn } from "./DefaultBtn";
-
 // Styled Components
 const Button = styled.button`
    display: flex;
@@ -36,8 +33,8 @@ const Button = styled.button`
    }
 `
 
-const CircleBtn = forwardRef(({ className, icon, onClick }) => (
-   <Button className={className} onClick={onClick}>
+const CircleBtn = forwardRef(({ className, icon, onClick }, ref) => (
+   <Button ref={ref} className={className} onClick={onClick}>
       {icon}
    </Button>
 ))

@@ -27,7 +27,7 @@ function Designs({ isClosed, setIsClosed }) {
     <>
       <PageHeader
         title="Designs"
-        subtitle="UX/UI or other Adobe Creative Suite projects that I've worked on"
+        subtitle="All completed UX/UI or other Adobe Creative Suite projects"
         isClosed={isClosed}
         setIsClosed={setIsClosed}
       />

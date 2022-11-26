@@ -3,18 +3,13 @@ import { forwardRef } from "react"
 
 // Components
 import Gallery from "@/atoms/containers/Gallery"
-import CertificateCard from "@/molecules/cards/CertificateCard"
+import HoverCard from "@/molecules/cards/HoverCard"
 
 // Functional Component
 const CertificateGallery = forwardRef(({ data }, ref) => (
   <Gallery ref={ref}>
     {data.map((item, i) => (
-      <CertificateCard
-        key={i}
-        href={item.href}
-        title={item.title}
-        img={item.img}
-      />
+      <HoverCard key={i} href={item.href} title={item.title} img={item.img} />
     ))}
   </Gallery>
 ))

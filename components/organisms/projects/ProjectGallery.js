@@ -3,13 +3,13 @@ import { forwardRef } from "react";
 import Gallery from "@/atoms/containers/Gallery";
 
 // Components
-import ProjectCard from "@/molecules/cards/ProjectCard";
+import HoverCard from "@/molecules/cards/HoverCard";
 
 // Functional Component
 const ProjectGallery = forwardRef(({ data }, ref) => (
    <Gallery ref={ref}>
       {data.map((item, i) => (
-         <ProjectCard
+         <HoverCard
             key={i}
          />
       ))}

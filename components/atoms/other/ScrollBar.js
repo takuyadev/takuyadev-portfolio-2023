@@ -47,9 +47,7 @@ const ScrollBar = forwardRef(({ pathName }, ref) => {
         }
     }
 
-
     const position = checkPosition(pathName)
-    console.log(position)
 
     return (
         <ScrollBarEl ref={ref}>

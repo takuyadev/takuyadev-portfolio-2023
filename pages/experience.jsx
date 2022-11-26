@@ -7,8 +7,8 @@ import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid"
 // Components
 import Main from "@/atoms/containers/Main"
 import PageHeader from "@/organisms/general/PageHeader"
-import ArticleCards from "@/organisms/experience/ArticleGallery"
 import CertificateGallery from "@/organisms/experience/CertificateGallery"
+import ArticleGallery from "@/organisms/experience/ArticleGallery"
 
 // Animation
 import {
@@ -18,7 +18,7 @@ import {
 import Heading4 from "@/atoms/text/Heading4"
 
 // Motion Components
-const MotionGallery = motion(ArticleCards)
+const MotionGallery = motion(ArticleGallery)
 const MotionCertGallery = motion(CertificateGallery)
 
 const HiddenHeading4 = styled(Heading4)`
