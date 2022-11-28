@@ -11,6 +11,7 @@ import {
 
 // Components
 import Main from "@/atoms/containers/Main"
+import Item from "@/atoms/text/Item"
 import Paragraph from "@/atoms/text/Paragraph"
 import List from "@/atoms/text/List"
 import HeadingUlr from "@/molecules/text/HeadingUlr"
@@ -77,10 +78,11 @@ function Contact({ service, isClosed, setIsClosed }) {
                 in your projects! If you are interested in contacting me,
                 currently, I am open to working the following services:
               </Paragraph>
-              <List
-                isOrdered={false}
-                data={service.map((item) => item.title)}
-              />
+              <List isOrdered={false}>
+                <Item>Front-end Developer</Item>
+                <Item>Fullstack Developer</Item>
+                <Item>UX/UI Developer</Item>
+              </List>
               <Paragraph>
                 You can also reach out to me at the platforms below. I look
                 forward to hearing more from you!

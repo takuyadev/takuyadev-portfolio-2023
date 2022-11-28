@@ -1,4 +1,5 @@
 // Packages
+import { forwardRef } from "react"
 import styled from "styled-components"
 import Image from "next/image"
 
@@ -74,9 +75,9 @@ const StyledParagraph = styled(Paragraph)`
   }
 `
 
-const PageHeader = ({ title, subtitle, isClosed, setIsClosed }) => {
+const PageHeader = forwardRef(({ className, title, subtitle }, ref) => {
   return (
-    <HeaderCont>
+    <HeaderCont ref={ref} className={className}>
       <TitleCont>
         <SquareCont>
           <Image
@@ -103,11 +104,14 @@ const PageHeader = ({ title, subtitle, isClosed, setIsClosed }) => {
       </TitleCont>
     </HeaderCont>
   )
-}
+})
 
+// Settings & Exports
 PageHeader.defaultProps = {
   title: "Title",
   subtitle: "Subtitle",
 }
+
+PageHeader.displayName = "PageHeader"
 
 export default PageHeader

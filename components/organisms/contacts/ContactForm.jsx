@@ -1,4 +1,5 @@
 // Packages
+import { forwardRef } from "react"
 import styled from "styled-components"
 import { useState, useRef, useEffect } from "react"
 
@@ -12,6 +13,7 @@ import InputWithLabel from "@/molecules/inputs/InputWithLabel"
 import TextAreaWithLabel from "@/molecules/inputs/TextAreaWithLabel"
 import Loading from "@/atoms/icon/Loading"
 
+// Styled Components
 const StyledForm = styled(Form)`
   @media (max-width: 1024px) {
     min-height: 500px;
@@ -19,7 +21,7 @@ const StyledForm = styled(Form)`
 `
 
 // Component
-const ContactForm = () => {
+const ContactForm = ({ className, ...otherProps }) => {
   const emptyForm = {
     name: "",
     email: "",
@@ -38,6 +40,7 @@ const ContactForm = () => {
   const emailRef = useRef()
   const messageRef = useRef()
 
+  // Updates form onChange input in the form
   const updateForm = (value) =>
     setForm((prev) => {
       return {
@@ -46,6 +49,18 @@ const ContactForm = () => {
       }
     })
 
+  // Callback function that takes in values to mass update state
+  const updateState = (message, values, input, icon, resetForm) => {
+    setStatusMessage(message)
+    setIsInputDisabled(input)
+    setIcon(icon)
+    values && setForm(values)
+    resetForm && formRef.current.reset()
+  }
+
+  // Checks status of the form and tracks and displays progress
+
+  // Disable sending the message if form is not filled out yet
   useEffect(() => {
     if (form.name && form.email && form.message) {
       setIsButtonDisabled(false)
@@ -55,32 +70,34 @@ const ContactForm = () => {
     }
   }, [form])
 
+  // Check and update form status to display and track form progress
   useEffect(() => {
-    if (status.status === 200) {
-      setStatusMessage("Message sent!")
-      setForm({ name: "", email: "", message: "" })
-      setIsInputDisabled(false)
-      setIcon("")
-      formRef.current.reset()
-    } else if (status.status === "sending") {
-      setStatusMessage("Sending...")
-      setIcon(<Loading />)
-      setIsInputDisabled(true)
-    } else if (status.status === null) {
-      setIcon("")
-      setStatusMessage("Send")
-      setIsInputDisabled(false)
-    } else {
-      setIcon("")
-      setStatusMessage("Error sending")
-      setIsInputDisabled(false)
+    const checkFormProgress = (status) => {
+      switch (status) {
+        case 200:
+          updateState("Sent message!", false, false, "", true)
+          break
+        case "sending":
+          console.log(status.status)
+          updateState("Sending...", false, true, <Loading />, false)
+          break
+        case 400:
+          updateState("Error sending", false, false, "", false)
+          break
+        default:
+          updateState("Send", false, false, "", false)
+          break
+      }
     }
+    checkFormProgress(status.status)
   }, [status])
 
   return (
     <StyledForm
       ref={formRef}
+      className={className}
       onSubmit={(e) => sendEmail(e, formRef, setStatus)}
+      {...otherProps}
     >
       <InputWithLabel
         required={true}

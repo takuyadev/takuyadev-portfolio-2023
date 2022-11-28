@@ -3,7 +3,7 @@ import { theme } from "@/modules/config/theme.config"
 import "@/styles/globals.css"
 import { ThemeProvider } from "styled-components"
 import { IsClosedContextProvider } from "@/modules/context/IsClosedContext"
-import Page from "components/page/Page"
+import Page from "components/template/Page"
 
 function MyApp({ Component, pageProps, router }) {
   return (

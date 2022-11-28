@@ -1,0 +1,68 @@
+// Packages
+import { forwardRef } from "react"
+import styled from "styled-components"
+
+// Components
+import Anchor from "@/atoms/text/Anchor"
+import List from "@/atoms/text/List"
+
+// Styled Components
+const NavigationEl = styled.nav`
+  display: flex;
+  gap: 1.5em;
+`
+
+const StyledList = styled(List)`
+  align-items: center;
+  list-style: none;
+  gap: 2em;
+  padding: 0;
+`
+
+// Component
+const MobileLinks = forwardRef(({ setIsClosed, pathName, className }, ref) => {
+  const closeMenu = () => setIsClosed(true)
+
+  return (
+    <NavigationEl ref={ref} className={className}>
+      <StyledList isOrdered={false}>
+        <Anchor pathName={pathName} onClick={closeMenu} href="/" text="Home" />
+        <Anchor
+          pathName={pathName}
+          onClick={closeMenu}
+          href="/experience"
+          text="Experience"
+        />
+        <Anchor
+          pathName={pathName}
+          onClick={closeMenu}
+          href="/development"
+          text="Development"
+        />
+        <Anchor
+          pathName={pathName}
+          onClick={closeMenu}
+          href="/design"
+          text="Design"
+        />
+        <Anchor
+          pathName={pathName}
+          onClick={closeMenu}
+          href="/contact"
+          text="Contact"
+        />
+        <Anchor
+          pathName={pathName}
+          onClick={closeMenu}
+          href="/about"
+          text="About"
+        />
+      </StyledList>
+    </NavigationEl>
+  )
+})
+
+// Settings & Exports
+MobileLinks.displayName = "MobileLinks"
+
+export default MobileLinks

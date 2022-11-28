@@ -17,7 +17,6 @@ import {
   stgerFadeDownAnim,
   stgerFadeDownItem,
 } from "@/modules/animation/stgerFadeDown"
-import { minorProjectData } from "@/modules/dummy/projects"
 
 // Styled Components
 const StyledMain = styled(Main)``
@@ -38,7 +37,7 @@ function Development({ isClosed, setIsClosed, highlights, projects }) {
       />
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionCarousel data={highlights} variants={stgerFadeDownItem} />
-        <MotionGallery variants={stgerFadeDownItem} data={minorProjectData} />
+        <MotionGallery data={projects} variants={stgerFadeDownItem} />
       </StyledMain>
     </>
   )

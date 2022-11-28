@@ -8,7 +8,7 @@ import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid"
 import Main from "@/atoms/containers/Main"
 import PageHeader from "@/organisms/general/PageHeader"
 import CertificateGallery from "@/organisms/experience/CertificateGallery"
-import ArticleGallery from "@/organisms/experience/ArticleGallery"
+import ArticleGallery from "@/organisms/experience/ExperienceGallery"
 
 // Animation
 import {

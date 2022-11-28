@@ -3,7 +3,7 @@ import { forwardRef } from "react"
 
 // Components
 import Gallery from "@/atoms/containers/Gallery"
-import HoverCard from "@/molecules/cards/HoverCard"
+import HoverCard from "@/molecules/cards/CertificateCard"
 
 // Functional Component
 const CertificateGallery = forwardRef(({ data }, ref) => (
@@ -15,6 +15,6 @@ const CertificateGallery = forwardRef(({ data }, ref) => (
 ))
 
 // Export settings
-CertificateGallery.displayName = "ProjectGallery"
+CertificateGallery.displayName = "CertificateGallery"
 
 export default CertificateGallery

@@ -1,8 +1,8 @@
 // Packages
 import styled from "styled-components"
 import { motion } from "framer-motion"
-import { HiClipboardCheck } from "react-icons/hi"
 import Link from "next/link"
+import { HiClipboardCheck } from "react-icons/hi"
 
 // Animations
 import {
