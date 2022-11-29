@@ -47,12 +47,12 @@ function Experience({ data, isClosed, setIsClosed }) {
             <HiddenHeading4>Certificates</HiddenHeading4>
             <MotionCertGallery
               variants={stgerFadeRightItem}
-              data={certificate}
+              data={data.certificate}
             />
             <MotionGallery
               variants={stgerFadeRightItem}
               title="Work"
-              data={work}
+              data={data.work}
               icon={<BriefcaseIcon />}
             />
           </>
