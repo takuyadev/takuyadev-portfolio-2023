@@ -59,7 +59,7 @@ const ServiceContainer = styled.div`
   }
 `
 
-function Contact({ data, isClosed, setIsClosed }) {
+function Contact({ data, env, isClosed, setIsClosed }) {
   return (
     <>
       <PageHeader
@@ -89,7 +89,7 @@ function Contact({ data, isClosed, setIsClosed }) {
               </Paragraph>
               <SocialButtons />
             </TextContainer>
-            <ContactForm />
+            {env && <ContactForm env={env} />}
           </ContactContainer>
         </ContactSection>
         <ServiceSection variants={stgerFadeDownItem}>
@@ -109,12 +109,18 @@ export async function getStaticProps() {
     return {
       props: {
         data: data,
+        env: {
+          TEMPLATE_ID: process.env.TEMPLATE_ID,
+          PUBLIC_KEY: process.env.PUBLIC_KEY,
+          SERVICE_ID: process.env.SERVICE_ID,
+        },
       },
     }
   } catch (error) {
     return {
       props: {
         data: null,
+        env: null,
       },
     }
   }

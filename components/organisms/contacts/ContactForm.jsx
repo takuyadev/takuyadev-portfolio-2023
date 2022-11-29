@@ -21,7 +21,7 @@ const StyledForm = styled(Form)`
 `
 
 // Component
-const ContactForm = ({ className, ...otherProps }) => {
+const ContactForm = ({ env, className, ...otherProps }) => {
   const emptyForm = {
     name: "",
     email: "",
@@ -96,7 +96,7 @@ const ContactForm = ({ className, ...otherProps }) => {
     <StyledForm
       ref={formRef}
       className={className}
-      onSubmit={(e) => sendEmail(e, formRef, setStatus)}
+      onSubmit={(e) => sendEmail(e, env, formRef, setStatus)}
       {...otherProps}
     >
       <InputWithLabel

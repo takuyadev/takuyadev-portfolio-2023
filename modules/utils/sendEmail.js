@@ -1,14 +1,14 @@
 import emailjs from "@emailjs/browser"
 // Requires private keys
-const sendEmail = (e, ref, setStatus) => {
+const sendEmail = (e, env, ref, setStatus) => {
    e.preventDefault()
    setStatus({ status: "sending" })
    emailjs
       .sendForm(
-         process.env.SERVICE_ID,
-         process.env.TEMPLATE_ID,
+         env.SERVICE_ID,
+         env.TEMPLATE_ID,
          ref.current,
-         process.env.PUBLIC_KEY
+         env.PUBLIC_KEY
       )
       .then(
          (result) => {
