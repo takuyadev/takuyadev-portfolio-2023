@@ -42,7 +42,7 @@ function Experience({ data, isClosed, setIsClosed }) {
               variants={stgerFadeRightItem}
               title="Education"
               icon={<AcademicCapIcon />}
-              data={experience}
+              data={data.experience}
             />
             <HiddenHeading4>Certificates</HiddenHeading4>
             <MotionCertGallery
