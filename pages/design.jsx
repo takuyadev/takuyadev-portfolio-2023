@@ -43,7 +43,7 @@ function Design({ isClosed, setIsClosed, highlights, projects }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  const { data } = await axios.get(`http://localhost:3000/api/design`)
+  const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/design`)
 
   return {
     props: {

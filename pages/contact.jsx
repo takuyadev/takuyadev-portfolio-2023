@@ -104,7 +104,7 @@ function Contact({ service, isClosed, setIsClosed }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  const { data } = await axios.get(`http://localhost:3000/api/contacts`)
+  const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/contacts`)
 
   return {
     props: {

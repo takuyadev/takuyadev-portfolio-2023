@@ -28,53 +28,51 @@ const StyledList = styled(List)`
 `
 
 // Component
-const SidebarLinks = forwardRef(
-  ({ position, pathName, className, navigation }, ref) => (
-    <Container ref={ref} className={className}>
-      <ScrollBar position={position} />
-      <nav>
-        <StyledList>
-          <Anchor
-            pathName={pathName}
-            href="/"
-            text="Home"
-            icon={<HiHome size={24} />}
-          />
-          <Anchor
-            pathName={pathName}
-            href="/experience"
-            text="Experience"
-            icon={<HiClipboardCheck size={24} />}
-          />
-          <Anchor
-            pathName={pathName}
-            href="/development"
-            text="Development"
-            icon={<HiOutlineCode size={24} />}
-          />
-          <Anchor
-            pathName={pathName}
-            href="/design"
-            text="Design"
-            icon={<FaBrush size={24} />}
-          />
-          <Anchor
-            pathName={pathName}
-            href="/contact"
-            text="Contact"
-            icon={<HiMail size={24} />}
-          />
-          <Anchor
-            pathName={pathName}
-            href="/about"
-            text="About"
-            icon={<HiUserCircle size={24} />}
-          />
-        </StyledList>
-      </nav>
-    </Container>
-  )
-)
+const SidebarLinks = forwardRef(({ position, pathName, className }, ref) => (
+  <Container ref={ref} className={className}>
+    <ScrollBar position={position} />
+    <nav>
+      <StyledList>
+        <Anchor
+          pathName={pathName}
+          href="/"
+          text="Home"
+          icon={<HiHome size={24} />}
+        />
+        <Anchor
+          pathName={pathName}
+          href="/experience"
+          text="Experience"
+          icon={<HiClipboardCheck size={24} />}
+        />
+        <Anchor
+          pathName={pathName}
+          href="/development"
+          text="Development"
+          icon={<HiOutlineCode size={24} />}
+        />
+        <Anchor
+          pathName={pathName}
+          href="/design"
+          text="Design"
+          icon={<FaBrush size={24} />}
+        />
+        <Anchor
+          pathName={pathName}
+          href="/contact"
+          text="Contact"
+          icon={<HiMail size={24} />}
+        />
+        <Anchor
+          pathName={pathName}
+          href="/about"
+          text="About"
+          icon={<HiUserCircle size={24} />}
+        />
+      </StyledList>
+    </nav>
+  </Container>
+))
 
 // Settings & Exports
 SidebarLinks.displayName = "SidebarLinks"

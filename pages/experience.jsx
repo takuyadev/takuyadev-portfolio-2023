@@ -21,6 +21,7 @@ import Heading4 from "@/atoms/text/Heading4"
 const MotionGallery = motion(ArticleGallery)
 const MotionCertGallery = motion(CertificateGallery)
 
+// Styled Components
 const HiddenHeading4 = styled(Heading4)`
   display: none;
 `
@@ -56,7 +57,7 @@ function Experience({ experience, work, certificate, isClosed, setIsClosed }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  const { data } = await axios.get(`http://localhost:3000/api/experience`)
+  const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/experience`)
 
   return {
     props: {

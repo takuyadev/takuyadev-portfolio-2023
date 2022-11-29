@@ -9,8 +9,6 @@ import Heading2 from "@/atoms/text/Heading2"
 import ProjectHighlights from "@/organisms/projects/ProjectHighlights"
 import ProjectCards from "@/organisms/projects/ProjectGallery"
 import PageHeader from "@/organisms/general/PageHeader"
-const MotionCarousel = motion(ProjectHighlights)
-const MotionGallery = motion(ProjectCards)
 
 // Modules
 import {
@@ -24,6 +22,10 @@ const StyledMain = styled(Main)``
 const HiddenHeading = styled(Heading2)`
   display: none;
 `
+
+// Framer Motion
+const MotionCarousel = motion(ProjectHighlights)
+const MotionGallery = motion(ProjectCards)
 
 function Development({ isClosed, setIsClosed, highlights, projects }) {
   return (
@@ -45,7 +47,7 @@ function Development({ isClosed, setIsClosed, highlights, projects }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  const { data } = await axios.get(`http://localhost:3000/api/development`)
+  const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/development`)
 
   return {
     props: {
