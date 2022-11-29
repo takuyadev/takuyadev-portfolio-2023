@@ -59,7 +59,7 @@ const ServiceContainer = styled.div`
   }
 `
 
-function Contact({ service, isClosed, setIsClosed }) {
+function Contact({ data, isClosed, setIsClosed }) {
   return (
     <>
       <PageHeader
@@ -95,7 +95,7 @@ function Contact({ service, isClosed, setIsClosed }) {
         <ServiceSection variants={stgerFadeDownItem}>
           <HeadingUlr>Services</HeadingUlr>
           <ServiceContainer></ServiceContainer>
-          <ServiceGallery data={service} />
+          {data && <ServiceGallery data={data.service} />}
         </ServiceSection>
       </Main>
     </>
@@ -104,12 +104,19 @@ function Contact({ service, isClosed, setIsClosed }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/contacts`)
-
-  return {
-    props: {
-      service: data.service,
-    },
+  try {
+    const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/contacts`)
+    return {
+      props: {
+        data: data,
+      },
+    }
+  } catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    }
   }
 }
 

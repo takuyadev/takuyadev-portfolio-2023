@@ -26,7 +26,7 @@ const HiddenHeading4 = styled(Heading4)`
   display: none;
 `
 
-function Experience({ experience, work, certificate, isClosed, setIsClosed }) {
+function Experience({ data, isClosed, setIsClosed }) {
   return (
     <>
       <PageHeader
@@ -36,20 +36,27 @@ function Experience({ experience, work, certificate, isClosed, setIsClosed }) {
         setIsClosed={setIsClosed}
       />
       <Main variants={stgerFadeRightAnim} initial="hidden" animate="show">
-        <MotionGallery
-          variants={stgerFadeRightItem}
-          title="Education"
-          icon={<AcademicCapIcon />}
-          data={experience}
-        />
-        <HiddenHeading4>Certificates</HiddenHeading4>
-        <MotionCertGallery variants={stgerFadeRightItem} data={certificate} />
-        <MotionGallery
-          variants={stgerFadeRightItem}
-          title="Work"
-          data={work}
-          icon={<BriefcaseIcon />}
-        />
+        {data && (
+          <>
+            <MotionGallery
+              variants={stgerFadeRightItem}
+              title="Education"
+              icon={<AcademicCapIcon />}
+              data={experience}
+            />
+            <HiddenHeading4>Certificates</HiddenHeading4>
+            <MotionCertGallery
+              variants={stgerFadeRightItem}
+              data={certificate}
+            />
+            <MotionGallery
+              variants={stgerFadeRightItem}
+              title="Work"
+              data={work}
+              icon={<BriefcaseIcon />}
+            />
+          </>
+        )}
       </Main>
     </>
   )
@@ -57,14 +64,21 @@ function Experience({ experience, work, certificate, isClosed, setIsClosed }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/experience`)
-
-  return {
-    props: {
-      experience: data.experience,
-      work: data.work,
-      certificate: data.certificate,
-    },
+  try {
+    const { data } = await axios.get(
+      `${process.env.WEBSITE_URL}/api/experience`
+    )
+    return {
+      props: {
+        data: data,
+      },
+    }
+  } catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    }
   }
 }
 

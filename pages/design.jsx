@@ -24,7 +24,7 @@ const StyledMain = styled(Main)`
 const MotionCarousel = motion(ProjectHighlights)
 const MotionGallery = motion(ProjectCards)
 
-function Design({ isClosed, setIsClosed, highlights, projects }) {
+function Design({ isClosed, setIsClosed, data }) {
   return (
     <>
       <PageHeader
@@ -34,8 +34,15 @@ function Design({ isClosed, setIsClosed, highlights, projects }) {
         setIsClosed={setIsClosed}
       />
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
-        <MotionCarousel data={highlights} variants={stgerFadeDownItem} />
-        <MotionGallery data={projects} variants={stgerFadeDownItem} />
+        {data && (
+          <>
+            <MotionCarousel
+              data={data.highlights}
+              variants={stgerFadeDownItem}
+            />
+            <MotionGallery data={data.projects} variants={stgerFadeDownItem} />
+          </>
+        )}
       </StyledMain>
     </>
   )
@@ -43,13 +50,19 @@ function Design({ isClosed, setIsClosed, highlights, projects }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/design`)
-
-  return {
-    props: {
-      highlights: data.highlights,
-      projects: data.projects,
-    },
+  try {
+    const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/design`)
+    return {
+      props: {
+        data: data,
+      },
+    }
+  } catch (error) {
+    return {
+      props: {
+        data: null,
+      },
+    }
   }
 }
 
