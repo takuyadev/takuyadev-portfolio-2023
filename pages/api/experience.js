@@ -48,12 +48,12 @@ export default function handler(req, res) {
             },
             {
                title: "Node.js API Masterclass with Express & MongoDB",
-               img: "/img/experience/nodejs_masterclass.jpg",
+               img: "/img/experience/nodejs_masterclass.webp",
                href: "https://www.udemy.com/certificate/UC-c0e64adc-c8ae-43a0-886b-ebb8aac4c380/"
             },
             {
                title: "MongoDB - The Complete Developer's Guide 2022",
-               img: "/img/experience/mongodb_course.jpg",
+               img: "/img/experience/mongodb_course.webp",
                href: "https://www.udemy.com/certificate/UC-654be02e-f476-4a0d-843a-06956c6413f3/"
             }
          ]

@@ -68,7 +68,7 @@ const TitleCont = styled.div`
 const StyledParagraph = styled(Paragraph)`
   overflow: hidden;
   text-overflow: ellipsis;
-  opacity: 0.5;
+  opacity: 0.65;
   white-space: nowrap;
   @media (max-width: 1024px) {
     width: calc(100% - 100px);

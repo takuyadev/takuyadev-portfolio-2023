@@ -21,7 +21,15 @@ import { propsErrorHandler } from "@/utils/propsErrorHandler"
 const StyledMain = styled(Main)``
 
 const HiddenHeading = styled(Heading2)`
-  display: none;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
 `
 
 // Framer Motion
@@ -36,16 +44,16 @@ function Development({ isClosed, setIsClosed, data }) {
         <meta property="og:title" content="Development" key="title" />
         <meta
           name="description"
-          content="All completed web development projects relating to Frontend and Fullstack Development"
+          content="All skills and completed web development projects relating to Frontend and Fullstack Development"
         />
       </Head>
-      <HiddenHeading>Projects</HiddenHeading>
       <PageHeader
         title="Development"
         subtitle="All completed Web Development projects"
         isClosed={isClosed}
         setIsClosed={setIsClosed}
       />
+      <HiddenHeading>Projects</HiddenHeading>
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         {data && (
           <>

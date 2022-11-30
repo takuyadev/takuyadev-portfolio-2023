@@ -70,6 +70,7 @@ const ProjectCard = forwardRef(
               as="a"
               href={live}
               target="_blank"
+              aria-label={`Check live website for ${title}`}
               rel="noopener noreferrer"
               icon={<HiGlobe size={24} />}
             />
@@ -77,6 +78,7 @@ const ProjectCard = forwardRef(
               as="a"
               href={github}
               target="_blank"
+              aria-label={`Github page for ${title}`}
               rel="noopener noreferrer"
               icon={<BsGithub size={24} />}
             />

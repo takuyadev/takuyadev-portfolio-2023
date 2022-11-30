@@ -8,6 +8,7 @@ import Main from "@/atoms/containers/Main"
 import ProjectHighlights from "@/organisms/projects/ProjectHighlights"
 import ProjectCards from "@/organisms/projects/ProjectGallery"
 import PageHeader from "@/organisms/general/PageHeader"
+import Heading2 from "@/atoms/text/Heading2"
 
 // Modules
 import {
@@ -19,6 +20,18 @@ import { propsErrorHandler } from "@/utils/propsErrorHandler"
 // Styled Components
 const StyledMain = styled(Main)`
   align-items: center;
+`
+
+const HiddenHeading = styled(Heading2)`
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
 `
 
 // Framer Motion
@@ -36,6 +49,7 @@ function Design({ isClosed, setIsClosed, data }) {
           content="All skills and completed projects related to UX/UI design and Graphic Designing"
         />
       </Head>
+      <HiddenHeading>Projects</HiddenHeading>
       <PageHeader
         title="Designs"
         subtitle="All completed UX/UI or other Adobe Creative Suite projects"

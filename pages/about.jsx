@@ -20,15 +20,18 @@ import {
 // Styled Components
 const Section = styled(motion.section)`
   display: grid;
+  grid-template-areas: "article image";
   position: relative;
   gap: 4em;
-  grid-template-columns: 4fr 3fr;
+  grid-template-columns: 1fr 1fr;
   @media (max-width: 1366px) {
+    grid-template-areas: "image" "article";
     grid-template-columns: 1fr;
   }
 `
 
 const Article = styled(motion.article)`
+  grid-area: article;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -36,16 +39,8 @@ const Article = styled(motion.article)`
 `
 
 const ImageContainer = styled(motion.div)`
-  object-fit: contain;
-  @media (max-width: 1366px) {
-    opacity: 0.25;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    height: 500px;
-    width: 400px;
-    z-index: 0;
-  }
+  grid-area: image;
+  margin: auto 0;
 `
 
 function About({ isClosed, setIsClosed }) {
@@ -104,12 +99,13 @@ function About({ isClosed, setIsClosed }) {
           </Article>
           <ImageContainer>
             <Image
-              width={480}
-              height={600}
-              quality={50}
+              width={100}
+              height={100}
+              quality={25}
+              objectFit="contain"
               layout="responsive"
-              src="/img/about.png"
-              alt="Takuya Toyokawa's casual selfie"
+              src="/img/about/headshot.webp"
+              alt="Headshot of Takuya Toyokawa"
             ></Image>
           </ImageContainer>
         </Section>

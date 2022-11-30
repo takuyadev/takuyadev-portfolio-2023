@@ -5,17 +5,17 @@ export default function handler(req, res) {
             {
                title: "Frontend Developer",
                description: "For developing and programming fully interactive websites from scratch.",
-               img: "/img/frontend.jpg"
+               img: "/img/contact/frontend.webp"
             },
             {
                title: "Fullstack Developer",
                description: "For developing both the interactive experience as well as handling the database.",
-               img: "/img/fullstack.jpg"
+               img: "/img/contact/fullstack.webp"
             },
             {
                title: "UX / UI Designer",
                description: "For researching, and designing websites tailored towards user experience.",
-               img: "/img/design.jpg"
+               img: "/img/contact/design.webp"
             },
          ]
       }

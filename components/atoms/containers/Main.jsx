@@ -10,7 +10,7 @@ const StyledMain = styled(motion.main)`
   flex-direction: column;
   padding: 2em;
   gap: 2em;
-  height: 85%;
+  height: 88%;
   overflow: auto;
 `
 

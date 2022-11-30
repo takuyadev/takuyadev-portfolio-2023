@@ -53,6 +53,7 @@ function Home() {
           <MotionButton
             as="a"
             tabIndex="0"
+            alt="Experience"
             variants={stgerFadeDownItem}
             icon={<HiClipboardCheck size={22} />}
             text="Experience"

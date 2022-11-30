@@ -83,6 +83,7 @@ const HighlightCard = forwardRef(
           <PrimaryBtn
             as="a"
             href={href}
+            aria-label={`Check live website for ${title}`}
             icon={<HiGlobe />}
             target="_blank"
             rel="noopener noreferrer"
@@ -90,6 +91,7 @@ const HighlightCard = forwardRef(
           />
           <Anchor
             icon={<BsGithub size={24} />}
+            aria-label={`Github page for ${title}`}
             href={href}
             target="_blank"
             rel="noopener noreferrer"

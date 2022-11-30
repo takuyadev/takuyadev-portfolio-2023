@@ -44,10 +44,12 @@ const Page = ({ children, router }) => {
   const { isClosed, setIsClosed } = useContext(IsClosedContext)
   const { pathname } = useRouter()
   const position = checkPosition(pathname)
+
   return (
     <>
       <Sidebar position={position} pathName={pathname} />
       <MobileMenuButton
+        aria-label="Menu"
         onClick={() => setIsClosed((prev) => !prev)}
         icon={<HiMenu size={18} />}
       />
