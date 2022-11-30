@@ -49,13 +49,13 @@ function Design({ isClosed, setIsClosed, data }) {
           content="All skills and completed projects related to UX/UI design and Graphic Designing"
         />
       </Head>
-      <HiddenHeading>Projects</HiddenHeading>
       <PageHeader
         title="Designs"
         subtitle="All completed UX/UI or other Adobe Creative Suite projects"
         isClosed={isClosed}
         setIsClosed={setIsClosed}
       />
+      <HiddenHeading>Projects</HiddenHeading>
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         {data && (
           <>
