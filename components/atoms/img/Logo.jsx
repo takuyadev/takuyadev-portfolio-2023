@@ -9,9 +9,9 @@ const Logo = forwardRef(({ className, ...otherProps }, ref) => (
     <a ref={ref} className={className} {...otherProps}>
       <Image
         layout="fixed"
-        width="108px"
-        height="100px"
-        src="/logo.png"
+        width={88}
+        height={80}
+        src="/img/other/logo.svg"
         alt="Logo of Takuya Toyokawa"
       />
     </a>

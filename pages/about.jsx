@@ -97,11 +97,10 @@ function About({ isClosed, setIsClosed }) {
             </Paragraph>
             <SocialButtons></SocialButtons>
           </Article>
-          <ImageContainer>
+          <ImageContainer variants={stgerFadeDownItem}>
             <Image
               width={100}
               height={100}
-              quality={25}
               objectFit="contain"
               layout="responsive"
               src="/img/about/headshot.webp"

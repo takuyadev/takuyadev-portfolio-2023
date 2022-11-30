@@ -84,7 +84,7 @@ const PageHeader = forwardRef(({ className, title, subtitle }, ref) => {
             layout="fixed"
             width={65}
             height={65}
-            src="/img/squares.png"
+            src="/img/other/squares.webp"
             alt="Vector squares diagonally aligned"
           />
         </SquareCont>
@@ -93,7 +93,7 @@ const PageHeader = forwardRef(({ className, title, subtitle }, ref) => {
             layout="fixed"
             width={75}
             height={57}
-            src="/img/circles.png"
+            src="/img/other/circles.webp"
             alt="Vector squares diagonally aligned"
           />
         </CirclesCont>

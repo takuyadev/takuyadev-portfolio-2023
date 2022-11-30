@@ -35,7 +35,7 @@ const Hero = forwardRef(({ className }, ref) => (
   >
     <Image
       layout="fill"
-      src="/img/home/main_vector.webp"
+      src="/img/home/vector.webp"
       alt="Hero, ft. Takuya Toyokawa"
       objectFit="contain"
     />
