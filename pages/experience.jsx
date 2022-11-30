@@ -1,5 +1,5 @@
 // Packages
-import axios from "axios"
+import Head from "next/head"
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid"
@@ -17,6 +17,9 @@ import {
 } from "@/modules/animation/stgerFadeRight"
 import Heading4 from "@/atoms/text/Heading4"
 
+// Modules
+import { propsErrorHandler } from "@/utils/propsErrorHandler"
+
 // Motion Components
 const MotionGallery = motion(ArticleGallery)
 const MotionCertGallery = motion(CertificateGallery)
@@ -29,6 +32,14 @@ const HiddenHeading4 = styled(Heading4)`
 function Experience({ data, isClosed, setIsClosed }) {
   return (
     <>
+      <Head>
+        <title>Experience</title>
+        <meta property="og:title" content="Experience" key="title" />
+        <meta
+          name="description"
+          content="Takuya Toyokawa's experiences and achievements in both educational and work environments"
+        />
+      </Head>
       <PageHeader
         title="Experience"
         subtitle="My experience and achievements in both educational and work environments"
@@ -64,22 +75,7 @@ function Experience({ data, isClosed, setIsClosed }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  try {
-    const { data } = await axios.get(
-      `${process.env.WEBSITE_URL}/api/experience`
-    )
-    return {
-      props: {
-        data: data,
-      },
-    }
-  } catch (error) {
-    return {
-      props: {
-        data: null,
-      },
-    }
-  }
+  return await propsErrorHandler(`${process.env.WEBSITE_URL}/api/experience`)
 }
 
 export default Experience

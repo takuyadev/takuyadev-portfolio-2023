@@ -1,17 +1,31 @@
 // Packages
 import { forwardRef } from "react"
 import { motion } from "framer-motion"
-import styled from "styled-components"
-
+import styled, { keyframes } from "styled-components"
 // Components
 import ImageCard from "@/atoms/cards/ImageCard"
 import Paragraph from "@/atoms/text/Paragraph"
 import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
 
-// Animation
-import { fade } from "@/animation/fade"
-
 // Styled Components
+const Out = keyframes`
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`
+
+const In = keyframes`
+  from{
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`
+
 const BoldParagraph = styled(Paragraph)`
   font-weight: bold;
   text-overflow: ellipsis;
@@ -39,10 +53,11 @@ const Hover = styled(motion.div)`
   height: 100%;
   width: 100%;
   background: ${({ theme }) => theme.dark.dark}BB;
+  animation: ${In} 0.5s forwards;
 
-  /* &:hover {
-    animation: ${fade} 0.5s forwards;
-  } */
+  &:hover {
+    animation: ${Out} 0.5s forwards;
+  }
 `
 
 const Opaque = styled.div`
@@ -54,7 +69,7 @@ const Opaque = styled.div`
 const CertificateCard = forwardRef(({ title, img, href, className }, ref) => (
   <StyledCard ref={ref} className={className} img={img}>
     <Opaque>
-      <Hover variants={fade} initial="initial" whileHover="animate">
+      <Hover>
         <BoldParagraph>{title}</BoldParagraph>
         <PrimaryBtn
           as="a"

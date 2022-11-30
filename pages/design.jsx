@@ -1,6 +1,6 @@
 // Packages
+import Head from "next/head"
 import styled from "styled-components"
-import axios from "axios"
 import { motion } from "framer-motion"
 
 // Components
@@ -14,6 +14,7 @@ import {
   stgerFadeDownAnim,
   stgerFadeDownItem,
 } from "@/modules/animation/stgerFadeDown"
+import { propsErrorHandler } from "@/utils/propsErrorHandler"
 
 // Styled Components
 const StyledMain = styled(Main)`
@@ -27,6 +28,14 @@ const MotionGallery = motion(ProjectCards)
 function Design({ isClosed, setIsClosed, data }) {
   return (
     <>
+      <Head>
+        <title>Design</title>
+        <meta property="og:title" content="Design" key="title" />
+        <meta
+          name="description"
+          content="All skills and completed projects related to UX/UI design and Graphic Designing"
+        />
+      </Head>
       <PageHeader
         title="Designs"
         subtitle="All completed UX/UI or other Adobe Creative Suite projects"
@@ -50,20 +59,7 @@ function Design({ isClosed, setIsClosed, data }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  try {
-    const { data } = await axios.get(`${process.env.WEBSITE_URL}/api/design`)
-    return {
-      props: {
-        data: data,
-      },
-    }
-  } catch (error) {
-    return {
-      props: {
-        data: null,
-      },
-    }
-  }
+  return await propsErrorHandler(`${process.env.WEBSITE_URL}/api/design`)
 }
 
 export default Design

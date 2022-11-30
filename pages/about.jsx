@@ -1,4 +1,5 @@
 // Packages
+import Head from "next/head"
 import styled from "styled-components"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -50,6 +51,14 @@ const ImageContainer = styled(motion.div)`
 function About({ isClosed, setIsClosed }) {
   return (
     <>
+      <Head>
+        <title>About</title>
+        <meta property="og:title" content="About" key="title" />
+        <meta
+          name="description"
+          content="More information about myself, goals and personal hobbies."
+        />
+      </Head>
       <PageHeader
         title="About"
         subtitle="Get to know more about me and my personal life!"

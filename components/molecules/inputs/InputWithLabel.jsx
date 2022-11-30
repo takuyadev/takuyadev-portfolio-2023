@@ -14,14 +14,16 @@ const Container = styled.div`
 `
 
 // Components
-const InputWithLabel = forwardRef(({ label, className, ...otherProps }, ref) => (
-   <Container ref={ref} className={className}>
+const InputWithLabel = forwardRef(
+  ({ label, className, ...otherProps }, ref) => (
+    <Container ref={ref} className={className}>
       <Label label={label} />
       <Input {...otherProps} />
-   </Container>
-))
+    </Container>
+  )
+)
 
 // Settings & Exports
-InputWithLabel.displayName = "Input"
+InputWithLabel.displayName = "InputWithLabel"
 
 export default InputWithLabel

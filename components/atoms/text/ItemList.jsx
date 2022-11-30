@@ -7,8 +7,8 @@ import Item from "@/atoms/text/Item"
 
 // Component
 // ? Despite being two atoms, decided to put into atoms for flexibility fdr molecules
-const ItemList = forwardRef(({ isOrdered, data }, ref) => (
-  <List ref={ref} isOrdered={isOrdered}>
+const ItemList = forwardRef(({ isOrdered, className, data }, ref) => (
+  <List ref={ref} className={className} isOrdered={isOrdered}>
     {data.map((item, i) => (
       <Item key={i}>{item}</Item>
     ))}

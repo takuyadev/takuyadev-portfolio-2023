@@ -38,7 +38,7 @@ const Hero = forwardRef(({ className }, ref) => (
       src="/img/headshot.png"
       alt="Hero, ft. Takuya Toyokawa"
       objectFit="contain"
-      quality={50}
+      quality={25}
     />
   </Container>
 ))

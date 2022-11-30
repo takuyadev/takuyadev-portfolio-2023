@@ -1,6 +1,6 @@
 // Packages
+import Head from "next/head"
 import styled from "styled-components"
-import axios from "axios"
 import { motion } from "framer-motion"
 
 // Components
@@ -15,6 +15,7 @@ import {
   stgerFadeDownAnim,
   stgerFadeDownItem,
 } from "@/modules/animation/stgerFadeDown"
+import { propsErrorHandler } from "@/utils/propsErrorHandler"
 
 // Styled Components
 const StyledMain = styled(Main)``
@@ -30,6 +31,14 @@ const MotionGallery = motion(ProjectCards)
 function Development({ isClosed, setIsClosed, data }) {
   return (
     <>
+      <Head>
+        <title>Development</title>
+        <meta property="og:title" content="Development" key="title" />
+        <meta
+          name="description"
+          content="All completed web development projects relating to Frontend and Fullstack Development"
+        />
+      </Head>
       <HiddenHeading>Projects</HiddenHeading>
       <PageHeader
         title="Development"
@@ -54,22 +63,7 @@ function Development({ isClosed, setIsClosed, data }) {
 
 // Static Site Generation
 export async function getStaticProps() {
-  try {
-    const { data } = await axios.get(
-      `${process.env.WEBSITE_URL}/api/development`
-    )
-    return {
-      props: {
-        data: data,
-      },
-    }
-  } catch (error) {
-    return {
-      props: {
-        data: null,
-      },
-    }
-  }
+  return await propsErrorHandler(`${process.env.WEBSITE_URL}/api/development`)
 }
 
 export default Development

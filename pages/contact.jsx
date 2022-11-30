@@ -1,4 +1,5 @@
 // Packages
+import Head from "next/head"
 import axios from "axios"
 import styled from "styled-components"
 import { motion } from "framer-motion"
@@ -19,6 +20,7 @@ import PageHeader from "@/organisms/general/PageHeader"
 import ContactForm from "@/organisms/contacts/ContactForm"
 import ServiceGallery from "@/organisms/contacts/ServiceGallery"
 import SocialButtons from "@/molecules/navigation/SocialBtns"
+import { propsErrorHandler } from "@/utils/propsErrorHandler"
 
 // Styled Components
 const ContactSection = styled(motion.section)`
@@ -62,6 +64,14 @@ const ServiceContainer = styled.div`
 function Contact({ data, env, isClosed, setIsClosed }) {
   return (
     <>
+      <Head>
+        <title>Contact</title>
+        <meta property="og:title" content="Contact" key="title" />
+        <meta
+          name="description"
+          content="If you're interested in starting and creating a website, please feel free to contact me through this page!"
+        />
+      </Head>
       <PageHeader
         title="Contact"
         subtitle="Leave me a message for any work inquiries"

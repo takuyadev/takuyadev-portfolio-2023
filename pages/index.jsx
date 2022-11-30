@@ -49,13 +49,13 @@ function Home() {
           as well as Node.js Full Stack Development. Currently looking for
           opportunites in development!
         </MotionParagraph>
-        <Link href="/experience">
+        <Link href="/experience" passHref={true}>
           <MotionButton
             as="a"
             tabIndex="0"
             variants={stgerFadeDownItem}
             icon={<HiClipboardCheck size={22} />}
-            text="Experiences"
+            text="Experience"
           />
         </Link>
       </StyledMain>
