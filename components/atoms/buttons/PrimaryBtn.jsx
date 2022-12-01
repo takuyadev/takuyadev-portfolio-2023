@@ -2,7 +2,7 @@
 import { forwardRef } from "react"
 import styled from "styled-components"
 
-// Components
+// Import Styling
 import { DefaultBtn } from "./DefaultBtn"
 
 // Styled Components

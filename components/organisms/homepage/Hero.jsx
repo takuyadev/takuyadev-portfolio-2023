@@ -4,6 +4,9 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
+// Components
+import NoSelectImage from "@/atoms/other/NoSelectImage"
+
 // Styled Components
 const slideLeft = {
   hidden: {
@@ -15,7 +18,7 @@ const slideLeft = {
   },
 }
 
-const Container = styled(motion.div)`
+const Container = styled(NoSelectImage)`
   position: fixed;
   width: 80vw;
   height: 100vh;
@@ -25,8 +28,11 @@ const Container = styled(motion.div)`
   }
 `
 
+// Motion Components
+const MotionContainer = motion(Container)
+
 const Hero = forwardRef(({ className }, ref) => (
-  <Container
+  <MotionContainer
     ref={ref}
     className={className}
     variants={slideLeft}
@@ -39,7 +45,7 @@ const Hero = forwardRef(({ className }, ref) => (
       alt="Hero, ft. Takuya Toyokawa"
       objectFit="contain"
     />
-  </Container>
+  </MotionContainer>
 ))
 
 // Settings & Exports

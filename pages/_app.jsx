@@ -1,11 +1,31 @@
+// Packages
+import { useState, useEffect } from "react"
 import Head from "next/head"
-import { theme } from "@/modules/config/theme.config"
-import "@/styles/globals.css"
 import { ThemeProvider } from "styled-components"
+import { AnimatePresence } from "framer-motion"
+
+// Modules
+import "@/styles/globals.css"
+import { theme } from "@/modules/config/theme.config"
 import { IsClosedContextProvider } from "@/modules/context/IsClosedContext"
+
+// Components
 import Page from "components/template/Page"
+import LoadingScreen from "@/organisms/general/LoadingScreen"
 
 function MyApp({ Component, pageProps, router }) {
+  const [isFirstLoad, setIsFirstLoad] = useState(true)
+
+  useEffect(() => {
+    const updateFirstLoad = () => {
+      setTimeout(() => {
+        setIsFirstLoad(false)
+      }, 1500)
+    }
+    updateFirstLoad()
+    return updateFirstLoad()
+  }, [])
+
   return (
     <IsClosedContextProvider>
       <ThemeProvider theme={theme}>
@@ -23,9 +43,15 @@ function MyApp({ Component, pageProps, router }) {
           <link rel="canonical" href="https://takuyaktoyokawa.ca" />
           <meta name="author" content="Takuya Toyokawa" />
         </Head>
-        <Page router={router}>
-          <Component {...pageProps} />
-        </Page>
+        <AnimatePresence mode="wait">
+          {isFirstLoad ? (
+            <LoadingScreen key="loader" />
+          ) : (
+            <Page key="page" router={router}>
+              <Component {...pageProps} />
+            </Page>
+          )}
+        </AnimatePresence>
       </ThemeProvider>
     </IsClosedContextProvider>
   )

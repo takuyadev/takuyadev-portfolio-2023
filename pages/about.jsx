@@ -10,6 +10,7 @@ import Main from "@/atoms/containers/Main"
 import HeadingUlr from "@/molecules/text/HeadingUlr"
 import Paragraph from "@/atoms/text/Paragraph"
 import SocialButtons from "@/molecules/navigation/SocialBtns"
+import NoSelectImage from "@/atoms/other/NoSelectImage"
 
 // Animations
 import {
@@ -38,10 +39,13 @@ const Article = styled(motion.article)`
   z-index: 1;
 `
 
-const ImageContainer = styled(motion.div)`
+const ImageContainer = styled(NoSelectImage)`
   grid-area: image;
   margin: auto 0;
 `
+
+// Motion Components
+const MotionImage = motion(ImageContainer)
 
 function About({ isClosed, setIsClosed }) {
   return (
@@ -97,7 +101,7 @@ function About({ isClosed, setIsClosed }) {
             </Paragraph>
             <SocialButtons></SocialButtons>
           </Article>
-          <ImageContainer variants={stgerFadeDownItem}>
+          <MotionImage variants={stgerFadeDownItem}>
             <Image
               width={100}
               height={100}
@@ -106,7 +110,7 @@ function About({ isClosed, setIsClosed }) {
               src="/img/about/headshot.webp"
               alt="Headshot of Takuya Toyokawa"
             ></Image>
-          </ImageContainer>
+          </MotionImage>
         </Section>
       </Main>
     </>

@@ -36,22 +36,17 @@
   }
 }
 
-#__next {
-  width: 100%;
-  display: grid;
-  grid-template-areas: "sidebar content";
-  grid-template-columns: repeat(4, 1fr);
-}
-
 ::-moz-selection {
   /* Code for Firefox */
   color: #F9F9F9;
   background: #FF7A8A;
+  text-shadow: none;
 }
 
 ::selection {
   color: #113A5D;
   background: #FF7A8A;
+  text-shadow: none;
 }
 
 /* width */

@@ -12,8 +12,8 @@ import Caption from "@/atoms/text/Caption"
 import Heading3 from "@/atoms/text/Heading3"
 import Paragraph from "@/atoms/text/Paragraph"
 import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
-import IconLinks from "../navigation/IconLinks"
 import Anchor from "@/atoms/text/Anchor"
+import NoSelectImage from "@/atoms/other/NoSelectImage"
 
 // Styled Components
 const StyledCard = styled(FigureCard)`
@@ -32,8 +32,6 @@ const Container = styled.div`
   gap: 1em;
   margin: 1em;
 `
-
-const ImageCont = styled.div``
 
 // ------------------- //
 
@@ -59,7 +57,7 @@ const ButtonsCont = styled.div`
 const HighlightCard = forwardRef(
   ({ img, title, description, href, className }, ref) => (
     <StyledCard ref={ref} className={className}>
-      <ImageCont>
+      <NoSelectImage>
         <Image
           layout="responsive"
           height={50}
@@ -71,7 +69,7 @@ const HighlightCard = forwardRef(
             borderRadius: "8px 8px 0 0",
           }}
         />
-      </ImageCont>
+      </NoSelectImage>
 
       <StyledLine />
       <Container>

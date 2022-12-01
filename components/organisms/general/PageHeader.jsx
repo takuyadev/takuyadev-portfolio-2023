@@ -6,6 +6,7 @@ import Image from "next/image"
 // Components
 import Title from "@/atoms/text/Title"
 import Paragraph from "@/atoms/text/Paragraph"
+import NoSelectImage from "@/atoms/other/NoSelectImage"
 
 // Styled Components
 const HeaderCont = styled.header`
@@ -31,7 +32,7 @@ const ImageCont = styled.div`
   }
 `
 
-const SquareCont = styled(ImageCont)`
+const SquareCont = styled(NoSelectImage)`
   @media (max-width: 1024px) {
     position: fixed;
     left: 0;
@@ -40,7 +41,7 @@ const SquareCont = styled(ImageCont)`
   }
 `
 
-const CirclesCont = styled(ImageCont)`
+const CirclesCont = styled(NoSelectImage)`
   position: fixed;
   right: 0;
   top: 0;

@@ -16,6 +16,13 @@ import CircleBtn from "@/atoms/buttons/CircleBtn"
 import { useRouter } from "next/router"
 
 // Styled Components
+const Container = styled(motion.div)`
+  width: 100%;
+  display: grid;
+  grid-template-areas: "sidebar content";
+  grid-template-columns: repeat(4, 1fr);
+`
+
 const Content = styled(motion.div)`
   grid-area: content;
   grid-column: span 3;
@@ -46,12 +53,12 @@ const Page = ({ children, router }) => {
   const position = checkPosition(pathname)
 
   return (
-    <>
+    <Container variants={fade} initial="initial" animate="animate" exit="exit">
       <Sidebar position={position} pathName={pathname} />
       <MobileMenuButton
-        aria-label="Menu"
         onClick={() => setIsClosed((prev) => !prev)}
         icon={<HiMenu size={18} />}
+        aria-label="Menu"
       />
       <AnimatePresence mode="wait">
         {!isClosed && (
@@ -74,7 +81,7 @@ const Page = ({ children, router }) => {
           {cloneElement(children, { isClosed, setIsClosed })}
         </Content>
       </AnimatePresence>
-    </>
+    </Container>
   )
 }
 

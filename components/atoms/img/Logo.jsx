@@ -1,19 +1,28 @@
 // Packages
+import styled from "styled-components"
 import { forwardRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
+// Components
+import NoSelectImage from "../other/NoSelectImage"
+
+const Container = styled(NoSelectImage)`
+  overflow: visible;
+`
 // Component
 const Logo = forwardRef(({ className, ...otherProps }, ref) => (
   <Link href="/">
     <a ref={ref} className={className} {...otherProps}>
-      <Image
-        layout="fixed"
-        width={88}
-        height={80}
-        src="/img/other/logo.svg"
-        alt="Logo of Takuya Toyokawa"
-      />
+      <Container>
+        <Image
+          layout="fixed"
+          width={80}
+          height={80}
+          src="/img/other/logo.svg"
+          alt="Logo of Takuya Toyokawa"
+        />
+      </Container>
     </a>
   </Link>
 ))

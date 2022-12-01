@@ -5,6 +5,7 @@ import Image from "next/image"
 
 // Components
 import Heading2 from "@/atoms/text/Heading2"
+import NoSelectImage from "@/atoms/other/NoSelectImage"
 
 // Styled Components
 const Container = styled.div`
@@ -31,12 +32,14 @@ const HeadingUlr = forwardRef(({ children, icon }, ref) => {
       {icon && <IconContainer>{icon}</IconContainer>}
       <TitleContainer>
         <StyledHeading>{children}</StyledHeading>
-        <Image
-          width={150}
-          height={10}
-          src="/img/other/squiggly.webp"
-          alt="Vector of squiggly lines"
-        />
+        <NoSelectImage>
+          <Image
+            width={150}
+            height={10}
+            src="/img/other/squiggly.webp"
+            alt="Vector of squiggly lines"
+          />
+        </NoSelectImage>
       </TitleContainer>
     </Container>
   )

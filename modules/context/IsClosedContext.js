@@ -1,7 +1,6 @@
 // Packages
 import { useState, createContext } from "react";
 
-
 const IsClosedContext = createContext()
 
 const IsClosedContextProvider = ({ children }) => {

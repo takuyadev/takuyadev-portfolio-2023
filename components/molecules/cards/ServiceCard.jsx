@@ -7,6 +7,7 @@ import styled from "styled-components"
 import FigureCard from "@/atoms/cards/FigureCard"
 import Heading3 from "@/atoms/text/Heading3"
 import Paragraph from "@/atoms/text/Paragraph"
+import NoSelectImage from "@/atoms/other/NoSelectImage"
 
 // Styled Components
 const StyledCard = styled(FigureCard)`
@@ -31,18 +32,20 @@ const FigCaption = styled.figcaption`
 const ServiceCard = forwardRef(
   ({ title, description, img, className }, ref) => (
     <StyledCard ref={ref} className={className}>
-      <Image
-        width={200}
-        height={100}
-        src={img}
-        alt={img}
-        quality={15}
-        layout="responsive"
-        style={{
-          borderRadius: "8px",
-          paddingBottom: "4px",
-        }}
-      />
+      <NoSelectImage>
+        <Image
+          width={200}
+          height={100}
+          src={img}
+          alt={img}
+          quality={15}
+          layout="responsive"
+          style={{
+            borderRadius: "8px",
+            paddingBottom: "4px",
+          }}
+        />
+      </NoSelectImage>
       <FigCaption>
         <Heading3>{title}</Heading3>
         <Paragraph>{description}</Paragraph>
