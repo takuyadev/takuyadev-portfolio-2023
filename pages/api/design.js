@@ -3,61 +3,100 @@ export default function handler(req, res) {
       {
          highlights: [
             {
-               title: "Srawana Weather App",
-               description: "Weather application using your geolocation as well as OpenWeather API.",
-               img: "/img/development/srawana_weather.webp",
-               href: "https://srawana-weather-app.netlify.app/"
+               title: "ScopeX Design System",
+               type: "work",
+               location: "ScopeX",
+               tag: ["figma", "ps", "ai"],
+               description: "ScopeX's Design System, featuring all of ScopeX's branding scheme and resource. (not all created design is shown on the featured link)",
+               img: "/img/design/scopex.webp",
+               live: "https://ghibli-movielist.netlify.app/"
             },
             {
-               title: "Ghibli Movielist",
-               description: "Movie searching application using both REST API as well as localStorage to store your favorite movies.",
-               img: "/img/development/ghibli_movie.webp",
-               href: "https://ghibli-movielist.netlify.app/"
+               title: "Portfolio (2023)",
+               type: "personal",
+               tag: ["figma", "ps", "ai"],
+               description: "Updated portfolio with featuring both ",
+               img: "/img/development/portfolio.webp",
+               live: "https://srawana-weather-app.netlify.app/"
             },
+
             {
-               title: "Shelfie",
-               description: "Food application made using Next.js to show the user more accurate expiration dates.",
-               img: "/img/development/shelfie.webp",
-               href: "https://shelfie-takuyatoyokawa.vercel.app/Homepage"
+               title: "Day in the Life of Animal Crossing",
+               type: "education",
+               location: "BCIT",
+               tag: ["ae"],
+               img: "/img/design/ac_animation.webp",
+               description: "A small motion graphic animation based off the popular franchise Animal Crossing, created by crafting all assets in Illustrator and then animating using After Effects.",
+               live: "https://www.youtube.com/watch?v=da6TO6zRZUs",
             },
          ],
          projects: [
             {
                title: "Shelfie",
                img: "/img/development/shelfie.webp",
-               live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
-               github: "https://shelfie-takuyatoyokawa.vercel.app/Homepage"
+               live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage"
             },
             {
-               title: "Shelfie",
+               title: "Toyo Sushi Menu",
                img: "/img/development/shelfie.webp",
                live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
-               github: "https://shelfie-takuyatoyokawa.vercel.app/Homepage"
             },
             {
-               title: "Shelfie",
+               title: "Japan Magazine",
                img: "/img/development/shelfie.webp",
                live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
-               github: "https://shelfie-takuyatoyokawa.vercel.app/Homepage"
             },
             {
-               title: "Shelfie",
+               title: "CookOff!",
                img: "/img/development/shelfie.webp",
                live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
-               github: "https://shelfie-takuyatoyokawa.vercel.app/Homepage"
             },
             {
-               title: "Shelfie",
+               title: "Nutrition Tracker",
                img: "/img/development/shelfie.webp",
                live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
-               github: "https://shelfie-takuyatoyokawa.vercel.app/Homepage"
             },
             {
-               title: "Shelfie",
+               title: "Logeee",
                img: "/img/development/shelfie.webp",
                live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
-               github: "https://shelfie-takuyatoyokawa.vercel.app/Homepage"
-            }
+            },
+            {
+               title: "SingleMingle",
+               img: "/img/development/shelfie.webp",
+               live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
+            },
+            {
+               title: "Salish Airways",
+               img: "/img/development/shelfie.webp",
+               live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
+            },
+            {
+               title: "Keybuild Magazine",
+               img: "/img/development/shelfie.webp",
+               live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
+            },
+            {
+               title: "Gameboy Flyer",
+               img: "/img/development/shelfie.webp",
+               live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
+            },
+            {
+               title: "The Proms Brochure",
+               img: "/img/development/shelfie.webp",
+               live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
+            },
+            {
+               title: "Brochure Cover",
+               img: "/img/development/shelfie.webp",
+               live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
+            },
+            {
+               title: "Clock Design",
+               img: "/img/development/shelfie.webp",
+               live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
+            },
+
          ]
       }
    )

@@ -32,10 +32,12 @@ const BottomContainer = styled.aside`
   gap: 2em;
 `
 
-function Sidebar({ position, pathName }) {
+function Sidebar({ position, pathName, setIsClosed }) {
+  const closeMenu = () => setIsClosed(true)
+
   return (
     <SidebarEl aria-label="sidebar">
-      <Logo />
+      <Logo setIsClosed={closeMenu} />
       <SidebarLinks position={position} pathName={pathName} />
       <BottomContainer>
         <IconLinks />

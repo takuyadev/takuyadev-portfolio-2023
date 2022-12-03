@@ -14,6 +14,7 @@ import MobileMenu from "@/organisms/general/mobile/MobileMenu"
 import { IsClosedContext } from "@/modules/context/IsClosedContext"
 import CircleBtn from "@/atoms/buttons/CircleBtn"
 import { useRouter } from "next/router"
+import Hamburger from "@/atoms/icon/Hamburger"
 
 // Styled Components
 const Container = styled(motion.div)`
@@ -54,10 +55,14 @@ const Page = ({ children, router }) => {
 
   return (
     <Container variants={fade} initial="initial" animate="animate" exit="exit">
-      <Sidebar position={position} pathName={pathname} />
+      <Sidebar
+        setIsClosed={setIsClosed}
+        position={position}
+        pathName={pathname}
+      />
       <MobileMenuButton
         onClick={() => setIsClosed((prev) => !prev)}
-        icon={<HiMenu size={18} />}
+        icon={<Hamburger isClosed={isClosed} />}
         aria-label="Menu"
       />
       <AnimatePresence mode="wait">

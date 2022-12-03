@@ -6,9 +6,7 @@ import styled from "styled-components"
 const Container = styled.section`
   display: grid;
   width: 100%;
-  height: fit-content;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-column: span 4;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1em;
 `
 

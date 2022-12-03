@@ -1,24 +1,26 @@
 // Packages
-import { forwardRef } from "react";
+import { forwardRef } from "react"
 
 // Components
-import LargeGallery from "@/atoms/containers/LargeGallery";
-import HighlightCard from "@/molecules/cards/HighlightCard";
+import LargeGallery from "@/atoms/containers/LargeGallery"
+import HighlightCard from "@/molecules/cards/HighlightCard"
 
-// Component 
+// Component
 const ProjectHighlights = forwardRef(({ data, ...otherProps }, ref) => (
-   <LargeGallery ref={ref}>
-      {data.map((item, i) => (
-         <HighlightCard
-            key={i}
-            img={item.img}
-            title={item.title}
-            description={item.description}
-            href={item.href}
-         />
-      ))}
-
-   </LargeGallery>
+  <LargeGallery ref={ref} {...otherProps}>
+    {data.map((item, i) => (
+      <HighlightCard
+        key={i}
+        img={item.img}
+        title={item.title}
+        type={item.type}
+        location={item.location}
+        description={item.description}
+        live={item.live}
+        github={item.github}
+      />
+    ))}
+  </LargeGallery>
 ))
 
 // Settings & Exports

@@ -1,6 +1,7 @@
 // Packages
 import { forwardRef } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import styled from "styled-components"
 
 // Animation
@@ -17,7 +18,7 @@ const Container = styled(motion.section)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
   background: ${({ theme }) => theme.dark.main};
   height: 100vh;
   width: 100vw;
@@ -63,7 +64,13 @@ const LoadingScreen = forwardRef(({ className, ...otherProps }, ref) => {
       exit="exit"
       {...otherProps}
     >
-      <StyledLogo />
+      <Image
+        layout="fixed"
+        width={80}
+        height={80}
+        src="/img/other/logo.svg"
+        alt="Logo of Takuya Toyokawa"
+      />
       <TextCont>
         <Circle />
         <MotionParagraph

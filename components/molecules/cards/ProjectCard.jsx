@@ -36,7 +36,7 @@ const BoldParagraph = styled(Paragraph)`
 
 const StyledCard = styled(ImageCard)`
   text-overflow: ellipsis;
-  height: 200px;
+  height: 250px;
   transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   &:hover {
     transform: translateY(-8px);
@@ -90,14 +90,16 @@ const ProjectCard = forwardRef(
               rel="noopener noreferrer"
               icon={<HiGlobe size={24} />}
             />
-            <CircleBtn
-              as="a"
-              href={github}
-              target="_blank"
-              aria-label={`Github page for ${title}`}
-              rel="noopener noreferrer"
-              icon={<BsGithub size={24} />}
-            />
+            {github && (
+              <CircleBtn
+                as="a"
+                href={github}
+                target="_blank"
+                aria-label={`Github page for ${title}`}
+                rel="noopener noreferrer"
+                icon={<BsGithub size={24} />}
+              />
+            )}
           </ButtonsCont>
         </Hover>
       </Opaque>

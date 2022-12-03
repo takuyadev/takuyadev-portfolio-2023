@@ -2,7 +2,12 @@
 import { forwardRef } from "react"
 import styled from "styled-components"
 import Image from "next/image"
-import { HiGlobe } from "react-icons/hi"
+import {
+  HiAcademicCap,
+  HiBriefcase,
+  HiGlobe,
+  HiUserCircle,
+} from "react-icons/hi"
 import { BsGithub } from "react-icons/bs"
 
 // Components
@@ -14,13 +19,20 @@ import Paragraph from "@/atoms/text/Paragraph"
 import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
 import Anchor from "@/atoms/text/Anchor"
 import NoSelectImage from "@/atoms/other/NoSelectImage"
+import Inline from "@/atoms/containers/Inline"
+import HoverContext from "@/atoms/other/HoverContext"
 
 // Styled Components
 const StyledCard = styled(FigureCard)`
   display: flex;
   flex-direction: column;
   gap: 1em;
-  background: #0c284099;
+  width: 100%;
+  min-height: fit-content;
+  background: ${({ theme }) => theme.dark.dark};
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   & img {
     object-fit: cover;
   }
@@ -29,14 +41,16 @@ const StyledCard = styled(FigureCard)`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   gap: 1em;
   margin: 1em;
 `
 
 // ------------------- //
 
-const StyledTitle = styled(Heading3)`
-  white-space: nowrap;
+const StyledInline = styled(Inline)`
+  margin-top: 0;
 `
 
 const StyledParagraph = styled(Paragraph)`
@@ -45,6 +59,7 @@ const StyledParagraph = styled(Paragraph)`
 
 const StyledLine = styled(Line)`
   width: 80%;
+  height: 6px;
   transform: translateY(calc(-1em + -2px));
 `
 
@@ -55,7 +70,10 @@ const ButtonsCont = styled.div`
 
 // Component
 const HighlightCard = forwardRef(
-  ({ img, title, description, href, className }, ref) => (
+  (
+    { img, title, type, location, description, live, github, className },
+    ref
+  ) => (
     <StyledCard ref={ref} className={className}>
       <NoSelectImage>
         <Image
@@ -70,30 +88,41 @@ const HighlightCard = forwardRef(
           }}
         />
       </NoSelectImage>
-
       <StyledLine />
       <Container>
         <Caption>
-          <StyledTitle>{title}</StyledTitle>
+          <Heading3>{title}</Heading3>
+          <StyledInline>
+            <HoverContext text={type}>
+              {type === "work" && <HiBriefcase size={24} />}
+              {type === "education" && <HiAcademicCap size={24} />}
+              {type === "personal" && <HiUserCircle size={24} />}
+            </HoverContext>
+
+            {location && <Paragraph>{location}</Paragraph>}
+            {" - "}
+          </StyledInline>
           <StyledParagraph>{description}</StyledParagraph>
         </Caption>
         <ButtonsCont>
           <PrimaryBtn
             as="a"
-            href={href}
+            href={live}
             aria-label={`Check live website for ${title}`}
             icon={<HiGlobe />}
             target="_blank"
             rel="noopener noreferrer"
             text="Check live"
           />
-          <Anchor
-            icon={<BsGithub size={24} />}
-            aria-label={`Github page for ${title}`}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-          />
+          {github && (
+            <Anchor
+              icon={<BsGithub size={24} />}
+              aria-label={`Github page for ${title}`}
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          )}
         </ButtonsCont>
       </Container>
     </StyledCard>

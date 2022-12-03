@@ -5,6 +5,7 @@ import styled from "styled-components"
 // Styled Components
 const Container = styled.div`
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 1em;
   margin-top: 1em;

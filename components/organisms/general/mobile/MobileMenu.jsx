@@ -36,26 +36,30 @@ const MotionIcon = motion(IconLinks)
 
 // Component
 const MobileMenu = forwardRef(
-  ({ isClosed, setIsClosed, pathName, ...otherProps }, ref) => (
-    <Container
-      variants={stgerFadeDownAnim}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
-      ref={ref}
-      isClosed={isClosed}
-      {...otherProps}
-    >
-      <MotionLogo variants={stgerFadeDownItem} />
-      <MotionLinks
-        variants={stgerFadeDownItem}
-        pathName={pathName}
-        setIsClosed={setIsClosed}
+  ({ isClosed, setIsClosed, pathName, ...otherProps }, ref) => {
+    const closeMenu = () => setIsClosed(true)
+
+    return (
+      <Container
+        variants={stgerFadeDownAnim}
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        ref={ref}
         isClosed={isClosed}
-      />
-      <MotionIcon variants={stgerFadeDownItem} />
-    </Container>
-  )
+        {...otherProps}
+      >
+        <MotionLogo onClick={closeMenu} variants={stgerFadeDownItem} />
+        <MotionLinks
+          variants={stgerFadeDownItem}
+          pathName={pathName}
+          setIsClosed={setIsClosed}
+          isClosed={isClosed}
+        />
+        <MotionIcon variants={stgerFadeDownItem} />
+      </Container>
+    )
+  }
 )
 
 // Settings & Exports

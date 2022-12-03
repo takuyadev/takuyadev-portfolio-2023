@@ -50,7 +50,7 @@ function Design({ isClosed, setIsClosed, data }) {
         />
       </Head>
       <PageHeader
-        title="Designs"
+        title="Design"
         subtitle="All completed UX/UI or other Adobe Creative Suite projects"
         isClosed={isClosed}
         setIsClosed={setIsClosed}

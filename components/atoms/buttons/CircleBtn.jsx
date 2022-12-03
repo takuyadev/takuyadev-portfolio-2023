@@ -15,11 +15,6 @@ const Button = styled.button`
   background: ${({ theme }) => theme.primary.main};
   color: ${({ theme }) => theme.dark.main};
 
-  &:focus {
-    color: ${({ theme }) => theme.light.main};
-    background: ${({ theme }) => theme.primary.dark};
-  }
-
   &:hover {
     color: ${({ theme }) => theme.light.main};
     background: ${({ theme }) => theme.primary.darker};
