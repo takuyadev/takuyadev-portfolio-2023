@@ -22,6 +22,8 @@ import NoSelectImage from "@/atoms/other/NoSelectImage"
 import Inline from "@/atoms/containers/Inline"
 import HoverContext from "@/atoms/other/HoverContext"
 
+import { renderIcons } from "@/utils/renderIcons"
+
 // Styled Components
 const StyledCard = styled(FigureCard)`
   display: flex;
@@ -49,8 +51,12 @@ const Container = styled.div`
 
 // ------------------- //
 
-const StyledInline = styled(Inline)`
+const TagsContainer = styled(Inline)`
   margin-top: 0;
+`
+
+const TagsInline = styled(TagsContainer)`
+  gap: 0.5em;
 `
 
 const StyledParagraph = styled(Paragraph)`
@@ -71,7 +77,7 @@ const ButtonsCont = styled.div`
 // Component
 const HighlightCard = forwardRef(
   (
-    { img, title, type, location, description, live, github, className },
+    { img, title, type, tags, location, description, live, github, className },
     ref
   ) => (
     <StyledCard ref={ref} className={className}>
@@ -92,16 +98,24 @@ const HighlightCard = forwardRef(
       <Container>
         <Caption>
           <Heading3>{title}</Heading3>
-          <StyledInline>
-            <HoverContext text={type}>
-              {type === "work" && <HiBriefcase size={24} />}
-              {type === "education" && <HiAcademicCap size={24} />}
-              {type === "personal" && <HiUserCircle size={24} />}
-            </HoverContext>
-
-            {location && <Paragraph>{location}</Paragraph>}
+          <TagsContainer>
+            <TagsInline>
+              {/* Renders icons using text with renderIcon utils */}
+              <HoverContext text={type}>{renderIcons(type)}</HoverContext>
+              {location && <Paragraph isBold={true}>{location}</Paragraph>}
+            </TagsInline>
             {" - "}
-          </StyledInline>
+            <TagsInline>
+              {/* Renders icons using text with renderIcon utils */}
+              {tags.map((item, i) => {
+                return (
+                  <HoverContext key={i} text={item}>
+                    {renderIcons(item)}
+                  </HoverContext>
+                )
+              })}
+            </TagsInline>
+          </TagsContainer>
           <StyledParagraph>{description}</StyledParagraph>
         </Caption>
         <ButtonsCont>
@@ -109,7 +123,7 @@ const HighlightCard = forwardRef(
             as="a"
             href={live}
             aria-label={`Check live website for ${title}`}
-            icon={<HiGlobe />}
+            icon={<HiGlobe size={24} />}
             target="_blank"
             rel="noopener noreferrer"
             text="Check live"

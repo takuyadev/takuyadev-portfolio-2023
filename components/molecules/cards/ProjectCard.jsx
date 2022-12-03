@@ -1,14 +1,19 @@
-// Packages
 import { forwardRef } from "react"
+// Packages
 import { motion } from "framer-motion"
 import styled, { keyframes } from "styled-components"
 import { BsGithub } from "react-icons/bs"
 import { HiGlobe } from "react-icons/hi"
 
 // Components
+import Heading3 from "@/atoms/text/Heading3"
 import ImageCard from "@/atoms/cards/ImageCard"
 import Paragraph from "@/atoms/text/Paragraph"
 import CircleBtn from "@/atoms/buttons/CircleBtn"
+import Inline from "@/atoms/containers/Inline"
+import HoverContext from "@/atoms/other/HoverContext"
+
+import { renderIcons } from "@/utils/renderIcons"
 
 // Styled Components
 const Out = keyframes`
@@ -29,11 +34,6 @@ const In = keyframes`
   }
 `
 
-const BoldParagraph = styled(Paragraph)`
-  font-weight: bold;
-  text-overflow: ellipsis;
-`
-
 const StyledCard = styled(ImageCard)`
   text-overflow: ellipsis;
   height: 250px;
@@ -51,7 +51,7 @@ const Hover = styled(motion.div)`
   align-items: center;
   text-align: center;
   padding: 1em;
-  gap: 1em;
+  gap: 2em;
   opacity: 0;
   height: 100%;
   width: 100%;
@@ -74,13 +74,42 @@ const ButtonsCont = styled.div`
   align-items: flex-start;
   gap: 1em;
 `
+const TagsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+`
+
+const TagsInline = styled(Inline)`
+  gap: 0.5em;
+  margin-top: 0;
+`
 
 const ProjectCard = forwardRef(
-  ({ title, img, live, github, className }, ref) => (
+  ({ title, img, type, location, tags, live, github, className }, ref) => (
     <StyledCard ref={ref} className={className} img={img}>
       <Opaque>
         <Hover>
-          <BoldParagraph>{title}</BoldParagraph>
+          <TagsInline>
+            {/* Renders icons using text with renderIcon utils */}
+            {tags.map((item, i) => {
+              return (
+                <HoverContext key={i} text={item}>
+                  {renderIcons(item)}
+                </HoverContext>
+              )
+            })}
+          </TagsInline>
+          <TagsContainer>
+            <Heading3>{title}</Heading3>
+            <TagsInline>
+              {/* Renders icons using text with renderIcon utils */}
+              <HoverContext text={type}>{renderIcons(type)}</HoverContext>
+              {location && <Paragraph isBold={true}>{location}</Paragraph>}
+            </TagsInline>
+          </TagsContainer>
+
           <ButtonsCont>
             <CircleBtn
               as="a"

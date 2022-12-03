@@ -20,7 +20,7 @@ const Container = styled.div`
     width: 12px;
     height: 12px;
     background: ${({ theme }) => theme.light.main};
-    transform: translate(-50%, 2em);
+    transform: translate(-50%, 1.75em);
     clip-path: polygon(50% 0%, 3% 50%, 100% 52%);
   }
 
@@ -28,6 +28,7 @@ const Container = styled.div`
     content: "${({ text }) => (text ? text : "default")}";
     padding: 0.5em;
     bottom: -4.5em;
+    white-space: nowrap;
     background: ${({ theme }) => theme.light.main};
     color: ${({ theme }) => theme.dark.main};
     text-transform: capitalize;

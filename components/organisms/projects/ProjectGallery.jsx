@@ -12,6 +12,9 @@ const ProjectGallery = forwardRef(({ data }, ref) => (
       <ProjectCard
         key={i}
         title={item.title}
+        tags={item.tags}
+        type={item.type}
+        location={item.location}
         img={item.img}
         live={item.live}
         github={item.github}

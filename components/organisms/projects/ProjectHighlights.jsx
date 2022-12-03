@@ -14,6 +14,7 @@ const ProjectHighlights = forwardRef(({ data, ...otherProps }, ref) => (
         img={item.img}
         title={item.title}
         type={item.type}
+        tags={item.tags}
         location={item.location}
         description={item.description}
         live={item.live}
