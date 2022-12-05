@@ -13,6 +13,7 @@ const Container = styled.div`
     left: 50%;
     transition: 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
     border-radius: 8px;
+    pointer-events: none;
   }
 
   &:before {

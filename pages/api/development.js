@@ -9,7 +9,7 @@ export default function handler(req, res) {
                location: "Personal",
                tags: ["react", "API", "javascript ES6", "next.js", "styled components", "framer motion"],
                img: "/img/development/portfolio.webp",
-               live: "takuyaktoyokawa.ca",
+               live: "https://www.takuyaktoyokawa.ca",
                github: "https://github.com/takuyadev/takuyadev-portfolio-2023"
             },
             {
@@ -121,6 +121,14 @@ export default function handler(req, res) {
                location: "Toyo Sushi",
                tags: ["wix", "photoshop"],
                live: "https://www.toyosushi.ca/",
+            },
+            {
+               title: "Salish Airways",
+               img: "/img/design/salish_airways.webp",
+               type: "education",
+               location: "BCIT",
+               tags: ["wordpress", "elementor"],
+               live: "http://salishairway.altervista.org/",
             },
             {
                title: "Unit Converter",
