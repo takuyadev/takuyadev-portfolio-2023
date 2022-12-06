@@ -40,7 +40,6 @@ function MyApp({ Component, pageProps, router }) {
             name="keywords"
             content="Takuya, Kevin, Toyokawa, html, css, javascript, js, react, framework, frontend, front-end, fullstack, full-stack, web development, portfolio, frontend portfolio, front-end porfolio, ux/ui designer "
           />
-          <link rel="canonical" href="https://takuyaktoyokawa.ca" />
           <meta name="author" content="Takuya Toyokawa" />
         </Head>
         <AnimatePresence mode="wait">
