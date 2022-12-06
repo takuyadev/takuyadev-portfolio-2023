@@ -8,7 +8,6 @@ const listStyle = `
   flex-direction: column;
   gap: 0.25m;
   margin: 0;
-  color: ${({ theme }) => theme.light.main};
 `
 
 const UlContainer = styled.ul`
