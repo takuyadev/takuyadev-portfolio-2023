@@ -57,6 +57,7 @@ function About({ isClosed, setIsClosed }) {
           name="description"
           content="More information about myself, goals and personal hobbies."
         />
+        <link rel="canonical" href="https://takuyaktoyokawa.ca/about" />
       </Head>
       <PageHeader
         title="About"

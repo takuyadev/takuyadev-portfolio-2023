@@ -71,6 +71,7 @@ function Contact({ data, env, isClosed, setIsClosed }) {
           name="description"
           content="If you're interested in starting and creating a website, please feel free to contact me through this page!"
         />
+        <link rel="canonical" href="https://takuyaktoyokawa.ca/contact" />
       </Head>
       <PageHeader
         title="Contact"

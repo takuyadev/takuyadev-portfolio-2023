@@ -16,6 +16,7 @@ const Logo = forwardRef(({ className, ...otherProps }, ref) => (
     <a ref={ref} className={className} {...otherProps}>
       <Container>
         <Image
+          priority
           layout="fixed"
           width={80}
           height={80}

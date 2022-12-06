@@ -48,6 +48,7 @@ function Design({ isClosed, setIsClosed, data }) {
           name="description"
           content="All skills and completed projects related to UX/UI design and Graphic Designing"
         />
+        <link rel="canonical" href="https://takuyaktoyokawa.ca/design" />
       </Head>
       <PageHeader
         title="Design"

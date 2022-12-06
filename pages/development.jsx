@@ -46,6 +46,7 @@ function Development({ isClosed, setIsClosed, data }) {
           name="description"
           content="All skills and completed web development projects relating to Frontend and Fullstack Development"
         />
+        <link rel="canonical" href="https://takuyaktoyokawa.ca/development" />
       </Head>
       <PageHeader
         title="Development"

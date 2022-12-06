@@ -22,18 +22,16 @@ const StyledForm = styled(Form)`
 
 // Component
 const ContactForm = ({ env, className, ...otherProps }) => {
-  const emptyForm = {
-    name: "",
-    email: "",
-    message: "",
-  }
-
   const [status, setStatus] = useState({ status: null })
   const [statusMessage, setStatusMessage] = useState("Send")
   const [isInputDisabled, setIsInputDisabled] = useState()
   const [icon, setIcon] = useState("")
   const [isButtonDisabled, setIsButtonDisabled] = useState(true)
-  const [form, setForm] = useState({ ...emptyForm })
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
 
   const formRef = useRef()
   const nameRef = useRef()
@@ -62,6 +60,8 @@ const ContactForm = ({ env, className, ...otherProps }) => {
 
   // Disable sending the message if form is not filled out yet
   useEffect(() => {
+    console.log(form)
+
     if (form.name && form.email && form.message) {
       setIsButtonDisabled(false)
       setStatusMessage("Send")

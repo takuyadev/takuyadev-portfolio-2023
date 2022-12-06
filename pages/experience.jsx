@@ -39,6 +39,7 @@ function Experience({ data, isClosed, setIsClosed }) {
           name="description"
           content="Takuya Toyokawa's experiences and achievements in both educational and work environments"
         />
+        <link rel="canonical" href="https://takuyaktoyokawa.ca/experience" />
       </Head>
       <PageHeader
         title="Experience"
