@@ -1,6 +1,7 @@
 // Packages
 import styled from "styled-components"
 import { motion } from "framer-motion"
+import Head from "next/head"
 import Link from "next/link"
 import { HiClipboardCheck } from "react-icons/hi"
 
@@ -39,6 +40,10 @@ const MotionButton = motion(PrimaryBtn)
 function Home() {
   return (
     <>
+      <Head>
+        <link rel="canonical" href="https://takuyaktoyokawa.ca" />
+      </Head>
+
       <Hero />
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionHeading shadow={true} variants={stgerFadeDownItem}>

@@ -74,6 +74,7 @@ const ButtonsCont = styled.div`
   align-items: flex-start;
   gap: 1em;
 `
+
 const TagsContainer = styled.div`
   display: flex;
   flex-direction: column;
