@@ -79,11 +79,13 @@ const TagsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 0.5em;
+  color: ${({ theme }) => theme.light.main};
 `
 
 const TagsInline = styled(Inline)`
   gap: 0.5em;
   margin-top: 0;
+  color: ${({ theme }) => theme.light.main};
 `
 
 const ProjectCard = forwardRef(

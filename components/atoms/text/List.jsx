@@ -4,10 +4,11 @@ import styled from "styled-components"
 
 // Styled Components
 const listStyle = `
-   display:flex;
-   flex-direction: column;
-   gap: 0.25m;
-   margin: 0;
+  display:flex;
+  flex-direction: column;
+  gap: 0.25m;
+  margin: 0;
+  color: ${({ theme }) => theme.light.main};
 `
 
 const UlContainer = styled.ul`

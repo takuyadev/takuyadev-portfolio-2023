@@ -10,7 +10,6 @@ import { wordAnimation, letterAnimation } from "@/modules/animation/stgerWord"
 
 // Components
 import Paragraph from "@/atoms/text/Paragraph"
-import Logo from "@/atoms/img/Logo"
 
 // Styled Components
 const Container = styled(motion.section)`
@@ -38,15 +37,12 @@ const TextCont = styled.div`
   gap: 1em;
 `
 
-const StyledLogo = styled(Logo)`
-  transform: translateX(-5px);
-`
-
 const StyledParagraph = styled(Paragraph)`
   display: flex;
   font-weight: bold;
   letter-spacing: 0.5em;
   transform: translateX(5px);
+  color: ${({ theme }) => theme.light.main};
 `
 
 const MotionParagraph = motion(StyledParagraph)
@@ -65,6 +61,7 @@ const LoadingScreen = forwardRef(({ className, ...otherProps }, ref) => {
       {...otherProps}
     >
       <Image
+        priority
         layout="fixed"
         width={80}
         height={80}

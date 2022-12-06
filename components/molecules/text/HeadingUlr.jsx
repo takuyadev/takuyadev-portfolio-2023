@@ -23,6 +23,7 @@ const StyledHeading = styled(Heading2)`
 const IconContainer = styled.div`
   width: 40px;
   height: 40px;
+  color: ${({ theme }) => theme.light.main};
 `
 
 // Component
