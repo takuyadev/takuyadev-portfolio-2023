@@ -34,7 +34,7 @@ const ImageCont = styled.div`
 
 const SquareCont = styled(NoSelectImage)`
   @media (max-width: 1024px) {
-    position: fixed;
+    position: absolute;
     left: 0;
     transform: scale(1.5);
     opacity: 0.25;
