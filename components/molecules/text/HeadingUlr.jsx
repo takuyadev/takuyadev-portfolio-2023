@@ -34,6 +34,7 @@ const HeadingUlr = forwardRef(({ children, icon }, ref) => {
         <StyledHeading>{children}</StyledHeading>
         <NoSelectImage>
           <Image
+            priority
             width={150}
             height={10}
             src="/img/other/squiggly.webp"

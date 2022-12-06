@@ -83,12 +83,12 @@ const HighlightCard = forwardRef(
     <StyledCard ref={ref} className={className}>
       <NoSelectImage>
         <Image
+          priority
           layout="responsive"
           height={50}
           width={100}
           src={img}
           alt={`${img}`}
-          priority={true}
           style={{
             borderRadius: "8px 8px 0 0",
           }}
