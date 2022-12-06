@@ -8,6 +8,7 @@ const StyledCaption = styled.figcaption`
   flex-direction: column;
   gap: 0.5em;
   transform: translateY(-18px);
+  color: ${({ theme }) => theme.light.main};
 `
 
 // Component

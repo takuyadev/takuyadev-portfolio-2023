@@ -9,6 +9,7 @@ const StyledHeading = styled.h3`
   font-size: ${fontSize["m"]};
   letter-spacing: 0.03em;
   line-height: 1.4em;
+  color: ${({ theme }) => theme.light.main};
   ${({ shadow }) => shadow && "text-shadow: 4px 4px 0px rgba(17, 58, 93, 1)"};
 `
 

@@ -10,6 +10,7 @@ const StyledParagraph = styled.p`
   ${({ isBold }) => isBold && "font-weight: bold;"}
   line-height: 175%;
   letter-spacing: 0.015em;
+  color: ${({ theme }) => theme.light.main};
   ${({ shadow }) => shadow && "text-shadow: 1px 1px 0px rgba(17, 58, 93, 1)"};
 `
 

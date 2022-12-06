@@ -8,6 +8,7 @@ const StyledTitle = styled.h1`
   margin: 0;
   font-size: ${fontSize["xl"]};
   letter-spacing: 0.02em;
+  color: ${({ theme }) => theme.light.main};
   ${({ shadow }) => shadow && "text-shadow: 4px 4px 0px rgba(17, 58, 93, 1)"};
 `
 
