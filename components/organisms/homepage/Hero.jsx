@@ -33,6 +33,7 @@ const MotionContainer = motion(Container)
 
 const Hero = forwardRef(({ className }, ref) => (
   <MotionContainer
+    priority
     ref={ref}
     className={className}
     variants={slideLeft}
