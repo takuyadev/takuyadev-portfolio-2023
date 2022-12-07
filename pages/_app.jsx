@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps, router }) {
           />
           <meta
             name="keywords"
-            content="Takuya, Kevin, Toyokawa, html, css, javascript, js, react, framework, frontend, front-end, fullstack, full-stack, web development, portfolio, frontend portfolio, front-end porfolio, ux/ui designer "
+            content="Takuya, Kevin, Toyokawa, takuyaktoyokawa, html, css, javascript, js, react, framework, frontend, front-end, fullstack, full-stack, web development, portfolio, frontend portfolio, front-end porfolio, ux/ui designer "
           />
           <meta name="author" content="Takuya Toyokawa" />
         </Head>

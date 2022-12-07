@@ -21,7 +21,7 @@ const Container = styled.div`
     width: 12px;
     height: 12px;
     background: ${({ theme }) => theme.light.main};
-    transform: translate(-50%, 1.75em);
+    transform: translate(-50%, 225%);
     clip-path: polygon(50% 0%, 3% 50%, 100% 52%);
   }
 

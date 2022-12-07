@@ -9,6 +9,7 @@ import {
   HiMail,
 } from "react-icons/hi"
 import { FaBrush } from "react-icons/fa"
+import { BsWrench } from "react-icons/bs"
 
 // Components
 import Anchor from "@/atoms/text/Anchor"
@@ -47,6 +48,14 @@ const SidebarLinks = forwardRef(({ position, pathName, className }, ref) => (
             href="/experience"
             text="Experience"
             icon={<HiClipboardCheck size={24} />}
+          />
+        </li>
+        <li>
+          <Anchor
+            pathName={pathName}
+            href="/tools"
+            text="Tools"
+            icon={<BsWrench size={24} />}
           />
         </li>
         <li>

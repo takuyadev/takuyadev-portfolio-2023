@@ -1,22 +1,25 @@
 const checkPosition = (pathName) => {
    switch (pathName) {
       case "/":
-         return (-4)
+         return (-3)
          break;
       case "/experience":
-         return 15.666
+         return 13.28
+         break;
+      case "/tools":
+         return 29
          break;
       case "/development":
-         return 33.333
+         return 44
          break;
       case "/design":
-         return 52.000
+         return 60
          break;
       case "/contact":
-         return 70.666
+         return 75
          break;
       case "/about":
-         return 89
+         return 91
          break;
    }
 }

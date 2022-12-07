@@ -3,17 +3,17 @@ const theme = {
   primary: {
     main: "#FF7A8A",
     dark: "#803D45",
-    darker: "#592B30"
+    darker: "#592B30",
   },
   dark: {
     main: "#113A5D",
     dark: "#0E304D",
-    darker: "0C2840"
+    darker: "0C2840",
   },
   light: {
     main: "#F9F9F9",
     dark: "#E6E6E6",
-    darker: "#D9D9D9"
+    darker: "#D9D9D9",
   },
   fontSize: {
     "3xs": "0.512rem",
