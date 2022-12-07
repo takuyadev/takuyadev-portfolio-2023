@@ -50,6 +50,14 @@ const MobileLinks = forwardRef(({ setIsClosed, pathName, className }, ref) => {
           <Anchor
             pathName={pathName}
             onClick={closeMenu}
+            href="/tools"
+            text="Tools"
+          />
+        </li>
+        <li>
+          <Anchor
+            pathName={pathName}
+            onClick={closeMenu}
             href="/development"
             text="Development"
           />
