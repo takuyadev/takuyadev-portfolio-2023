@@ -11,8 +11,10 @@ import List from "@/atoms/text/List"
 const NavigationEl = styled.nav`
   display: flex;
   gap: 1.5em;
+  font-size: ${fontSize["l"]};
+
   @media (max-height: 700px) {
-    font-size: ${fontSize["l"]};
+    font-size: ${fontSize["m"]};
   }
 `
 

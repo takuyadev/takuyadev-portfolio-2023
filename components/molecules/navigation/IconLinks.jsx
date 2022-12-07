@@ -26,10 +26,20 @@ const IconLinks = forwardRef(({ className }, ref) => (
       icon={<HiMail size={24} />}
     />
     <Link href="https://github.com/takuyadev" passHref>
-      <Anchor aria-label="Github" icon={<BsGithub size={20} />} />
+      <Anchor
+        aria-label="Github"
+        target="_blank"
+        rel="noopener noreferrer"
+        icon={<BsGithub size={20} />}
+      />
     </Link>
     <Link href="https://www.linkedin.com/in/takuya-toyokawa/" passHref>
-      <Anchor aria-label="LinkedIn" icon={<BsLinkedin size={20} />} />
+      <Anchor
+        aria-label="LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+        icon={<BsLinkedin size={20} />}
+      />
     </Link>
   </IconLinksEl>
 ))

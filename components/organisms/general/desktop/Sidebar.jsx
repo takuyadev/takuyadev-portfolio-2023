@@ -1,10 +1,13 @@
 // Packages
 import styled from "styled-components"
+import Link from "next/link"
 
 // Components
 import Logo from "@/atoms/img/Logo"
 import SidebarLinks from "@/molecules/navigation/SidebarLinks"
 import IconLinks from "@/molecules/navigation/IconLinks"
+import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
+import { FaClipboard } from "react-icons/fa"
 
 const SidebarEl = styled.div`
   grid-area: sidebar;
@@ -40,6 +43,17 @@ function Sidebar({ position, pathName, setIsClosed }) {
       <Logo setIsClosed={closeMenu} />
       <SidebarLinks position={position} pathName={pathName} />
       <BottomContainer>
+        <Link
+          href="https://drive.google.com/file/d/1qs_0fH0mIlTwwlzt33-x-re2OsZAxIaj/view?usp=sharing"
+          passHref
+        >
+          <PrimaryBtn
+            as="a"
+            target="_blank"
+            rel="noopener noreferrer"
+            text="Résumé"
+          />
+        </Link>
         <IconLinks />
       </BottomContainer>
     </SidebarEl>
