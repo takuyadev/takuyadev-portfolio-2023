@@ -42,7 +42,7 @@ const DesignGallery = forwardRef(({ className }, ref) => (
         <SiAdobeillustrator size={36} />
       </IconContainer>
       <IconContainer caption="After Effects">
-        <SiAdobeaftereffects size={30} />
+        <SiAdobeaftereffects size={36} />
       </IconContainer>
       <IconContainer caption="Premiere Pro">
         <SiAdobepremierepro size={36} />
