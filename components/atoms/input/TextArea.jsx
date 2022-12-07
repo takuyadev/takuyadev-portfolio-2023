@@ -6,7 +6,9 @@ import styled from "styled-components"
 const StyledInput = styled.textarea`
   padding: 0.5em;
   background: ${({ theme }) => theme.dark.dark}99;
+  color: ${({ theme }) => theme.light.main};
   border: none;
+
   border-bottom: 3px solid ${({ theme }) => theme.primary.main};
   border-radius: 4px;
   height: 100%;
