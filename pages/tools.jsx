@@ -33,7 +33,10 @@ function Home() {
       <Head>
         <link rel="canonical" href="https://takuyaktoyokawa.ca/tools" />
       </Head>
-      <PageHeader title="Tools" subtitle="All tools used for web development" />
+      <PageHeader
+        title="Tools"
+        subtitle="All current tools used for my workflow"
+      />
       <StyledMain variants={stgerFadeDownAnim} initial="hidden" animate="show">
         <MotionDevelopment variants={stgerFadeDownItem} />
         <MotionDesign variants={stgerFadeDownItem} />
