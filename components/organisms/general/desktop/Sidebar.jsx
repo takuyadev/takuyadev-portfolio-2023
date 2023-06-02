@@ -1,13 +1,13 @@
 // Packages
-import styled from "styled-components"
-import Link from "next/link"
+import styled from "styled-components";
+import Link from "next/link";
 
 // Components
-import Logo from "@/atoms/img/Logo"
-import SidebarLinks from "@/molecules/navigation/SidebarLinks"
-import IconLinks from "@/molecules/navigation/IconLinks"
-import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
-import { FaClipboard } from "react-icons/fa"
+import Logo from "@/atoms/img/Logo";
+import SidebarLinks from "@/molecules/navigation/SidebarLinks";
+import IconLinks from "@/molecules/navigation/IconLinks";
+import PrimaryBtn from "@/atoms/buttons/PrimaryBtn";
+import { FaClipboard } from "react-icons/fa";
 
 const SidebarEl = styled.div`
   grid-area: sidebar;
@@ -26,21 +26,19 @@ const SidebarEl = styled.div`
   @media (max-width: 1024px) {
     display: none;
   }
-`
+`;
 
 const BottomContainer = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2em;
-`
+`;
 
 function Sidebar({ position, pathName, setIsClosed }) {
-  const closeMenu = () => setIsClosed(true)
-
   return (
     <SidebarEl aria-label="sidebar">
-      <Logo setIsClosed={closeMenu} />
+      <Logo />
       <SidebarLinks position={position} pathName={pathName} />
       <BottomContainer>
         <Link
@@ -57,7 +55,7 @@ function Sidebar({ position, pathName, setIsClosed }) {
         <IconLinks />
       </BottomContainer>
     </SidebarEl>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;

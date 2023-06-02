@@ -1,28 +1,30 @@
 // Packages
-import { forwardRef } from "react"
-import styled from "styled-components"
-import Image from "next/image"
+import { forwardRef } from "react";
+import styled from "styled-components";
+import Image from "next/image";
 import {
   HiAcademicCap,
   HiBriefcase,
+  HiDocument,
+  HiDocumentText,
   HiGlobe,
   HiUserCircle,
-} from "react-icons/hi"
-import { BsGithub } from "react-icons/bs"
+} from "react-icons/hi";
+import { BsGithub } from "react-icons/bs";
 
 // Components
-import FigureCard from "@/atoms/cards/FigureCard"
-import Line from "@/atoms/other/Line"
-import Caption from "@/atoms/text/Caption"
-import Heading3 from "@/atoms/text/Heading3"
-import Paragraph from "@/atoms/text/Paragraph"
-import PrimaryBtn from "@/atoms/buttons/PrimaryBtn"
-import Anchor from "@/atoms/text/Anchor"
-import NoSelectImage from "@/atoms/other/NoSelectImage"
-import Inline from "@/atoms/containers/Inline"
-import HoverContext from "@/atoms/other/HoverContext"
+import FigureCard from "@/atoms/cards/FigureCard";
+import Line from "@/atoms/other/Line";
+import Caption from "@/atoms/text/Caption";
+import Heading3 from "@/atoms/text/Heading3";
+import Paragraph from "@/atoms/text/Paragraph";
+import PrimaryBtn from "@/atoms/buttons/PrimaryBtn";
+import Anchor from "@/atoms/text/Anchor";
+import NoSelectImage from "@/atoms/other/NoSelectImage";
+import Inline from "@/atoms/containers/Inline";
+import HoverContext from "@/atoms/other/HoverContext";
 
-import { renderIcons } from "@/utils/renderIcons"
+import { renderIcons } from "@/utils/renderIcons";
 
 // Styled Components
 const StyledCard = styled(FigureCard)`
@@ -38,7 +40,7 @@ const StyledCard = styled(FigureCard)`
   & img {
     object-fit: cover;
   }
-`
+`;
 
 const Container = styled.div`
   display: flex;
@@ -47,38 +49,49 @@ const Container = styled.div`
   height: 100%;
   gap: 1em;
   margin: 1em;
-`
+`;
 
 // ------------------- //
 
 const TagsContainer = styled(Inline)`
   margin-top: 0;
-`
+`;
 
 const TagsInline = styled(TagsContainer)`
   gap: 0.5em;
-`
+`;
 
 const StyledParagraph = styled(Paragraph)`
   color: ${({ theme }) => theme.light.main}99;
-`
+`;
 
 const StyledLine = styled(Line)`
   width: 80%;
   height: 6px;
   transform: translateY(calc(-1em + -2px));
-`
+`;
 
 const ButtonsCont = styled.div`
   display: flex;
   justify-content: space-between;
-`
+`;
 
 // Component
 const HighlightCard = forwardRef(
   (
-    { img, title, type, tags, location, description, live, github, className },
-    ref
+    {
+      img,
+      details,
+      title,
+      type,
+      tags,
+      location,
+      description,
+      live,
+      github,
+      className,
+    },
+    ref,
   ) => (
     <StyledCard ref={ref} className={className}>
       <NoSelectImage>
@@ -112,22 +125,36 @@ const HighlightCard = forwardRef(
                   <HoverContext key={i} text={item}>
                     {renderIcons(item)}
                   </HoverContext>
-                )
+                );
               })}
             </TagsInline>
           </TagsContainer>
           <StyledParagraph>{description}</StyledParagraph>
         </Caption>
         <ButtonsCont>
-          <PrimaryBtn
-            as="a"
-            href={live}
-            aria-label={`Check live website for ${title}`}
-            icon={<HiGlobe size={24} />}
-            target="_blank"
-            rel="noopener noreferrer"
-            text="Check live"
-          />
+          {live && (
+            <PrimaryBtn
+              as="a"
+              href={live}
+              aria-label={`Check live website for ${title}`}
+              icon={<HiGlobe size={24} />}
+              target="_blank"
+              rel="noopener noreferrer"
+              text="Check live"
+            />
+          )}
+
+          {details && (
+            <PrimaryBtn
+              as="a"
+              href={details}
+              aria-label={`Check details for ${title}`}
+              icon={<HiDocumentText size={24} />}
+              target="_blank"
+              rel="noopener noreferrer"
+              text="Check details"
+            />
+          )}
           {github && (
             <Anchor
               icon={<BsGithub size={24} />}
@@ -140,17 +167,17 @@ const HighlightCard = forwardRef(
         </ButtonsCont>
       </Container>
     </StyledCard>
-  )
-)
+  ),
+);
 
 // Settings & Exports
-HighlightCard.displayName = "Highlight Card"
+HighlightCard.displayName = "Highlight Card";
 
 HighlightCard.defaultProps = {
   href: "/",
   img: "/img/dummy/1.webp",
   title: "title",
   description: "title",
-}
+};
 
-export default HighlightCard
+export default HighlightCard;

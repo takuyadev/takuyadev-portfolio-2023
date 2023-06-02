@@ -1,7 +1,8 @@
 // Packages
-import { forwardRef } from "react"
-import styled from "styled-components"
+import { forwardRef } from "react";
+import styled from "styled-components";
 import {
+  SiClickup,
   SiGithub,
   SiGitlab,
   SiHeroku,
@@ -10,19 +11,19 @@ import {
   SiNotion,
   SiTrello,
   SiVercel,
-} from "react-icons/si"
+} from "react-icons/si";
 
 // Components
-import ToolsCard from "@/molecules/cards/ToolsCard"
-import HeadingUlr from "@/molecules/text/HeadingUlr"
-import IconContainer from "@/molecules/container/IconWithCaption"
+import ToolsCard from "@/molecules/cards/ToolsCard";
+import HeadingUlr from "@/molecules/text/HeadingUlr";
+import IconContainer from "@/molecules/container/IconWithCaption";
 
 // Styled Components
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
-`
+`;
 
 // Component
 const OtherGallery = forwardRef(({ className }, ref) => (
@@ -41,6 +42,9 @@ const OtherGallery = forwardRef(({ className }, ref) => (
       <IconContainer caption="Jira">
         <SiJira size={36} />
       </IconContainer>
+      <IconContainer caption="Clickup">
+        <SiClickup size={36} />
+      </IconContainer>
       <IconContainer caption="Notion">
         <SiNotion size={36} />
       </IconContainer>
@@ -55,9 +59,9 @@ const OtherGallery = forwardRef(({ className }, ref) => (
       </IconContainer>
     </ToolsCard>
   </Container>
-))
+));
 
 // Settings & Exports
-OtherGallery.displayName = "OtherGallery"
+OtherGallery.displayName = "OtherGallery";
 
-export default OtherGallery
+export default OtherGallery;

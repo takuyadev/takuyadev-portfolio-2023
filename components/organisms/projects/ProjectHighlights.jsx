@@ -11,14 +11,7 @@ const ProjectHighlights = forwardRef(({ data, ...otherProps }, ref) => (
     {data.map((item, i) => (
       <HighlightCard
         key={i}
-        img={item.img}
-        title={item.title}
-        type={item.type}
-        tags={item.tags}
-        location={item.location}
-        description={item.description}
-        live={item.live}
-        github={item.github}
+        {...item}
       />
     ))}
   </LargeGallery>

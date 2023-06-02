@@ -11,6 +11,7 @@ const ProjectGallery = forwardRef(({ data }, ref) => (
     {data.map((item, i) => (
       <ProjectCard
         key={i}
+        details={item.details}
         title={item.title}
         tags={item.tags}
         type={item.type}

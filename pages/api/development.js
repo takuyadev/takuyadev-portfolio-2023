@@ -2,6 +2,25 @@ export default function handler(req, res) {
   res.status(200).json({
     highlights: [
       {
+        title: "Personalize.ai",
+        description:
+          "Coldmailing software that mass personalizes introductions to emails and pushes to your campaign by importing your own sheet file.",
+        type: "education",
+        location: "Lighthouse Labs",
+        tags: [
+          "react",
+          "next.js",
+          "sass",
+          "framer motion",
+          "postgresql",
+          "prisma",
+          "passport",
+          "jsonwebtoken",
+        ],
+        img: "/img/development/personalize-ai.webp",
+        details: "https://github.com/takuyadev/personalize-ai",
+      },
+      {
         title: "Portfolio (2023)",
         description:
           "Updated personal portfolio using Next.js and Styled Components; utilizing the Static Site Generation to vastly increase performance and load time.",
@@ -30,27 +49,15 @@ export default function handler(req, res) {
         live: "https://srawana-weather-app.netlify.app/",
         github: "https://github.com/takuyadev/ghibli-movielist-revamp",
       },
-      {
-        title: "Minimalist",
-        description:
-          "A minimalistic to-do list application created using React.js and Firebase that allows the user to authenticate using Google, and upload their notes on the cloud.",
-        img: "/img/development/windlist.webp",
-        type: "personal",
-        location: "Personal",
-        tags: ["react", "API", "tailwindCSS", "firebase"],
-        live: "http://windlist.netlify.app",
-        github: "https://github.com/takuyadev/windlist-firebase",
-      },
     ],
     projects: [
       {
-        title: "Shelfie",
+        title: "Interview Scheduler",
         img: "/img/development/shelfie.webp",
         type: "education",
-        location: "BCIT",
-        tags: ["react", "storybook", "next.js", "styled components"],
-        live: "https://shelfie-takuyatoyokawa.vercel.app/Homepage",
-        github: "https://github.com/takuyadev/shelfie",
+        location: "Ligthouse Labs",
+        tags: ["react", "storybook", "cypress", "jest"],
+        github: "https://github.com/takuyadev/interview-scheduler",
       },
       {
         title: "Logeee",
@@ -62,30 +69,28 @@ export default function handler(req, res) {
         github: "https://github.com/takuyadev/logeee",
       },
       {
+        title: "Shelfie",
+        img: "/img/development/shelfie.webp",
+        type: "education",
+        location: "BCIT",
+        tags: ["react", "node", "next.js", "styled components"],
+        github: "https://github.com/takuyadev/shelfie",
+      },
+      {
+        title: "Tiny App",
+        img: "/img/development/shelfie.webp",
+        type: "education",
+        location: "Ligthouse Labs",
+        tags: ["jquery", "node.js", "express"],
+        github: "https://github.com/takuyadev/tinyapp",
+      },
+      {
         title: "Visionary Productions",
         img: "/img/development/visionary_prod.webp",
         type: "work",
         location: "Visionary Productions",
         tags: ["wordpress", "elementor"],
         live: "https://visionaryproductionsinc.com/",
-      },
-      {
-        title: "Minimalist",
-        img: "/img/development/windlist.webp",
-        type: "personal",
-        location: "Personal",
-        tags: ["react", "API", "tailwindCSS", "firebase"],
-        live: "http://windlist.netlify.app",
-        github: "https://github.com/takuyadev/windlist-firebase",
-      },
-      {
-        title: "DevCamper",
-        img: "/img/development/devcamper.webp",
-        type: "education",
-        location: "Udemy",
-        tags: ["node.js", "express", "mongoDB"],
-        live: "https://dev-camper-api.onrender.com/",
-        github: "https://github.com/takuyadev/dev_camper_api",
       },
       {
         title: "Portfolio (2021)",
@@ -95,6 +100,15 @@ export default function handler(req, res) {
         tags: ["react", "next.js", "tailwindCSS"],
         live: "https://portfolio.takuyatoyokawa.vercel.app",
         github: "https://github.com/takuyadev/takuyadev-portfolio-2021",
+      },
+      {
+        title: "Minimalist",
+        img: "/img/development/windlist.webp",
+        type: "personal",
+        location: "Personal",
+        tags: ["react", "API", "tailwindCSS", "firebase"],
+        live: "http://windlist.netlify.app",
+        github: "https://github.com/takuyadev/windlist-firebase",
       },
       {
         title: "Luck Tester",
@@ -175,15 +189,6 @@ export default function handler(req, res) {
         live: "https://takuyadev.github.io/invoice-generator-scrimba/",
         github: "https://github.com/takuyadev/invoice-generator-scrimba",
       },
-      {
-        title: "Vanilla JS Carousel",
-        img: "/img/development/carousel.webp",
-        type: "education",
-        location: "Scrimba",
-        tags: ["html", "css", "javascript ES6"],
-        live: "https://takuyadev.github.io/carousel-vanilla-js-scrimba/",
-        github: "https://github.com/takuyadev/carousel-vanilla-js-scrimba",
-      },
     ],
-  })
+  });
 }

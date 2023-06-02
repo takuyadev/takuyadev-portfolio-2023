@@ -1,19 +1,19 @@
-import { forwardRef } from "react"
+import { forwardRef } from "react";
 // Packages
-import { motion } from "framer-motion"
-import styled, { keyframes } from "styled-components"
-import { BsGithub } from "react-icons/bs"
-import { HiGlobe } from "react-icons/hi"
+import { motion } from "framer-motion";
+import styled, { keyframes } from "styled-components";
+import { BsGithub } from "react-icons/bs";
+import { HiGlobe } from "react-icons/hi";
 
 // Components
-import Heading3 from "@/atoms/text/Heading3"
-import ImageCard from "@/atoms/cards/ImageCard"
-import Paragraph from "@/atoms/text/Paragraph"
-import CircleBtn from "@/atoms/buttons/CircleBtn"
-import Inline from "@/atoms/containers/Inline"
-import HoverContext from "@/atoms/other/HoverContext"
+import Heading3 from "@/atoms/text/Heading3";
+import ImageCard from "@/atoms/cards/ImageCard";
+import Paragraph from "@/atoms/text/Paragraph";
+import CircleBtn from "@/atoms/buttons/CircleBtn";
+import Inline from "@/atoms/containers/Inline";
+import HoverContext from "@/atoms/other/HoverContext";
 
-import { renderIcons } from "@/utils/renderIcons"
+import { renderIcons } from "@/utils/renderIcons";
 
 // Styled Components
 const Out = keyframes`
@@ -23,7 +23,7 @@ const Out = keyframes`
   100% {
     opacity: 1;
   }
-`
+`;
 
 const In = keyframes`
   from{
@@ -32,7 +32,7 @@ const In = keyframes`
   to {
     opacity: 0;
   }
-`
+`;
 
 const StyledCard = styled(ImageCard)`
   text-overflow: ellipsis;
@@ -41,7 +41,7 @@ const StyledCard = styled(ImageCard)`
   &:hover {
     transform: translateY(-8px);
   }
-`
+`;
 
 const Hover = styled(motion.div)`
   position: relative;
@@ -61,19 +61,19 @@ const Hover = styled(motion.div)`
   &:hover {
     animation: ${Out} 0.5s forwards;
   }
-`
+`;
 
 const Opaque = styled.div`
   height: inherit;
   width: inherit;
   background: ${({ theme }) => theme.dark.dark}99;
-`
+`;
 
 const ButtonsCont = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 1em;
-`
+`;
 
 const TagsContainer = styled.div`
   display: flex;
@@ -81,16 +81,16 @@ const TagsContainer = styled.div`
   align-items: center;
   gap: 0.5em;
   color: ${({ theme }) => theme.light.main};
-`
+`;
 
 const TagsInline = styled(Inline)`
   gap: 0.5em;
   margin-top: 0;
   color: ${({ theme }) => theme.light.main};
-`
+`;
 
 const ProjectCard = forwardRef(
-  ({ title, img, type, location, tags, live, github, className }, ref) => (
+  ({ details, title, img, type, location, tags, live, github, className }, ref) => (
     <StyledCard ref={ref} className={className} img={img}>
       <Opaque>
         <Hover>
@@ -101,7 +101,7 @@ const ProjectCard = forwardRef(
                 <HoverContext key={i} text={item}>
                   {renderIcons(item)}
                 </HoverContext>
-              )
+              );
             })}
           </TagsInline>
           <TagsContainer>
@@ -114,14 +114,28 @@ const ProjectCard = forwardRef(
           </TagsContainer>
 
           <ButtonsCont>
-            <CircleBtn
-              as="a"
-              href={live}
-              target="_blank"
-              aria-label={`Check live website for ${title}`}
-              rel="noopener noreferrer"
-              icon={<HiGlobe size={24} />}
-            />
+            {live && (
+              <CircleBtn
+                as="a"
+                href={live}
+                target="_blank"
+                aria-label={`Check live website for ${title}`}
+                rel="noopener noreferrer"
+                icon={<HiGlobe size={24} />}
+              />
+            )}
+
+            {details && (
+              <CircleBtn
+                as="a"
+                href={details}
+                target="_blank"
+                aria-label={`Check details for project ${title}`}
+                rel="noopener noreferrer"
+                icon={<HiGlobe size={24} />}
+              />
+            )}
+
             {github && (
               <CircleBtn
                 as="a"
@@ -136,10 +150,10 @@ const ProjectCard = forwardRef(
         </Hover>
       </Opaque>
     </StyledCard>
-  )
-)
+  ),
+);
 
 // Settings & Exports
-ProjectCard.displayName = "ProjectCard"
+ProjectCard.displayName = "ProjectCard";
 
-export default ProjectCard
+export default ProjectCard;

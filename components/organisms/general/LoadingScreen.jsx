@@ -65,7 +65,7 @@ const LoadingScreen = forwardRef(({ className, ...otherProps }, ref) => {
         layout="fixed"
         width={80}
         height={80}
-        src="/img/other/logo.svg"
+        src="/img/other/Logo.svg"
         alt="Logo of Takuya Toyokawa"
       />
       <TextCont>
