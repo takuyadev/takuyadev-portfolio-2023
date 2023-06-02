@@ -2,14 +2,7 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import {
-  HiAcademicCap,
-  HiBriefcase,
-  HiDocument,
-  HiDocumentText,
-  HiGlobe,
-  HiUserCircle,
-} from "react-icons/hi";
+import { HiGlobe } from "react-icons/hi";
 import { BsGithub } from "react-icons/bs";
 
 // Components
@@ -23,7 +16,6 @@ import Anchor from "@/atoms/text/Anchor";
 import NoSelectImage from "@/atoms/other/NoSelectImage";
 import Inline from "@/atoms/containers/Inline";
 import HoverContext from "@/atoms/other/HoverContext";
-
 import { renderIcons } from "@/utils/renderIcons";
 
 // Styled Components
@@ -149,7 +141,7 @@ const HighlightCard = forwardRef(
               as="a"
               href={details}
               aria-label={`Check details for ${title}`}
-              icon={<HiDocumentText size={24} />}
+              icon={<BsGithub size={24} />}
               target="_blank"
               rel="noopener noreferrer"
               text="Check details"

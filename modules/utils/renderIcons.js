@@ -27,6 +27,8 @@ import {
   SiHtml5,
   SiPrisma,
   SiPostgresql,
+  SiJquery,
+  SiRubyonrails,
 } from "react-icons/si";
 import { BsWordpress } from "react-icons/bs";
 import { FaElementor, FaReact, FaCss3 } from "react-icons/fa";
@@ -40,6 +42,9 @@ const renderIcons = (text) => {
     case "work":
       icon = <HiBriefcase size={20} />;
       break;
+    case "ruby on rails":
+      icon = <SiRubyonrails size={20} />;
+      break;
     case "education":
       icon = <HiAcademicCap size={20} />;
       break;
@@ -48,6 +53,9 @@ const renderIcons = (text) => {
       break;
     case "react":
       icon = <FaReact size={20} />;
+      break;
+    case "jquery":
+      icon = <SiJquery size={20} />;
       break;
     case "API":
       icon = <TbApi size={20} />;
@@ -61,6 +69,7 @@ const renderIcons = (text) => {
     case "typescript":
       icon = <SiTypescript size={20} />;
       break;
+
     case "html":
       icon = <SiHtml5 size={20} />;
       break;
