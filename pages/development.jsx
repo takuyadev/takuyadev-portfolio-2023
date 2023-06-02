@@ -40,7 +40,9 @@ const Message = styled(motion.div)`
   justify-content: center;
   color: white;
   font-weight: bold;
+  padding: 1em;
   border-radius: 16px;
+  text-align: center;
   background-color:${({ theme }) => theme.dark.dark} ;
 
   & p {
